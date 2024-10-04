@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script src="GuessingNumber.js"></script>
+    <script src="Java.js"></script>
+    <script>
+        document.write("Hello world")
+    </script>
+    <div id="text"></div>
+    <script>
+        document.getElementById("text").innerHTML = "Hello world"
+    </script>
+    <script>
+        console.log("Hello world")
+    </script>
+    <pre></pre>
+
+    <script>
+        var x = prompt("Nhập số vào ");
+        var c = x.split(',').map(Number)
+        var randomIndex = Math.floor(Math.random() * c.length);
+        var tron = c[randomIndex];
+        alert(" Tôi biết bạn đang nghĩ về " + tron);
+
+    </script>
+
+
+</body>
+
+</html>
