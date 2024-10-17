@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Form Đăng Ký và Slideshow</title>
+    <!-- Thêm file JavaScript external -->
+    <script src="validation.js"></script>
+    <script src="slideshow.js"></script> <!-- Add the slideshow script -->
+    <style>
+        /* Slideshow styling */
+        .slideshow-container {
+            max-width: 100%;
+            position: relative;
+            margin: auto;
+            text-align: center;
+        }
+
+        .slide {
+            display: none;
+        }
+
+        .prev,
+        .next {
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            width: auto;
+            padding: 16px;
+            color: white;
+            font-weight: bold;
+            font-size: 18px;
+            transition: 0.6s ease;
+            user-select: none;
+        }
+
+        .prev {
+            left: 0;
+        }
+
+        .next {
+            right: 0;
+        }
+
+        /* Style for the form */
+        form {
+            border: 2px solid #888;
+            padding: 20px;
+            width: 400px;
+            margin: auto;
+            outline: 1px solid #888;
+        }
+
+        h2 {
+            text-align: center;
+            font-family: Arial, sans-serif;
+            color: #800080;
+            /* Purple color */
+        }
+
+        /* Make hobbies and Khac on one line */
+        .hobbies-container {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .hobbies-container input[type="checkbox"] {
+            margin-right: 10px;
+        }
+
+        .hobbies-container input[type="text"] {
+            margin-left: 20px;
+        }
+
+        /* Align label and inputs */
+        label {
+            display: inline-block;
+            width: 120px;
+            margin-bottom: 10px;
+        }
+
+        input[type="submit"],
+        input[type="reset"] {
+            margin-top: 20px;
+            margin-right: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>FORM ĐĂNG KÝ</h2>
+    <form name="registrationForm" onsubmit="return validateForm()">
+        <label for="ho">Họ:</label>
+        <input type="text" id="ho" name="ho"><br><br>
+
+        <label for="ten">Tên:</label>
+        <input type="text" id="ten" name="ten"><br><br>
+
+        <label for="ngay">Ngày sinh:</label>
+        <select id="ngay" name="ngay">
+            <option value="0">Ngày</option>
+            <script>
+                for (var i = 1; i <= 31; i++) {
+                    document.write('<option value="' + i + '">' + i + '</option>');
+                }
+            </script>
+        </select>
+
+        <select id="thang" name="thang">
+            <option value="0">Tháng</option>
+            <script>
+                for (var i = 1; i <= 12; i++) {
+                    document.write('<option value="' + i + '">' + i + '</option>');
+                }
+            </script>
+        </select>
+
+        <select id="nam" name="nam">
+            <option value="0">Năm</option>
+            <script>
+                for (var i = 1980; i <= 2024; i++) {
+                    document.write('<option value="' + i + '">' + i + '</option>');
+                }
+            </script>
+        </select>
+        <br><br>
+
+        <label>Giới tính:</label>
+        <input type="radio" id="nam" name="gioiTinh" value="Nam">Nam
+        <input type="radio" id="nu" name="gioiTinh" value="Nữ">Nữ<br><br>
+
+        <label for="soDienThoai">Số điện thoại:</label>
+        <input type="text" id="soDienThoai" name="soDienThoai"><br><br>
+
+        <label>Sở thích:</label>
+        <div class="hobbies-container">
+            <input type="checkbox" name="soThich" value="docSach"> Đọc sách
+            <input type="checkbox" name="soThich" value="xemPhim"> Xem phim
+            <input type="checkbox" name="soThich" value="ngheNhac"> Nghe nhạc
+            <input type="checkbox" name="soThich" value="daBong"> Đá bóng
+            <input type="text" id="khac" name="khac" placeholder="Khác...">
+        </div>
+        <br><br>
+
+        <input type="submit" value="Submit">
+        <input type="reset" value="Reset">
+    </form>
+
+    <!-- Slideshow section -->
+    <div class="slideshow-container">
+        <div class="slide">
+            <img src="https://media.istockphoto.com/id/1153561755/vi/anh/c%E1%BA%A3nh-quan-tuy%E1%BB%87t-%C4%91%E1%BA%B9p-v%E1%BB%8Bnh-h%E1%BA%A1-long-nh%C3%ACn-t%E1%BB%AB-adove-%C4%91%E1%BA%A3o-b%E1%BB%93-h%C3%B2n-v%E1%BB%8Bnh-h%E1%BA%A1-long-vi%E1%BB%87t-nam.jpg?s=2048x2048&w=is&k=20&c=72cdjgzL3KYXeXhsZ1hWsAOt1gX1-PR8UQthZmfFVvw="
+                style="width:100%">
+        </div>
+        <div class="slide">
+            <img src="https://media.istockphoto.com/id/1351410946/vi/anh/tour-hang-thuy%E1%BB%81n-ng%E1%BA%AFm-c%E1%BA%A3nh-tr%C3%A0ng-an-tr%C3%A0ng-an-l%C3%A0-di-s%E1%BA%A3n-th%E1%BA%BF-gi%E1%BB%9Bi-c%E1%BB%A7a-unesco-v%E1%BB%8Bnh-h%E1%BA%A1-long-tr%C3%AAn.jpg?s=2048x2048&w=is&k=20&c=XyOnLhiy-65eVXC1jzDuYFuwXYY5JKC3BD5j1K7faWs="
+                style="width:100%">
+        </div>
+        <div class="slide">
+            <img src="https://media.istockphoto.com/id/511588442/vi/anh/b%C3%ACnh-minh-tr%C3%AAn-v%E1%BB%8Bnh-h%E1%BA%A1-long-vi%E1%BB%87t-nam-v%E1%BB%9Bi-to%C3%A0n-c%E1%BA%A3nh-s%C6%B0%C6%A1ng-m%C3%B9.jpg?s=2048x2048&w=is&k=20&c=lWGuCqH3MQyR7JHRuBJM30thQR-idgHzvEhasezTkT4="
+                style="width:100%">
+        </div>
+
+        <!-- Navigation buttons -->
+        <a class="prev" onclick="previousSlide()">&#10094;</a>
+        <a class="next" onclick="nextSlide()">&#10095;</a>
+    </div>
+</body>
+
+</html>

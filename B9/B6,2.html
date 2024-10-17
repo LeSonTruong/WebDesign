@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator with Operations Log</title>
+    <style>
+        /* Basic styling for the form */
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        .calculator-container {
+            max-width: 600px;
+            margin: auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+        }
+
+        .operation {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .operation input {
+            width: 40px;
+            margin: 0 5px;
+            text-align: center;
+        }
+
+        .operation span {
+            margin: 0 5px;
+        }
+
+        #log {
+            margin-top: 20px;
+        }
+
+        /* Style to make the division log red */
+        .red {
+            color: red;
+        }
+
+        #calculateBtn {
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="calculator-container">
+        <h2>Các phép toán</h2>
+
+        <!-- Addition -->
+        <div class="operation">
+            <input type="number" id="add1" placeholder="0" />
+            <span>+</span>
+            <input type="number" id="add2" placeholder="0" />
+            <span>=</span>
+            <input type="text" id="addResult" readonly />
+        </div>
+
+        <!-- Subtraction -->
+        <div class="operation">
+            <input type="number" id="sub1" placeholder="0" />
+            <span>-</span>
+            <input type="number" id="sub2" placeholder="0" />
+            <span>=</span>
+            <input type="text" id="subResult" readonly />
+        </div>
+
+        <!-- Multiplication -->
+        <div class="operation">
+            <input type="number" id="mul1" placeholder="0" />
+            <span>*</span>
+            <input type="number" id="mul2" placeholder="0" />
+            <span>=</span>
+            <input type="text" id="mulResult" readonly />
+        </div>
+
+        <!-- Division -->
+        <div class="operation">
+            <input type="number" id="div1" placeholder="0" />
+            <span>/</span>
+            <input type="number" id="div2" placeholder="0" />
+            <span>=</span>
+            <input type="text" id="divResult" readonly class="red" />
+        </div>
+
+        <!-- Calculate Button -->
+        <button id="calculateBtn">Tính toán</button>
+
+        <h3>Các phép toán vừa thực hiện</h3>
+        <div id="log"></div> <!-- This will contain the log of operations -->
+    </div>
+
+    <script>
+        // Function to calculate and display the results
+        document.getElementById("calculateBtn").addEventListener("click", function () {
+            // Get values for addition
+            let add1 = parseFloat(document.getElementById("add1").value) || 0;
+            let add2 = parseFloat(document.getElementById("add2").value) || 0;
+            let addResult = add1 + add2;
+            document.getElementById("addResult").value = addResult;
+
+            // Get values for subtraction
+            let sub1 = parseFloat(document.getElementById("sub1").value) || 0;
+            let sub2 = parseFloat(document.getElementById("sub2").value) || 0;
+            let subResult = sub1 - sub2;
+            document.getElementById("subResult").value = subResult;
+
+            // Get values for multiplication
+            let mul1 = parseFloat(document.getElementById("mul1").value) || 0;
+            let mul2 = parseFloat(document.getElementById("mul2").value) || 0;
+            let mulResult = mul1 * mul2;
+            document.getElementById("mulResult").value = mulResult;
+
+            // Get values for division and handle division by zero
+            let div1 = parseFloat(document.getElementById("div1").value) || 0;
+            let div2 = parseFloat(document.getElementById("div2").value) || 0;
+            let divResult;
+            if (div2 === 0) {
+                divResult = "Không thể chia cho 0";
+            } else {
+                divResult = div1 / div2;
+            }
+            document.getElementById("divResult").value = divResult;
+
+            // Log the operations
+            logOperations(add1, add2, addResult, sub1, sub2, subResult, mul1, mul2, mulResult, div1, div2, divResult);
+        });
+
+        // Function to log operations
+        function logOperations(add1, add2, addResult, sub1, sub2, subResult, mul1, mul2, mulResult, div1, div2, divResult) {
+            const log = document.getElementById("log");
+
+            // Make only the division log red
+            let divisionLog = `<span class="red">${div1} / ${div2} = ${divResult}</span>`;
+
+            // Create a new log entry
+            const logEntry = `
+                <p>
+                    ${add1} + ${add2} = ${addResult} <br />
+                    ${sub1} - ${sub2} = ${subResult} <br />
+                    ${mul1} * ${mul2} = ${mulResult} <br />
+                    ${divisionLog}
+                </p>
+                <hr />
+            `;
+
+            // Add the new log entry to the top of the log div
+            log.innerHTML = logEntry + log.innerHTML;
+        }
+    </script>
+
+</body>
+
+</html>
