@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <style>
+        table,
+        th,
+        td {
+            border: 1px solid black;
+            margin: auto;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-image: url('https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExdndxdmc5OGloZGV3OHM1eWVha3V4eDRreG9tYnFqYmQyMnV6YW15biZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/U3qYN8S0j3bpK/giphy.webp');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            color: #ffffff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        .container {
+            max-width: 1200px;
+            width: 100%;
+            height: 100vh;
+            /* Set height to fill the viewport */
+            padding: 0 20px;
+            background-color: rgba(26, 26, 26, 0.8);
+        }
+
+        .scrollable {
+            height: calc(100% - 100px);
+            /* Adjust for header and footer height */
+            overflow-y: scroll;
+            /* Allow vertical scrolling */
+            padding-right: 15px;
+            /* Add padding to prevent content from being cut off */
+            /* Hide scrollbars */
+            -ms-overflow-style: none;
+            /* For Internet Explorer and Edge */
+            scrollbar-width: none;
+            /* For Firefox */
+        }
+
+        .scrollable::-webkit-scrollbar {
+            display: none;
+            /* For Chrome, Safari, and Opera */
+        }
+
+        header {
+            display: flex;
+            justify-content: center;
+            padding: 20px 0;
+            background-color: #232323;
+        }
+
+        nav {
+            display: flex;
+            gap: 10px;
+        }
+
+        nav a {
+            color: #ffffff;
+            padding: 10px 20px;
+            text-decoration: none;
+            font-size: 14px;
+            background-color: #2c2c2c;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+
+        nav a:hover {
+            background-color: #1f1f1f;
+            /* Darker color on hover */
+        }
+
+        .divider {
+            width: 100%;
+            height: 1px;
+            background-color: #444;
+            margin: 20px 0;
+        }
+
+        .section {
+            padding: 50px 0;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .intro,
+        .student-section {
+            flex-direction: row;
+            gap: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .intro img {
+            width: 200px;
+            /* Resizing the profile image */
+            height: auto;
+            /* Maintain aspect ratio */
+            border-radius: 8px;
+            /* Optional: add rounded corners */
+        }
+
+        .intro .text,
+        .student-section .text {
+            max-width: 500px;
+            text-align: center;
+        }
+
+        .intro h1,
+        .student-section h2 {
+            margin: 0;
+            font-size: 28px;
+            line-height: 1.2;
+        }
+
+        .intro p {
+            font-size: 20px;
+            line-height: 1.6;
+        }
+
+        .services,
+        .clients {
+            padding: 20px 0;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 20px;
+            text-align: center;
+        }
+
+        .services h2,
+        .clients h2 {
+            font-size: 24px;
+            width: 100%;
+        }
+
+        .services ul,
+        .clients ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            text-align: center;
+        }
+
+        .services li,
+        .clients li {
+            font-size: 14px;
+            line-height: 2;
+        }
+
+        footer {
+            padding: 20px 0;
+            background-color: #232323;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        footer div {
+            display: flex;
+            gap: 20px;
+        }
+
+        footer a {
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        table a button {
+            background-color: #4CAF50;
+            /* Green */
+            border: none;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 14px;
+            margin: 4px 2px;
+            cursor: pointer;
+            border-radius: 8px;
+            transition: background-color 0.3s;
+        }
+
+        table a button:hover {
+            background-color: #45a049;
+            /* Darker green on hover */
+        }
+
+        /* Responsive Adjustments */
+        @media (max-width: 768px) {
+
+            .section,
+            .intro,
+            .student-section {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .intro h1,
+            .student-section h2 {
+                font-size: 24px;
+            }
+        }
+
+        .collapsible {
+            margin: 20px 0;
+        }
+
+        .collapsible-header {
+            background-color: #4CAF50;
+            /* Green background */
+            color: white;
+            /* White text */
+            cursor: pointer;
+            /* Pointer cursor on hover */
+            padding: 10px 20px;
+            /* Spacing (top/bottom, left/right) */
+            border: none;
+            /* No border */
+            outline: none;
+            /* No outline */
+            font-size: 16px;
+            /* Font size */
+            display: inline-block;
+            /* Make it an inline block for centering */
+            margin: 20px auto;
+            /* Add some margin for spacing */
+            border-radius: 25px;
+            /* Round the corners */
+            transition: background-color 0.3s;
+            /* Smooth transition for hover effect */
+        }
+
+        .collapsible-header:hover {
+            background-color: #45a049;
+            /* Darker green on hover */
+        }
+
+        .collapsible-content {
+            display: none;
+            /* Hide by default */
+            overflow: hidden;
+            /* Hide overflow */
+            padding: 10px;
+            /* Spacing */
+            background-color: #f1f1f1;
+            /* Light background */
+            margin: 0 auto;
+            /* Center content */
+            max-width: 80%;
+            /* Optional: Limit the width */
+        }
+
+        th {
+            background-color: #800000;
+            /* Dark green background */
+            color: white;
+            /* White text */
+            padding: 10px;
+            /* Spacing inside the header */
+            text-align: center;
+            /* Center the text */
+        }
+
+        header {
+            padding: 10px 20px;
+            /* Some padding */
+            text-align: center;
+            /* Centered text */
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="scrollable">
+            <header>
+                <nav>
+                    <a href="index.html">Home</a>
+                    <a href="#">About</a>
+                    <a href="#">Service</a>
+                    <a href="#">Client</a>
+                    <a href="#">Contact</a>
+                </nav>
+            </header>
+
+            <div class="divider"></div> <!-- Divider line -->
+
+            <section class="section intro">
+                <img src="https://scontent.fhan20-1.fna.fbcdn.net/v/t1.6435-9/119353436_1266671233716847_8490199420470400579_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=odN_DNcuao4Q7kNvgGZcnfG&_nc_zt=23&_nc_ht=scontent.fhan20-1.fna&_nc_gid=A47vkHy89vAd06vceCyUZJV&oh=00_AYCZt-QAzC2Z820PwTyfAl2qh8JX1bMArIw8toG3o_2tcQ&oe=673A1DF0"
+                    alt="Profile Image">
+                <div class="text">
+                    <h1>Xin chào! Mình là Lê Sơn Trường.</h1>
+                    <p>Mình sinh năm 2005 và mình hiện đang là sinh viên năm 2 khoa Toán và Công nghệ thông tin của
+                        Trường
+                        Đại học Thủ đô Hà Nội. Mình thích chơi game và đọc truyện tranh.</p>
+                </div>
+            </section>
+
+            <div class="divider"></div> <!-- Divider line -->
+
+            <section class="student-section intro">
+                <h2>Mình là sinh viên trường Đại học Thủ đô Hà Nội!</h2>
+                <img src="https://upload.wikimedia.org/wikipedia/vi/thumb/3/32/Logo_Tr%C6%B0%E1%BB%9Dng_%C4%90%E1%BA%A1i_h%E1%BB%8Dc_Th%E1%BB%A7_%C4%91%C3%B4_H%C3%A0_N%E1%BB%99i.jpg/220px-Logo_Tr%C6%B0%E1%BB%9Dng_%C4%90%E1%BA%A1i_h%E1%BB%8Dc_Th%E1%BB%A7_%C4%91%C3%B4_H%C3%A0_N%E1%BB%99i.jpg"
+                    alt="Additional Image" style="max-width:100%;height:auto;">
+            </section>
+
+            <div class="divider"></div> <!-- Divider line -->
+
+            <section class="clients">
+                <h2 class="collapsible-header">Homeworks</h2>
+                <div class="collapsible-content">
+                    <table>
+                        <tr>
+                            <th>Buổi 1</th>
+                            <th>Buổi 2</th>
+                            <th>Buổi 3</th>
+                            <th>Buổi 4</th>
+                            <th>Buổi 5</th>
+                            <th>Buổi 6</th>
+                            <th>Buổi 7</th>
+                            <th>Buổi 8</th>
+                            <th>Buổi 9</th>
+                            <th>Buổi 10</th>
+                        </tr>
+                        <tr>
+                            <td><a href="https://lesontruong.github.io/WebDesign/B1/B1.html" target="_blank"><button>Bài
+                                        1</button></a></td>
+                            <td><a href="https://lesontruong.github.io/WebDesign/B2/B2-1.html"
+                                    target="_blank"><button>Bài
+                                        1</button></a>
+                            </td>
+                            <td><a href="https://lesontruong.github.io/WebDesign/B3/B1-1.html"
+                                    target="_blank"><button>Bài
+                                        1</button></a>
+                            </td>
+                            <td><a href="https://lesontruong.github.io/WebDesign/B4/Tutorial.html"
+                                    target="_blank"><button>Bài
+                                        1</button></a></td>
+                            <td><a href="https://lesontruong.github.io/WebDesign/B5/Material Design.html"
+                                    target="_blank"><button>Bài
+                                        1</button></a></td>
+                            <td><a href="#" target="_blank"><button>Bài 1</button></a></td>
+                            <td><a href="#" target="_blank"><button>Bài 1</button></a></td>
+                            <td><a href="#" target="_blank"><button>Bài 1</button></a></td>
+                            <td><a href="#" target="_blank"><button>Bài 1</button></a></td>
+                            <td><a href="#" target="_blank"><button>Bài 1</button></a></td>
+                        </tr>
+                        <tr>
+                            <td><a href="https://lesontruong.github.io/WebDesign/B1/B2-1.html"
+                                    target="_blank"><button>Bài
+                                        2</button></a>
+                            </td>
+                            <td><a href="https://lesontruong.github.io/WebDesign/B2/B2-2.html"
+                                    target="_blank"><button>Bài
+                                        2</button></a>
+                            </td>
+                            <td><a href="https://lesontruong.github.io/WebDesign/B3/B2.html" target="_blank"><button>Bài
+                                        2</button></a></td>
+                            <td><a href="https://lesontruong.github.io/WebDesign/B4/My%20Portfolio.html"
+                                    target="_blank"><button>Bài
+                                        2</button></a></td>
+                            <td><a href="https://lesontruong.github.io/WebDesign/B5/Báo Mới.html"
+                                    target="_blank"><button>Bài
+                                        2</button></a>
+                            </td>
+                            <td><a href="#" target="_blank"><button>Bài 2</button></a></td>
+                            <td><a href="#" target="_blank"><button>Bài 2</button></a></td>
+                            <td><a href="#" target="_blank"><button>Bài 2</button></a></td>
+                            <td><a href="#" target="_blank"><button>Bài 2</button></a></td>
+                            <td><a href="#" target="_blank"><button>Bài 2</button></a></td>
+                        </tr>
+                        <tr>
+                            <td><a href="https://lesontruong.github.io/WebDesign/B1/B2-2.html"
+                                    target="_blank"><button>Bài
+                                        3</button></a>
+                            </td>
+                            <td><a href="https://lesontruong.github.io/WebDesign/B2/B3.html" target="_blank"><button>Bài
+                                        3</button></a></td>
+                            <td><a href="https://lesontruong.github.io/WebDesign/B3/B3-1.html"
+                                    target="_blank"><button>Bài
+                                        3</button></a>
+                            </td>
+                            <td><a href="https://lesontruong.github.io/WebDesign/B4/Tutorial.html"
+                                    target="_blank"><button>Bài
+                                        3</button></a></td>
+                            <td><a href="https://lesontruong.github.io/WebDesign/B5/My%20Portfolio.html"
+                                    target="_blank"><button>Bài
+                                        3</button></a></td>
+                            <td><a href="#" target="_blank"><button>Bài 3</button></a></td>
+                            <td><a href="#" target="_blank"><button>Bài 3</button></a></td>
+                            <td><a href="#" target="_blank"><button>Bài 3</button></a></td>
+                            <td><a href="#" target="_blank"><button>Bài 3</button></a></td>
+                            <td><a href="#" target="_blank"><button>Bài 3</button></a></td>
+                        </tr>
+                        <tr>
+                            <td><a href="https://lesontruong.github.io/WebDesign/B1/B2-3.html"
+                                    target="_blank"><button>Bài
+                                        4</button></a>
+                            </td>
+                            <td><a href="https://lesontruong.github.io/WebDesign/B2/B3.html" target="_blank"><button>Bài
+                                        4</button></a></td>
+                            <td><a href="https://lesontruong.github.io/WebDesign/B3/HD1.html"
+                                    target="_blank"><button>Bài
+                                        4</button></a>
+                            </td>
+                            <td><a href="https://lesontruong.github.io/WebDesign/B4/Tutorial.html"
+                                    target="_blank"><button>Bài
+                                        4</button></a></td>
+                            <td><a href="#" target="_blank"><button>Bài 4</button></a></td>
+                            <td><a href="#" target="_blank"><button>Bài 4</button></a></td>
+                            <td><a href="#" target="_blank"><button>Bài 4</button></a></td>
+                            <td><a href="#" target="_blank"><button>Bài 4</button></a></td>
+                            <td><a href="#" target="_blank"><button>Bài 4</button></a></td>
+                            <td><a href="#" target="_blank"><button>Bài 4</button></a></td>
+                        </tr>
+                    </table>
+
+            </section>
+
+            <div class="divider"></div> <!-- Divider line -->
+
+            <footer>
+                <div>
+                    <a href="mailto:LeSonTruong@icloud.com">
+                        <img src="https://cdn-icons-png.freepik.com/512/2099/2099100.png?ga=GA1.1.1279589366.1725373930"
+                            alt="Email Icon" style="width:20px; height:20px; vertical-align:middle; margin-right:8px;">
+                        LeSonTruong@icloud.com
+                    </a>
+                    <a href="https://www.facebook.com/0LeSonTruong0/" target="_blank">
+                        <img src="https://cdn-icons-png.freepik.com/512/4701/4701482.png?ga=GA1.1.1279589366.1725373930"
+                            alt="Facebook Icon"
+                            style="width:20px; height:20px; vertical-align:middle; margin-right:8px;">
+                        Facebook
+                    </a>
+                    <a href="https://www.instagram.com/le_son_truong/" target="_blank">
+                        <img src="https://cdn-icons-png.freepik.com/512/1400/1400829.png?ga=GA1.1.1279589366.1725373930"
+                            alt="Instagram Icon"
+                            style="width:20px; height:20px; vertical-align:middle; margin-right:8px;">
+                        Instagram
+                    </a>
+                </div>
+            </footer>
+        </div>
+    </div>
+    <script>
+        document.querySelectorAll('.collapsible-header').forEach(button => {
+            button.addEventListener('click', () => {
+                const content = button.nextElementSibling; // Get the content
+                content.style.display = content.style.display === 'block' ? 'none' : 'block'; // Toggle display
+            });
+        });
+    </script>
+
+</body>
+
+</html>
