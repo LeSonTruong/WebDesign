@@ -1,724 +1,840 @@
 <!DOCTYPE html>
 <!-- saved from url=(0056)https://arisu171.github.io/Long.D.Shine/B6%20Kalium.html -->
-<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="./Kalium_files/css2" rel="stylesheet">
-    <link href="./Kalium_files/css2(1)" rel="stylesheet">
-    <link rel="stylesheet" href="./Kalium_files/all.css">
-    <title>Kalium</title>
-    <style>
-        body {
-            margin: 0;
-            font-family: Barlow;
-            cursor: default;
-        }
+<html lang="en">
 
-        .nav {
-            font-weight: bold;
-            top: 15px;
-            position: fixed;
-            display: flex;
-            width: 80vw;
-            margin: 10px 10vw;
-            justify-content: space-between;
-            font-size: 18px;
-            color: rgb(243, 243, 243);
-            z-index: 10;
-            transition: 0.2s;
-        }
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
-        .left img {
-            height: 30px;
-        }
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="./Kalium_files/css2" rel="stylesheet">
+  <link href="./Kalium_files/css2(1)" rel="stylesheet">
+  <link rel="stylesheet" href="./Kalium_files/all.css">
+  <title>Kalium</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Barlow;
+      cursor: default;
+    }
 
-        .right {
-            display: flex;
-            cursor: pointer;
-        }
+    .nav {
+      font-weight: bold;
+      top: 15px;
+      position: fixed;
+      display: flex;
+      width: 80vw;
+      margin: 10px 10vw;
+      justify-content: space-between;
+      font-size: 18px;
+      color: rgb(243, 243, 243);
+      z-index: 10;
+      transition: 0.2s;
+    }
 
-        .ulc,
-        .ulcc {
-            padding: 5px 0px;
-            margin: 0px 13px;
-            position: relative;
-        }
+    .left img {
+      height: 30px;
+    }
 
-        #home::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0%;
-            width: 100%;
-            height: 1px;
-            background-color: rgb(255, 255, 255);
-            transition: 0.4s;
-            border-radius: 1px;
-        }
+    .right {
+      display: flex;
+      cursor: pointer;
+    }
 
-        .ulc::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 50%;
-            width: 0%;
-            height: 1px;
-            background-color: rgb(255, 255, 255);
-            transition: 0.4s;
-            border-radius: 1px;
-        }
+    .ulc,
+    .ulcc {
+      padding: 5px 0px;
+      margin: 0px 13px;
+      position: relative;
+    }
 
-        .ulc:hover:after {
-            left: 0%;
-            width: 100%;
-        }
+    #home::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0%;
+      width: 100%;
+      height: 1px;
+      background-color: rgb(255, 255, 255);
+      transition: 0.4s;
+      border-radius: 1px;
+    }
 
-        .ul1 {
-            position: relative;
-        }
+    .ulc::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      width: 0%;
+      height: 1px;
+      background-color: rgb(255, 255, 255);
+      transition: 0.4s;
+      border-radius: 1px;
+    }
 
-        .list {
-            margin: 10px 0px 0px 14px;
-            height: 0;
-            overflow: hidden;
-            position: absolute;
-            width: 180px;
-            border: 1px solid rgba(0, 0, 0, 0);
-        }
+    .ulc:hover:after {
+      left: 0%;
+      width: 100%;
+    }
 
-        .item {
-            opacity: 0;
-            color: rgb(77, 77, 77);
-            transition: 1s ease;
-            padding: 10px 15px 10px 20px;
-            background-color: white;
-            font-weight: 600;
-            font-size: 16px;
-        }
+    .ul1 {
+      position: relative;
+    }
 
-        .ul1:hover .list {
-            height: max-content;
-            transition-delay: 0.5s;
-            overflow: visible;
-            transition-delay: border 0.5s;
-            border: 1px solid black;
-        }
+    .list {
+      margin: 10px 0px 0px 14px;
+      height: 0;
+      overflow: hidden;
+      position: absolute;
+      width: 180px;
+      border: 1px solid rgba(0, 0, 0, 0);
+    }
 
-        .ul1:hover .item {
-            opacity: 1;
-        }
+    .item {
+      opacity: 0;
+      color: rgb(77, 77, 77);
+      transition: 1s ease;
+      padding: 10px 15px 10px 20px;
+      background-color: white;
+      font-weight: 600;
+      font-size: 16px;
+    }
 
-        .ul1:hover .ul2 div {
-            opacity: 0;
-        }
+    .ul1:hover .list {
+      height: max-content;
+      transition-delay: 0.5s;
+      overflow: visible;
+      transition-delay: border 0.5s;
+      border: 1px solid black;
+    }
 
-        .ul2 {
-            top: 40px;
-            left: 180px;
-            width: 0px;
-            overflow: hidden;
-            position: absolute;
-            transition-delay: border 0.4s;
-        }
+    .ul1:hover .item {
+      opacity: 1;
+    }
 
-        .ul2 div {
-            background-color: white;
-            width: 140px;
-            padding: 10px 20px;
-            opacity: 0;
-            transition: 1s;
-        }
+    .ul1:hover .ul2 div {
+      opacity: 0;
+    }
 
-        .item:hover .ul2 {
-            border: 1px solid black;
-            height: max-content;
-            width: max-content;
-        }
+    .ul2 {
+      top: 40px;
+      left: 180px;
+      width: 0px;
+      overflow: hidden;
+      position: absolute;
+      transition-delay: border 0.4s;
+    }
 
-        .item:hover .ul2 div {
-            opacity: 1;
-        }
+    .ul2 div {
+      background-color: white;
+      width: 140px;
+      padding: 10px 20px;
+      opacity: 0;
+      transition: 1s;
+    }
 
-        .banner {
-            position: relative;
-            height: 40vw;
-            overflow: hidden;
-        }
+    .item:hover .ul2 {
+      border: 1px solid black;
+      height: max-content;
+      width: max-content;
+    }
 
-        .char {
-            position: absolute;
-            left: calc(50vw - 315px);
-            z-index: -100;
-            height: 95vh;
-            transition: 0.3s;
-        }
+    .item:hover .ul2 div {
+      opacity: 1;
+    }
 
-        .back {
-            margin: auto;
-            position: absolute;
-            z-index: -1000;
-            width: 100vw;
-        }
+    .banner {
+      position: relative;
+      height: 40vw;
+      overflow: hidden;
+    }
 
-        .text {
-            left: calc(50vw - 300px);
-            bottom: 15vw;
-            position: absolute;
-            width: 600px;
-            text-align: center;
-            color: white;
-            font-size: 75px;
-            font-family: 'Times New Roman', Times, serif;
-            transition: 0.3s;
-            transition-delay: 0s;
-        }
+    .char {
+      position: absolute;
+      left: calc(50vw - 315px);
+      z-index: -100;
+      height: 95vh;
+      transition: 0.3s;
+    }
 
-        .button {
-            position: absolute;
-            font-family: Montserrat;
-            font-weight: bold;
-            width: 120px;
-            font-size: 16px;
-            padding: 10px 14px;
-            border-radius: 3px;
-            background-color: white;
-            text-align: center;
-            left: calc(50vw - 74px);
-            bottom: 10vw;
-            transition: background-color 0.5s;
-            cursor: pointer;
-        }
+    .back {
+      margin: auto;
+      position: absolute;
+      z-index: -1000;
+      width: 100vw;
+    }
 
-        .button:hover {
-            background-color: rgba(255, 255, 255, 0.753);
-        }
+    .text {
+      left: calc(50vw - 300px);
+      bottom: 15vw;
+      position: absolute;
+      width: 600px;
+      text-align: center;
+      color: white;
+      font-size: 75px;
+      font-family: 'Times New Roman', Times, serif;
+      transition: 0.3s;
+      transition-delay: 0s;
+    }
 
-        h2 {
-            font-family: Montserrat;
-            text-align: center;
-            margin: 50px 0px 10px 0px;
-        }
+    .button {
+      position: absolute;
+      font-family: Montserrat;
+      font-weight: bold;
+      width: 120px;
+      font-size: 16px;
+      padding: 10px 14px;
+      border-radius: 3px;
+      background-color: white;
+      text-align: center;
+      left: calc(50vw - 74px);
+      bottom: 10vw;
+      transition: background-color 0.5s;
+      cursor: pointer;
+    }
 
-        h3 {
-            text-align: center;
-            margin: 10px 0px 120px 0px;
-            font-weight: 100;
-        }
+    .button:hover {
+      background-color: rgba(255, 255, 255, 0.753);
+    }
 
-        .flex {
-            width: 78vw;
-            margin: auto;
-            display: grid;
-            grid-template-columns: repeat(4, 2fr);
-            gap: 3vw;
-        }
+    h2 {
+      font-family: Montserrat;
+      text-align: center;
+      margin: 50px 0px 10px 0px;
+    }
 
-        .sp {
-            position: relative;
-            width: 17vw;
-            height: 27vw;
-            cursor: pointer;
-        }
+    h3 {
+      text-align: center;
+      margin: 10px 0px 120px 0px;
+      font-weight: 100;
+    }
 
-        .cap,
-        .cost {
-            position: absolute;
-            font-weight: bolder;
-            color: rgba(0, 0, 0, 0.719);
-        }
+    .flex {
+      width: 78vw;
+      margin: auto;
+      display: grid;
+      grid-template-columns: repeat(4, 2fr);
+      gap: 3vw;
+    }
 
-        .sp img {
-            position: absolute;
-            width: 17vw;
-            transition: 0.7s;
-        }
+    .sp {
+      position: relative;
+      width: 17vw;
+      height: 27vw;
+      cursor: pointer;
+    }
 
-        .show {
-            opacity: 1;
-        }
+    .cap,
+    .cost {
+      position: absolute;
+      font-weight: bolder;
+      color: rgba(0, 0, 0, 0.719);
+    }
 
-        .hide {
-            opacity: 0;
-        }
+    .sp img {
+      position: absolute;
+      width: 17vw;
+      transition: 0.7s;
+    }
 
-        .cap {
-            width: 13vw;
-            top: 22.5vw;
-            transition: 0.7s;
-        }
+    .show {
+      opacity: 1;
+    }
 
-        .name {
-            font-size: 20px;
-        }
+    .hide {
+      opacity: 0;
+    }
 
-        .note {
-            position: relative;
-            margin-top: 10px;
-            font-size: 14px;
-        }
+    .cap {
+      width: 13vw;
+      top: 22.5vw;
+      transition: 0.7s;
+    }
 
-        .note1 {
-            position: absolute;
-            opacity: 1;
-            transition: 0.5s;
-        }
+    .name {
+      font-size: 20px;
+    }
 
-        .add {
-            position: absolute;
-            opacity: 0;
-            transition: 0.5s;
-        }
+    .note {
+      position: relative;
+      margin-top: 10px;
+      font-size: 14px;
+    }
 
-        .cost {
-            transition: 0.7s;
-            top: 21.7vw;
-            right: 0.5vw;
-            font-size: 19px;
-        }
+    .note1 {
+      position: absolute;
+      opacity: 1;
+      transition: 0.5s;
+    }
 
-        .img:hover .show {
-            opacity: 0;
-        }
+    .add {
+      position: absolute;
+      opacity: 0;
+      transition: 0.5s;
+    }
 
-        .img:hover .hide {
-            opacity: 1;
-        }
+    .cost {
+      transition: 0.7s;
+      top: 21.7vw;
+      right: 0.5vw;
+      font-size: 19px;
+    }
 
-        .note:hover .note1 {
-            opacity: 0;
-        }
+    .img:hover .show {
+      opacity: 0;
+    }
 
-        .note:hover .add {
-            opacity: 1;
-        }
+    .img:hover .hide {
+      opacity: 1;
+    }
 
-        .add::after {
-            content: '';
-            position: absolute;
-            bottom: -5px;
-            left: 50%;
-            width: 0%;
-            height: 1px;
-            background-color: rgb(0, 0, 0);
-            transition: 0.4s;
-            border-radius: 1px;
-        }
+    .note:hover .note1 {
+      opacity: 0;
+    }
 
-        .add:hover:after {
-            left: 0%;
-            width: 100%;
-        }
+    .note:hover .add {
+      opacity: 1;
+    }
 
-        @media (max-width: 960px) {
-            .nav {
-                width: 94vw;
-                margin: 5px 3vw;
-                font-size: 12px;
-            }
+    .add::after {
+      content: '';
+      position: absolute;
+      bottom: -5px;
+      left: 50%;
+      width: 0%;
+      height: 1px;
+      background-color: rgb(0, 0, 0);
+      transition: 0.4s;
+      border-radius: 1px;
+    }
 
-            .left img {
-                height: 20px;
-            }
+    .add:hover:after {
+      left: 0%;
+      width: 100%;
+    }
 
-            .ulc,
-            .ulcc {
-                padding: 5px 0px;
-                margin: 0px 8px;
-                position: relative;
-            }
+    @media (max-width: 960px) {
+      .nav {
+        width: 94vw;
+        margin: 5px 3vw;
+        font-size: 12px;
+      }
 
-            .text {
-                left: calc(100vw - 370px);
-                bottom: 35%;
-                width: 300px;
-                font-size: calc(10px + 5vw);
-                text-align: end;
-            }
+      .left img {
+        height: 20px;
+      }
 
-            .button {
-                bottom: 15%;
-                width: calc(50px + 4vw);
-                font-size: calc(9px + 0.4vw);
-                padding: 10px 14px;
-                left: calc(48vw - 39px);
-                background-color: rgba(0, 0, 0, 0.308);
-                color: white;
-            }
+      .ulc,
+      .ulcc {
+        padding: 5px 0px;
+        margin: 0px 8px;
+        position: relative;
+      }
 
-            .char {
-                position: absolute;
-                left: calc(0px + 5vw);
-                z-index: -100;
-                height: 60vw;
-            }
+      .text {
+        left: calc(100vw - 370px);
+        bottom: 35%;
+        width: 300px;
+        font-size: calc(10px + 5vw);
+        text-align: end;
+      }
 
-            h3 {
-                margin: 10px 0px 60px 0px;
-            }
+      .button {
+        bottom: 15%;
+        width: calc(50px + 4vw);
+        font-size: calc(9px + 0.4vw);
+        padding: 10px 14px;
+        left: calc(48vw - 39px);
+        background-color: rgba(0, 0, 0, 0.308);
+        color: white;
+      }
 
-            .flex {
-                grid-template-columns: repeat(2, 2fr);
-                gap: 6vw;
-            }
+      .char {
+        position: absolute;
+        left: calc(0px + 5vw);
+        z-index: -100;
+        height: 60vw;
+      }
 
-            .sp {
-                width: 34vw;
-                height: 54vw;
-            }
+      h3 {
+        margin: 10px 0px 60px 0px;
+      }
 
-            .sp img {
-                width: 34vw;
-                transition: 0.7s;
-            }
+      .flex {
+        grid-template-columns: repeat(2, 2fr);
+        gap: 6vw;
+      }
 
-            .cap {
-                width: 26vw;
-                top: 44vw;
-                transition: 0.7s;
-            }
+      .sp {
+        width: 34vw;
+        height: 54vw;
+      }
 
-            .name {
-                font-size: calc(14px + 0.5vw);
-            }
+      .sp img {
+        width: 34vw;
+        transition: 0.7s;
+      }
 
-            .note {
-                margin-top: 0.8vw;
-                font-size: calc(10px + 0.5vw);
-            }
+      .cap {
+        width: 26vw;
+        top: 44vw;
+        transition: 0.7s;
+      }
 
-            .cost {
-                transition: 0.7s;
-                top: 43vw;
-                right: 0.5vw;
-                font-size: calc(16px + 0.5px);
-            }
-        }
-    </style>
-<style>.--savior-overlay-transform-reset {
-  transform: none !important;
-}
-.--savior-overlay-z-index-top {
-  z-index: 2147483643 !important;
-}
-.--savior-overlay-position-relative {
-  position: relative;
-}
-.--savior-overlay-position-static {
-  position: static !important;
-}
-.--savior-overlay-overflow-hidden {
-  overflow: hidden !important;
-}
-.--savior-overlay-overflow-x-visible {
-  overflow-x: visible !important;
-}
-.--savior-overlay-overflow-y-visible {
-  overflow-y: visible !important;
-}
-.--savior-overlay-z-index-reset {
-  z-index: auto !important;
-}
-.--savior-overlay-display-none {
-  display: none !important;
-}
-.--savior-overlay-clearfix {
-  clear: both;
-}
-.--savior-overlay-reset-filter {
-  filter: none !important;
-  backdrop-filter: none !important;
-}
-.--savior-tooltip-host {
-  z-index: 9999;
-  position: absolute;
-  top: 0;
-}
-/*Override css styles for Twitch.tv*/
-main.--savior-overlay-z-index-reset {
-  z-index: auto !important;
-}
-.modal__backdrop.--savior-overlay-z-index-reset {
-  position: static !important;
-}
-main.--savior-overlay-z-index-top {
-  z-index: auto !important;
-}
-main.--savior-overlay-z-index-top .channel-root__player-container + div,
-main.--savior-overlay-z-index-top .video-player-hosting-ui__container + div {
-  opacity: 0.1;
-}
-/*Dirty hack for facebook big video page e.g: https://www.facebook.com/abc/videos/...*/
-.--savior-backdrop {
-  position: fixed !important;
-  z-index: 2147483642 !important;
-  top: 0;
-  left: 0;
-  height: 100vh;
-  width: 100vw !important;
-  background-color: rgba(0,0,0,0.9);
-}
-.--savior-overlay-twitter-video-player {
-  position: fixed;
-  width: 80%;
-  height: 80%;
-  top: 10%;
-  left: 10%;
-}
-.--savior-overlay-z-index-reset [class*="DivSideNavContainer"],
-.--savior-overlay-z-index-reset [class*="DivHeaderContainer"],
-.--savior-overlay-z-index-reset [class*="DivBottomContainer"],
-.--savior-overlay-z-index-reset [class*="DivCategoryListWrapper"],
-.--savior-overlay-z-index-reset [data-testid="sidebarColumn"],
-.--savior-overlay-z-index-reset header[role="banner"],
-.--savior-overlay-z-index-reset [data-testid="cellInnerDiv"]:not(.--savior-overlay-z-index-reset),
-.--savior-overlay-z-index-reset [aria-label="Home timeline"]>div:first-child,
-.--savior-overlay-z-index-reset [aria-label="Home timeline"]>div:nth-child(3) {
-  z-index: -1 !important;
-}
-.--savior-overlay-z-index-reset [data-testid="cellInnerDiv"] .--savior-backdrop+div {
-  z-index: 2147483643 !important;
-}
-.--savior-overlay-z-index-reset [data-testid="primaryColumn"]>[aria-label="Home timeline"] {
-  z-index: 0 !important;
-}
-.--savior-overlay-z-index-reset#mtLayer,
-.--savior-overlay-z-index-reset.media-layer {
-  z-index: 3000 !important;
-}
-.--savior-overlay-position-relative [class*="SecBar_secBar_"],
-.--savior-overlay-position-relative .woo-box-flex [class*="Frame_top_"] {
-  z-index: 0 !important;
-}
-.--savior-overlay-position-relative .vue-recycle-scroller__item-view:not(.--savior-overlay-z-index-reset),
-.--savior-overlay-position-relative .woo-panel-main[class*="BackTop_main_"],
-.--savior-overlay-position-relative [class*="Main_side_"] {
-  z-index: -1 !important;
-}
-/* Fix conflict css with zingmp3 */
-.zm-video-modal.--savior-overlay-z-index-reset {
-  position: absolute;
-}
-/* Dirty hack for xvideos99 */
-#page #main.--savior-overlay-z-index-reset {
-  z-index: auto !important;
-}
-/* Overlay for ok.ru */
-#vp_w.--savior-overlay-z-index-reset.media-layer.media-layer__video {
-  overflow-y: hidden;
-  z-index: 2147483643 !important;
-}
-/* Fix missing controller for tv.naver.com */
-.--savior-overlay-z-index-top.rmc_controller,
-.--savior-overlay-z-index-top.rmc_setting_intro,
-.--savior-overlay-z-index-top.rmc_highlight,
-.--savior-overlay-z-index-top.rmc_control_settings {
-  z-index: 2147483644 !important;
-}
-/* Dirty hack for douyi.com */
-.swiper-wrapper.--savior-overlay-z-index-reset .swiper-slide:not(.swiper-slide-active),
-.swiper-wrapper.--savior-overlay-transform-reset .swiper-slide:not(.swiper-slide-active) {
-  display: none;
-}
-.videoWrap + div > div {
-  pointer-events: unset;
-}
-/* Dirty hack for fpt.ai */
-.mfp-wrap.--savior-overlay-z-index-top {
-  position: relative;
-}
-.mfp-wrap.--savior-overlay-z-index-top .mfp-close {
-  display: none;
-}
-.mfp-wrap.--savior-overlay-z-index-top .mfp-content {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-section.--savior-overlay-z-index-reset>main[role="main"].--savior-overlay-z-index-reset + nav {
-  z-index: -1 !important;
-}
-section.--savior-overlay-z-index-reset>main[role="main"].--savior-overlay-z-index-reset section.--savior-overlay-z-index-reset div.--savior-overlay-z-index-reset ~ div {
-  position: relative;
-}
-.watching-movie #video-player.--savior-overlay-z-index-top {
-  z-index: 2147483644 !important;
-}
-div[class^="tiktok"].--savior-overlay-z-index-reset {
-  z-index: 2147483644 !important;
-}
-.--savior-lightoff-fix section:not(:has([class*="--savior-overlay-"])),
-.--savior-lightoff-fix section.section_video ~ section {
-  z-index: -1;
-  position: relative;
-}
-.--savior-lightoff-fix header,
-.--savior-lightoff-fix footer,
-.--savior-lightoff-fix .top-header,
-.--savior-lightoff-fix .swiper-container,
-.--savior-lightoff-fix #to_top,
-.--savior-lightoff-fix #button-adblock {
-  z-index: -1 !important;
-}
-@-moz-keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-@-webkit-keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-@-o-keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-</style></head>
+      .name {
+        font-size: calc(14px + 0.5vw);
+      }
+
+      .note {
+        margin-top: 0.8vw;
+        font-size: calc(10px + 0.5vw);
+      }
+
+      .cost {
+        transition: 0.7s;
+        top: 43vw;
+        right: 0.5vw;
+        font-size: calc(16px + 0.5px);
+      }
+    }
+  </style>
+  <style>
+    .--savior-overlay-transform-reset {
+      transform: none !important;
+    }
+
+    .--savior-overlay-z-index-top {
+      z-index: 2147483643 !important;
+    }
+
+    .--savior-overlay-position-relative {
+      position: relative;
+    }
+
+    .--savior-overlay-position-static {
+      position: static !important;
+    }
+
+    .--savior-overlay-overflow-hidden {
+      overflow: hidden !important;
+    }
+
+    .--savior-overlay-overflow-x-visible {
+      overflow-x: visible !important;
+    }
+
+    .--savior-overlay-overflow-y-visible {
+      overflow-y: visible !important;
+    }
+
+    .--savior-overlay-z-index-reset {
+      z-index: auto !important;
+    }
+
+    .--savior-overlay-display-none {
+      display: none !important;
+    }
+
+    .--savior-overlay-clearfix {
+      clear: both;
+    }
+
+    .--savior-overlay-reset-filter {
+      filter: none !important;
+      backdrop-filter: none !important;
+    }
+
+    .--savior-tooltip-host {
+      z-index: 9999;
+      position: absolute;
+      top: 0;
+    }
+
+    /*Override css styles for Twitch.tv*/
+    main.--savior-overlay-z-index-reset {
+      z-index: auto !important;
+    }
+
+    .modal__backdrop.--savior-overlay-z-index-reset {
+      position: static !important;
+    }
+
+    main.--savior-overlay-z-index-top {
+      z-index: auto !important;
+    }
+
+    main.--savior-overlay-z-index-top .channel-root__player-container+div,
+    main.--savior-overlay-z-index-top .video-player-hosting-ui__container+div {
+      opacity: 0.1;
+    }
+
+    /*Dirty hack for facebook big video page e.g: https://www.facebook.com/abc/videos/...*/
+    .--savior-backdrop {
+      position: fixed !important;
+      z-index: 2147483642 !important;
+      top: 0;
+      left: 0;
+      height: 100vh;
+      width: 100vw !important;
+      background-color: rgba(0, 0, 0, 0.9);
+    }
+
+    .--savior-overlay-twitter-video-player {
+      position: fixed;
+      width: 80%;
+      height: 80%;
+      top: 10%;
+      left: 10%;
+    }
+
+    .--savior-overlay-z-index-reset [class*="DivSideNavContainer"],
+    .--savior-overlay-z-index-reset [class*="DivHeaderContainer"],
+    .--savior-overlay-z-index-reset [class*="DivBottomContainer"],
+    .--savior-overlay-z-index-reset [class*="DivCategoryListWrapper"],
+    .--savior-overlay-z-index-reset [data-testid="sidebarColumn"],
+    .--savior-overlay-z-index-reset header[role="banner"],
+    .--savior-overlay-z-index-reset [data-testid="cellInnerDiv"]:not(.--savior-overlay-z-index-reset),
+    .--savior-overlay-z-index-reset [aria-label="Home timeline"]>div:first-child,
+    .--savior-overlay-z-index-reset [aria-label="Home timeline"]>div:nth-child(3) {
+      z-index: -1 !important;
+    }
+
+    .--savior-overlay-z-index-reset [data-testid="cellInnerDiv"] .--savior-backdrop+div {
+      z-index: 2147483643 !important;
+    }
+
+    .--savior-overlay-z-index-reset [data-testid="primaryColumn"]>[aria-label="Home timeline"] {
+      z-index: 0 !important;
+    }
+
+    .--savior-overlay-z-index-reset#mtLayer,
+    .--savior-overlay-z-index-reset.media-layer {
+      z-index: 3000 !important;
+    }
+
+    .--savior-overlay-position-relative [class*="SecBar_secBar_"],
+    .--savior-overlay-position-relative .woo-box-flex [class*="Frame_top_"] {
+      z-index: 0 !important;
+    }
+
+    .--savior-overlay-position-relative .vue-recycle-scroller__item-view:not(.--savior-overlay-z-index-reset),
+    .--savior-overlay-position-relative .woo-panel-main[class*="BackTop_main_"],
+    .--savior-overlay-position-relative [class*="Main_side_"] {
+      z-index: -1 !important;
+    }
+
+    /* Fix conflict css with zingmp3 */
+    .zm-video-modal.--savior-overlay-z-index-reset {
+      position: absolute;
+    }
+
+    /* Dirty hack for xvideos99 */
+    #page #main.--savior-overlay-z-index-reset {
+      z-index: auto !important;
+    }
+
+    /* Overlay for ok.ru */
+    #vp_w.--savior-overlay-z-index-reset.media-layer.media-layer__video {
+      overflow-y: hidden;
+      z-index: 2147483643 !important;
+    }
+
+    /* Fix missing controller for tv.naver.com */
+    .--savior-overlay-z-index-top.rmc_controller,
+    .--savior-overlay-z-index-top.rmc_setting_intro,
+    .--savior-overlay-z-index-top.rmc_highlight,
+    .--savior-overlay-z-index-top.rmc_control_settings {
+      z-index: 2147483644 !important;
+    }
+
+    /* Dirty hack for douyi.com */
+    .swiper-wrapper.--savior-overlay-z-index-reset .swiper-slide:not(.swiper-slide-active),
+    .swiper-wrapper.--savior-overlay-transform-reset .swiper-slide:not(.swiper-slide-active) {
+      display: none;
+    }
+
+    .videoWrap+div>div {
+      pointer-events: unset;
+    }
+
+    /* Dirty hack for fpt.ai */
+    .mfp-wrap.--savior-overlay-z-index-top {
+      position: relative;
+    }
+
+    .mfp-wrap.--savior-overlay-z-index-top .mfp-close {
+      display: none;
+    }
+
+    .mfp-wrap.--savior-overlay-z-index-top .mfp-content {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    section.--savior-overlay-z-index-reset>main[role="main"].--savior-overlay-z-index-reset+nav {
+      z-index: -1 !important;
+    }
+
+    section.--savior-overlay-z-index-reset>main[role="main"].--savior-overlay-z-index-reset section.--savior-overlay-z-index-reset div.--savior-overlay-z-index-reset~div {
+      position: relative;
+    }
+
+    .watching-movie #video-player.--savior-overlay-z-index-top {
+      z-index: 2147483644 !important;
+    }
+
+    div[class^="tiktok"].--savior-overlay-z-index-reset {
+      z-index: 2147483644 !important;
+    }
+
+    .--savior-lightoff-fix section:not(:has([class*="--savior-overlay-"])),
+    .--savior-lightoff-fix section.section_video~section {
+      z-index: -1;
+      position: relative;
+    }
+
+    .--savior-lightoff-fix header,
+    .--savior-lightoff-fix footer,
+    .--savior-lightoff-fix .top-header,
+    .--savior-lightoff-fix .swiper-container,
+    .--savior-lightoff-fix #to_top,
+    .--savior-lightoff-fix #button-adblock {
+      z-index: -1 !important;
+    }
+
+    @-moz-keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+
+      to {
+        opacity: 1;
+      }
+    }
+
+    @-webkit-keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+
+      to {
+        opacity: 1;
+      }
+    }
+
+    @-o-keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+
+      to {
+        opacity: 1;
+      }
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+
+      to {
+        opacity: 1;
+      }
+    }
+
+    header {
+      padding: 10px 20px;
+      /* Some padding */
+      text-align: center;
+      /* Centered text */
+    }
+
+    nav a {
+      margin: 0 15px;
+      /* Space between links */
+      text-decoration: none;
+      /* Remove underline */
+      color: #333;
+      /* Dark text color */
+      font-weight: bold;
+      /* Bold text */
+    }
+
+    nav a:hover {
+      color: #007BFF;
+      /* Change color on hover */
+    }
+  </style>
+</head>
 
 <body data-new-gr-c-s-check-loaded="14.1198.0" data-gr-ext-installed="">
-    <div class="nav">
-        <div class="left"><img src="./Kalium_files/fashion_logo.png" alt=""></div>
-        <div class="right">
-            <div class="ul1">
-                <div class="ulc" id="home">Home</div>
-                <div class="list">
-                    <div class="item">Home Fullscreen</div>
-                    <div class="item">Home Parallax</div>
-                </div>
-            </div>
-            <div class="ul1">
-                <div class="ulc">Shop</div>
-                <div class="list">
-                    <div class="item">Accessories</div>
-                    <div class="item">
-                        <div class="ulc2">Variants</div>
-                        <div class="ul2">
-                            <div class="item">Sidebar Left</div>
-                            <div class="item">Sidebar Right</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="ul1">
-                <div class="ulc">Product</div>
-                <div class="list">
-                    <div class="item">Simple</div>
-                    <div class="item">Variable</div>
-                </div>
-            </div>
-            <div class="ul1">
-                <div class="ulc">News</div>
-                <div class="list">
-                    <div class="item">Sidebar Right</div>
-                    <div class="item">Sidebar Left</div>
-                </div>
-            </div>
-            <div class="ul1">
-                <div class="ulc">Pages</div>
-                <div class="list">
-                    <div class="item">About</div>
-                    <div class="item">Contact</div>
-                </div>
-            </div>
-            <div class="ulc">Buy Now</div>
-            <div class="ulcc"><i class="fa fa-search"></i></div>
-            <div class="ulcc"><i class="fa fa-shopping-bag"></i></div>
+  <header>
+    <nav>
+      <a href="https://lesontruong.github.io/WebDesign/B10/My%20Portfolio.html">Home</a>
+      <a href="#">About</a>
+      <a href="#">Service</a>
+      <a href="#">Client</a>
+      <a href="#">Contact</a>
+    </nav>
+  </header>
+  <div class="nav">
+    <div class="left"><img src="./Kalium_files/fashion_logo.png" alt=""></div>
+    <div class="right">
+      <div class="ul1">
+        <div class="ulc" id="home">Home</div>
+        <div class="list">
+          <div class="item">Home Fullscreen</div>
+          <div class="item">Home Parallax</div>
         </div>
+      </div>
+      <div class="ul1">
+        <div class="ulc">Shop</div>
+        <div class="list">
+          <div class="item">Accessories</div>
+          <div class="item">
+            <div class="ulc2">Variants</div>
+            <div class="ul2">
+              <div class="item">Sidebar Left</div>
+              <div class="item">Sidebar Right</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="ul1">
+        <div class="ulc">Product</div>
+        <div class="list">
+          <div class="item">Simple</div>
+          <div class="item">Variable</div>
+        </div>
+      </div>
+      <div class="ul1">
+        <div class="ulc">News</div>
+        <div class="list">
+          <div class="item">Sidebar Right</div>
+          <div class="item">Sidebar Left</div>
+        </div>
+      </div>
+      <div class="ul1">
+        <div class="ulc">Pages</div>
+        <div class="list">
+          <div class="item">About</div>
+          <div class="item">Contact</div>
+        </div>
+      </div>
+      <div class="ulc">Buy Now</div>
+      <div class="ulcc"><i class="fa fa-search"></i></div>
+      <div class="ulcc"><i class="fa fa-shopping-bag"></i></div>
     </div>
-    <div class="banner">
-        <img src="./Kalium_files/Kalium-char.png" alt="" class="char">
-        <img src="./Kalium_files/Kalium-back.jpg" alt="" class="back">
-        <div class="text">Monochrome Collection</div>
-        <div class="button">SHOP NOW</div>
+  </div>
+  <div class="banner">
+    <img src="./Kalium_files/Kalium-char.png" alt="" class="char">
+    <img src="./Kalium_files/Kalium-back.jpg" alt="" class="back">
+    <div class="text">Monochrome Collection</div>
+    <div class="button">SHOP NOW</div>
+  </div>
+  <div class="title">
+    <h2>New Arrivals</h2>
+    <h3>Latest From our Store</h3>
+  </div>
+  <div class="flex">
+    <div class="sp">
+      <div class="img">
+        <img src="./Kalium_files/Kalium-show1.png" alt="" class="show">
+        <img src="./Kalium_files/Kalium-hide1.jpg" alt="" class="hide">
+      </div>
+      <div class="cost">$9</div>
+      <div class="cap">
+        <div class="name">Broken T Shirt</div>
+        <div class="note">
+          <div class="note1">Men, T Shirts</div>
+          <div class="add">Add to cart</div>
+        </div>
+      </div>
     </div>
-    <div class="title">
-        <h2>New Arrivals</h2>
-        <h3>Latest From our Store</h3>
+    <div class="sp">
+      <div class="img">
+        <img src="./Kalium_files/Kalium-show2.png" alt="" class="show">
+        <img src="./Kalium_files/Kalium-hide2.jpg" alt="" class="hide">
+      </div>
+      <div class="cost">$25</div>
+      <div class="cap">
+        <div class="name">Knickerboxer</div>
+        <div class="note">
+          <div class="note1">Men, Sweaters</div>
+          <div class="add">Add to cart</div>
+        </div>
+      </div>
     </div>
-    <div class="flex">
-        <div class="sp">
-            <div class="img">
-                <img src="./Kalium_files/Kalium-show1.png" alt="" class="show">
-                <img src="./Kalium_files/Kalium-hide1.jpg" alt="" class="hide">
-            </div>
-            <div class="cost">$9</div>
-            <div class="cap">
-                <div class="name">Broken T Shirt</div>
-                <div class="note">
-                    <div class="note1">Men, T Shirts</div>
-                    <div class="add">Add to cart</div>
-                </div>
-            </div>
+    <div class="sp">
+      <div class="img">
+        <img src="./Kalium_files/Kalium-show3.png" alt="" class="show">
+        <img src="./Kalium_files/Kalium-hide3.jpg" alt="" class="hide">
+      </div>
+      <div class="cost">$7</div>
+      <div class="cap">
+        <div class="name">Studio Belt</div>
+        <div class="note">
+          <div class="note1">Accessories</div>
+          <div class="add">Add to cart</div>
         </div>
-        <div class="sp">
-            <div class="img">
-                <img src="./Kalium_files/Kalium-show2.png" alt="" class="show">
-                <img src="./Kalium_files/Kalium-hide2.jpg" alt="" class="hide">
-            </div>
-            <div class="cost">$25</div>
-            <div class="cap">
-                <div class="name">Knickerboxer</div>
-                <div class="note">
-                    <div class="note1">Men, Sweaters</div>
-                    <div class="add">Add to cart</div>
-                </div>
-            </div>
+      </div>
+    </div>
+    <div class="sp">
+      <div class="img">
+        <img src="./Kalium_files/Kalium-show4.png" alt="" class="show">
+        <img src="./Kalium_files/Kalium-hide4.jpg" alt="" class="hide">
+      </div>
+      <div class="cost">$29</div>
+      <div class="cap">
+        <div class="name">Chambray Shirt</div>
+        <div class="note">
+          <div class="note1">Men, Sweaters</div>
+          <div class="add">Add to cart</div>
         </div>
-        <div class="sp">
-            <div class="img">
-                <img src="./Kalium_files/Kalium-show3.png" alt="" class="show">
-                <img src="./Kalium_files/Kalium-hide3.jpg" alt="" class="hide">
-            </div>
-            <div class="cost">$7</div>
-            <div class="cap">
-                <div class="name">Studio Belt</div>
-                <div class="note">
-                    <div class="note1">Accessories</div>
-                    <div class="add">Add to cart</div>
-                </div>
-            </div>
-        </div>
-        <div class="sp">
-            <div class="img">
-                <img src="./Kalium_files/Kalium-show4.png" alt="" class="show">
-                <img src="./Kalium_files/Kalium-hide4.jpg" alt="" class="hide">
-            </div>
-            <div class="cost">$29</div>
-            <div class="cap">
-                <div class="name">Chambray Shirt</div>
-                <div class="note">
-                    <div class="note1">Men, Sweaters</div>
-                    <div class="add">Add to cart</div>
-                </div>
-            </div>
+      </div>
 
-        </div>
     </div>
-    <br><br>
+  </div>
+  <br><br>
 
 
-</body><savior-host style="all: unset; position: absolute; top: 0; z-index: 99999999999999; display: block !important; overflow: unset"><template shadowrootmode="open"><style>@import "chrome-extension://jdfkmiabjpfjacifcmihfdjhpnjpiick/css/content-script.css";
-</style><div class="body"><div class="turn-lights-overlay"></div><toasts id="toasts-container"></toasts></div></template></savior-host><en2vi-host class="corom-element" version="3" style="all: initial; position: absolute; top: 0; left: 0; right: 0; height: 0; margin: 0; text-align: left; z-index: 10000000000; pointer-events: none; border: none; display: block"><template shadowrootmode="open"><style>@import "chrome-extension://gfgbmghkdjckppeomloefmbphdfmokgd/css/common.css";
-@import "chrome-extension://gfgbmghkdjckppeomloefmbphdfmokgd/css/style.css";</style><style id="svelte-1dp9t6n">.toast-container.svelte-1dp9t6n{position:fixed;pointer-events:none;width:100%;height:100%;display:flex;flex-direction:column-reverse;align-items:center;z-index:1000;bottom:0;padding:16px;gap:8px}</style>   <div class="toast-container svelte-1dp9t6n"></div></template></en2vi-host><grammarly-desktop-integration data-grammarly-shadow-root="true"><template shadowrootmode="open"><style>
+</body><savior-host
+  style="all: unset; position: absolute; top: 0; z-index: 99999999999999; display: block !important; overflow: unset"><template
+    shadowrootmode="open">
+    <style>
+      @import "chrome-extension://jdfkmiabjpfjacifcmihfdjhpnjpiick/css/content-script.css";
+    </style>
+    <div class="body">
+      <div class="turn-lights-overlay"></div>
+      <toasts id="toasts-container"></toasts>
+    </div>
+  </template></savior-host><en2vi-host class="corom-element" version="3"
+  style="all: initial; position: absolute; top: 0; left: 0; right: 0; height: 0; margin: 0; text-align: left; z-index: 10000000000; pointer-events: none; border: none; display: block"><template
+    shadowrootmode="open">
+    <style>
+      @import "chrome-extension://gfgbmghkdjckppeomloefmbphdfmokgd/css/common.css";
+      @import "chrome-extension://gfgbmghkdjckppeomloefmbphdfmokgd/css/style.css";
+    </style>
+    <style id="svelte-1dp9t6n">
+      .toast-container.svelte-1dp9t6n {
+        position: fixed;
+        pointer-events: none;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column-reverse;
+        align-items: center;
+        z-index: 1000;
+        bottom: 0;
+        padding: 16px;
+        gap: 8px
+      }
+    </style>
+    <div class="toast-container svelte-1dp9t6n"></div>
+  </template></en2vi-host><grammarly-desktop-integration data-grammarly-shadow-root="true"><template
+    shadowrootmode="open">
+    <style>
       div.grammarly-desktop-integration {
         position: absolute;
         width: 1px;
@@ -731,11 +847,17 @@ div[class^="tiktok"].--savior-overlay-z-index-reset {
         border: 0;
         -moz-user-select: none;
         -webkit-user-select: none;
-        -ms-user-select:none;
-        user-select:none;
+        -ms-user-select: none;
+        user-select: none;
       }
 
       div.grammarly-desktop-integration:before {
         content: attr(data-content);
       }
-    </style><div aria-label="grammarly-integration" role="group" tabindex="-1" class="grammarly-desktop-integration" data-content="{&quot;mode&quot;:&quot;full&quot;,&quot;isActive&quot;:true,&quot;isUserDisabled&quot;:false}"></div></template></grammarly-desktop-integration></html>
+    </style>
+    <div aria-label="grammarly-integration" role="group" tabindex="-1" class="grammarly-desktop-integration"
+      data-content="{&quot;mode&quot;:&quot;full&quot;,&quot;isActive&quot;:true,&quot;isUserDisabled&quot;:false}">
+    </div>
+  </template></grammarly-desktop-integration>
+
+</html>
