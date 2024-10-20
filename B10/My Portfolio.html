@@ -6,231 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio</title>
-    <style>
-        table,
-        th,
-        td {
-            border: 1px solid black;
-            margin: auto;
-        }
-
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background-image: url('https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExdndxdmc5OGloZGV3OHM1eWVha3V4eDRreG9tYnFqYmQyMnV6YW15biZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/U3qYN8S0j3bpK/giphy.webp');
-            background-size: cover;
-            background-repeat: no-repeat;
-            background-attachment: fixed;
-            color: #ffffff;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
-        }
-
-        .container {
-            max-width: 1200px;
-            width: 100%;
-            padding: 0 20px;
-        }
-
-        .background {
-            z-index: -1;
-            top: 0;
-            position: fixed;
-            height: 100%;
-            max-width: 1200px;
-            width: 100%;
-            background-color: rgba(26, 26, 26, 0.8);
-        }
-
-        header {
-            width: 100%;
-            display: flex;
-            justify-content: center;
-            padding: 20px 0;
-            background-color: #232323;
-        }
-
-        nav {
-            display: flex;
-            gap: 10px;
-        }
-
-        nav a,
-        .collapsible-header {
-            color: #ffffff;
-            padding: 10px 20px;
-            text-decoration: none;
-            font-size: 14px;
-            background-color: #2c2c2c;
-            border-radius: 4px;
-            transition: background-color 0.3s;
-            cursor: pointer;
-            border: none;
-        }
-
-        nav a:hover,
-        .collapsible-header:hover {
-            background-color: #1f1f1f;
-        }
-
-        .divider {
-            width: 100%;
-            height: 1px;
-            background-color: #444;
-            margin: 20px 0;
-        }
-
-        .section {
-            padding: 50px 0;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 20px;
-            flex-wrap: wrap;
-        }
-
-        .intro,
-        .student-section {
-            flex-direction: row;
-            gap: 20px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .intro img {
-            width: 200px;
-            height: auto;
-            border-radius: 8px;
-        }
-
-        .intro .text,
-        .student-section .text {
-            max-width: 500px;
-            text-align: center;
-        }
-
-        .intro h1,
-        .student-section h2 {
-            margin: 0;
-            font-size: 28px;
-            line-height: 1.2;
-        }
-
-        .intro p {
-            font-size: 20px;
-            line-height: 1.6;
-        }
-
-        .clients {
-            padding: 20px 0;
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-            gap: 20px;
-            text-align: center;
-        }
-
-        .clients h2 {
-            font-size: 24px;
-            width: fit-content;
-            margin: 0 auto;
-        }
-
-        footer {
-            padding: 20px 0;
-            background-color: #232323;
-            display: flex;
-            flex-wrap: wrap;
-            gap: 20px;
-            justify-content: center;
-        }
-
-        footer div {
-            display: flex;
-            gap: 20px;
-        }
-
-        footer a {
-            color: #ffffff;
-            text-decoration: none;
-            font-size: 14px;
-        }
-
-        table a button {
-            background-color: #4CAF50;
-            border: none;
-            color: white;
-            padding: 10px 20px;
-            text-align: center;
-            text-decoration: none;
-            display: inline-block;
-            font-size: 14px;
-            margin: 4px 2px;
-            cursor: pointer;
-            border-radius: 8px;
-            transition: background-color 0.3s;
-        }
-
-        table a button:hover {
-            background-color: #45a049;
-        }
-
-        @media (max-width: 768px) {
-
-            .section,
-            .intro,
-            .student-section {
-                flex-direction: column;
-                text-align: center;
-            }
-
-            .intro h1,
-            .student-section h2 {
-                font-size: 24px;
-            }
-        }
-
-        .collapsible-content {
-            display: none;
-            position: fixed;
-            /* Định vị cố định */
-            top: 100px;
-            /* Cách từ đầu trang */
-            left: 50%;
-            transform: translateX(-50%);
-            /* Đưa vào giữa */
-            background-color: rgba(255, 255, 255, 0.9);
-            /* Màu nền trong suốt */
-            z-index: 20;
-            /* Để đảm bảo nó nổi bật */
-            padding: 20px;
-            /* Thêm khoảng cách cho bảng */
-            border-radius: 8px;
-            /* Bo tròn các góc */
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            /* Bóng đổ */
-        }
-
-        th {
-            background-color: #800000;
-            color: white;
-            padding: 10px;
-            text-align: center;
-        }
-
-        .table-responsive {
-            width: 100%;
-            overflow-x: auto;
-        }
-
-        table {
-            width: 100%;
-            border-collapse: collapse;
-        }
-    </style>
+    <link rel="stylesheet" href="Style Portfolio.css">
+    <script src="Java Script Portfolio.js" defer></script>
 </head>
 
 <body>
@@ -245,7 +22,23 @@
                 <a href="https://lesontruong.github.io/WebDesign/">Contact</a>
             </nav>
         </header>
-        <div class="divider"></div> <!-- Divider line -->
+        <!-- Nút sidebar -->
+        <button id="sidebarToggle" aria-label="Toggle Sidebar"
+            style="position: fixed; top: 5px; right: 5px; z-index: 2000;">
+            ☰
+        </button>
+        <!-- Sidebar -->
+        <div id="sidebar">
+            <nav>
+                <button class="collapsible-header" onclick="toggleHomeworks()">Homeworks</button>
+                <a href="https://lesontruong.github.io/WebDesign/">About</a>
+                <a href="https://lesontruong.github.io/WebDesign/">Service</a>
+                <a href="https://lesontruong.github.io/WebDesign/">Client</a>
+                <a href="https://lesontruong.github.io/WebDesign/">Contact</a>
+                <!-- Thêm các nút khác tương tự -->
+            </nav>
+        </div>
+        <div class="divider" style="margin-top: 100px" ;></div> <!-- Divider line -->
 
         <section class="section intro">
             <img src="https://scontent.fhan20-1.fna.fbcdn.net/v/t1.6435-9/119353436_1266671233716847_8490199420470400579_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=odN_DNcuao4Q7kNvgGZcnfG&_nc_zt=23&_nc_ht=scontent.fhan20-1.fna&_nc_gid=A47vkHy89vAd06vceCyUZJV&oh=00_AYCZt-QAzC2Z820PwTyfAl2qh8JX1bMArIw8toG3o_2tcQ&oe=673A1DF0"
@@ -268,9 +61,9 @@
 
         <div class="divider"></div> <!-- Divider line -->
 
-        <section class="clients">
+        <section class="clients content">
             <div class="collapsible-content" id="homeworks-content">
-                <div class="table-responsive">
+                <div class="table-responsive" id="content">
                     <table>
                         <tr>
                             <th>Buổi 1</th>
@@ -321,7 +114,7 @@
                                         2</button></a></td>
                             <td><a href="https://lesontruong.github.io/WebDesign/B9/B6.html"><button>Bài
                                         2</button></a></td>
-                            <td><a href="https://lesontruong.github.io/WebDesign/B10"><button>Bài
+                            <td><a href="https://lesontruong.github.io/WebDesign/B10/B2.html"><button>Bài
                                         2</button></a></td>
                         </tr>
                         <tr>
@@ -335,7 +128,7 @@
                                         3</button></a></td>
                             <td><a href="https://lesontruong.github.io/WebDesign/B9/B6-2.html"><button>Bài
                                         3</button></a></td>
-                            <td><a href="https://lesontruong.github.io/WebDesign/B10"><button>Bài
+                            <td><a href="https://lesontruong.github.io/WebDesign/B10/B3.html"><button>Bài
                                         3</button></a></td>
                         </tr>
                         <tr>
@@ -347,8 +140,6 @@
                             <td><a href="https://lesontruong.github.io/WebDesign/B3/HD1.html"><button>Bài
                                         4</button></a></td>
                             <td><a href="https://lesontruong.github.io/WebDesign/B9/B7.html"><button>Bài
-                                        4</button></a></td>
-                            <td><a href="https://lesontruong.github.io/WebDesign/B10"><button>Bài
                                         4</button></a></td>
                         </tr>
                     </table>
@@ -377,35 +168,8 @@
                 </a>
             </div>
         </footer>
+        <div class="divider"></div> <!-- Divider line -->
     </div>
-    <script>
-        function toggleHomeworks(event) {
-            const content = document.getElementById("homeworks-content");
-            const isVisible = content.style.display === "block";
-
-            // Nếu bảng đang hiện, ẩn nó. Nếu không, hiện bảng.
-            if (isVisible) {
-                content.style.display = "none";
-            } else {
-                content.style.display = "block";
-            }
-
-            // Ngăn sự kiện click trên nút "Homeworks" ảnh hưởng đến sự kiện click bên ngoài.
-            event.stopPropagation();
-        }
-
-        // Khi nhấp chuột ra ngoài bảng, thu lại bảng.
-        document.addEventListener("click", function (event) {
-            const content = document.getElementById("homeworks-content");
-            const target = event.target;
-
-            // Nếu nhấp vào nút "Homeworks", không làm gì
-            if (!target.closest(".collapsible-header") && content.style.display === "block") {
-                content.style.display = "none";
-            }
-        });
-    </script>
-
 </body>
 
 </html>

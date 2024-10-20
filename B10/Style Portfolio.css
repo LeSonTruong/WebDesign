@@ -1,0 +1,342 @@
+html,
+body {
+    overflow-x: hidden;
+    height: 100%;
+    margin: 0;
+}
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-image: url('https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExdndxdmc5OGloZGV3OHM1eWVha3V4eDRreG9tYnFqYmQyMnV6YW15biZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/U3qYN8S0j3bpK/giphy.webp');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.container {
+    max-width: 1200px;
+    width: 100%;
+    padding: 0 20px;
+}
+
+.background {
+    z-index: -1;
+    top: 0;
+    position: fixed;
+    height: 100%;
+    max-width: 1200px;
+    width: 100%;
+    background-color: rgba(26, 26, 26, 0.8);
+}
+
+header {
+    top: 0;
+    position: fixed;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 0;
+    background-color: #232323;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    left: 0;
+    right: 0;
+    z-index: 1000;
+}
+
+header.scrolled {
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 5px 0;
+}
+
+/* Ẩn header trên màn hình nhỏ */
+@media (max-width: 768px) {
+    header {
+        display: none;
+    }
+}
+
+nav {
+    display: flex;
+    gap: 10px;
+    padding: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+nav a,
+.collapsible-header {
+    color: #ffffff;
+    padding: 10px 20px;
+    text-decoration: none;
+    font-size: 14px;
+    background-color: #2c2c2c;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+    cursor: pointer;
+    border: none;
+    text-align: left;
+}
+
+nav a:hover,
+.collapsible-header:hover {
+    background-color: #1f1f1f;
+}
+
+.divider {
+    díplay: block;
+    width: 100%;
+    height: 1px;
+    background-color: #444;
+    margin: 20px 0;
+}
+
+.section {
+    padding: 50px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.intro,
+.student-section {
+    flex-direction: row;
+    gap: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.intro img {
+    width: 200px;
+    height: auto;
+    border-radius: 8px;
+}
+
+.intro .text,
+.student-section .text {
+    max-width: 500px;
+    text-align: center;
+}
+
+.intro h1,
+.student-section h2 {
+    margin: 0;
+    font-size: 28px;
+    line-height: 1.2;
+}
+
+.intro p {
+    font-size: 20px;
+    line-height: 1.6;
+}
+
+.clients {
+    padding: 20px 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    text-align: center;
+}
+
+.clients h2 {
+    font-size: 24px;
+    width: fit-content;
+    margin: 0 auto;
+}
+
+footer {
+    padding: 20px 0;
+    background-color: #232323;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+footer div {
+    display: flex;
+    gap: 20px;
+}
+
+footer a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+table,
+th,
+td {
+    border: 1px solid black;
+    margin: auto;
+}
+
+th {
+    background-color: #800000;
+    color: white;
+    padding: 10px;
+    text-align: center;
+}
+
+table a button {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: background-color 0.3s;
+}
+
+table a button:hover {
+    background-color: #45a049;
+}
+
+.table-responsive {
+    width: 100%;
+    overflow-x: auto;
+}
+
+.collapsible-content {
+    display: none;
+    position: fixed;
+    top: 100px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(255, 255, 255, 0.9);
+    z-index: 9999;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    max-width: 90%;
+    /* Đặt chiều rộng tối đa để tránh tràn ra khỏi màn hình */
+}
+
+/* Media query cho màn hình nhỏ hơn 768px */
+@media (max-width: 768px) {
+    .collapsible-content {
+        top: 70px;
+        /* Đặt vị trí cao hơn nếu cần */
+        padding: 15px;
+        /* Giảm padding cho màn hình nhỏ */
+    }
+}
+
+/* Media query cho màn hình nhỏ hơn 480px */
+@media (max-width: 480px) {
+    .collapsible-content {
+        top: 60px;
+        /* Điều chỉnh vị trí cho màn hình nhỏ hơn */
+        padding: 10px;
+        /* Giảm padding hơn nữa */
+        font-size: 14px;
+        /* Giảm kích thước font */
+    }
+}
+
+@media (max-width: 768px) {
+
+    .section,
+    .intro,
+    .student-section {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .intro h1,
+    .student-section h2 {
+        font-size: 24px;
+    }
+
+    nav {
+        flex-direction: column;
+    }
+
+    nav a,
+    .collapsible-header {
+        width: 100%;
+        text-align: match;
+    }
+}
+
+@media (max-width: 480px) {
+    .intro img {
+        width: 150px;
+    }
+
+    .intro h1,
+    .student-section h2 {
+        font-size: 20px;
+    }
+
+    .intro p {
+        font-size: 16px;
+    }
+
+    footer {
+        flex-direction: column;
+        text-align: center;
+        padding: 20px 0;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+            justify-content: center;
+    }
+}
+
+#sidebar {
+    position: fixed;
+    top: -100%;
+    /* Đặt sidebar ẩn ở trên màn hình */
+    left: 0;
+    width: 100%;
+    /* Đặt chiều rộng full màn hình */
+    height: content;
+    /* Đặt chiều cao cho sidebar */
+    background-color: #2c2c2c;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+    /* Đổ bóng */
+    transition: top 0.3s ease;
+    /* Hiệu ứng trượt */
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    padding-top: 10px;
+}
+
+#sidebar.active {
+    top: 0;
+    /* Trượt sidebar vào màn hình khi active */
+}
+#sidebarToggle {
+    border: none;
+    border-radius: 4px;
+    background-color: #ffffff;
+    cursor: pointer;
+    margin: 20px;
+    padding: 10px 20px;
+}
+
+#sidebarToggle.hidden {
+    display: none;
+}

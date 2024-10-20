@@ -1,9 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Stacked Colored Boxes</title>
+    <style>
+        header {
+            padding: 10px 20px;
+            /* Some padding */
+            text-align: center;
+            /* Centered text */
+        }
+
+        nav a {
+            margin: 0 15px;
+            /* Space between links */
+            text-decoration: none;
+            /* Remove underline */
+            color: #333;
+            /* Dark text color */
+            font-weight: bold;
+            /* Bold text */
+        }
+
+        nav a:hover {
+            color: #007BFF;
+            /* Change color on hover */
+        }
+    </style>
     <style>
         body {
             display: flex;
@@ -12,6 +37,7 @@
             margin: 0;
             padding: 20px;
         }
+
         .box {
             display: flex;
             justify-content: center;
@@ -22,22 +48,36 @@
             margin-bottom: 10px;
             font-size: 16px;
         }
+
         .red-box {
             background-color: red;
         }
+
         .blue-box {
             background-color: blue;
         }
+
         .green-box {
             background-color: green;
         }
     </style>
 </head>
-<body>
 
-<div class="box red-box">Red Box</div>
-<div class="box blue-box">Blue Box</div>
-<div class="box green-box">Green Box</div>
+<body>
+    <header>
+        <nav>
+            <a href="https://lesontruong.github.io/WebDesign/B10/My%20Portfolio.html">Home</a>
+            <a href="#">About</a>
+            <a href="#">Service</a>
+            <a href="#">Client</a>
+            <a href="#">Contact</a>
+        </nav>
+    </header>
+
+    <div class="box red-box">Red Box</div>
+    <div class="box blue-box">Blue Box</div>
+    <div class="box green-box">Green Box</div>
 
 </body>
+
 </html>

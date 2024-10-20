@@ -6,9 +6,42 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Multi-Level Menu</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        header {
+            padding: 10px 20px;
+            /* Some padding */
+            text-align: center;
+            /* Centered text */
+        }
+
+        nav a {
+            margin: 0 15px;
+            /* Space between links */
+            text-decoration: none;
+            /* Remove underline */
+            color: #333;
+            /* Dark text color */
+            font-weight: bold;
+            /* Bold text */
+        }
+
+        nav a:hover {
+            color: #007BFF;
+            /* Change color on hover */
+        }
+    </style>
 </head>
 
 <body>
+    <header>
+        <nav>
+            <a href="https://lesontruong.github.io/WebDesign/B10/My%20Portfolio.html">Home</a>
+            <a href="#">About</a>
+            <a href="#">Service</a>
+            <a href="#">Client</a>
+            <a href="#">Contact</a>
+        </nav>
+    </header>
 
     <div class="menu">
         <button class="menu-btn" onclick="toggleMenu()">Thiết kế web</button>
