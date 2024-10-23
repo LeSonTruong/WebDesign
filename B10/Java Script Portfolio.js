@@ -77,3 +77,23 @@ sidebarHomeworks.addEventListener("click", (event) => {
     event.stopPropagation(); // Ngăn sự kiện click lan ra ngoài
     toggleHomeworks(event);
 });
+function checkHeaderVisibility() {
+    if (window.innerWidth <= 768) {
+        header.style.display = 'none'; // Ẩn header khi ở màn hình nhỏ
+        sidebarToggle.style.display = 'block'; // Hiển thị sidebarToggle ở màn hình nhỏ
+    } else {
+        header.style.display = 'block'; // Hiển thị header khi ở màn hình lớn
+        sidebarToggle.style.display = 'none'; // Ẩn sidebarToggle ở màn hình lớn
+    }
+
+    // Kiểm tra xem sidebar có đang mở hay không
+    if (sidebar.classList.contains('active')) {
+        header.style.display = 'none'; // Ẩn header khi sidebar mở ở màn hình nhỏ
+    }
+}
+
+// Gọi hàm kiểm tra kích thước khi tải trang
+window.addEventListener('load', checkHeaderVisibility); // Gọi hàm khi tải trang
+
+// Thêm sự kiện resize để kiểm tra khi kích thước cửa sổ thay đổi
+window.addEventListener('resize', checkHeaderVisibility);
