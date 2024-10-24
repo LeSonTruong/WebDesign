@@ -22,6 +22,7 @@ body {
 
 /* ------------ Container Styles ------------ */
 .container {
+    margin-top: 500px;
     max-width: 1200px;
     width: 100%;
     padding: 0 20px;
@@ -77,8 +78,15 @@ nav {
 
 nav a,
 .collapsible-header {
+    display: flex;
+    /* Đảm bảo sử dụng flex để dễ căn giữa nội dung */
+    align-items: center;
+    /* Căn giữa nội dung theo chiều dọc */
+    justify-content: center;
+    /* Căn giữa nội dung theo chiều ngang */
     color: #ffffff;
-    padding: 20px 20px;
+    padding: 10px;
+    /* Padding đều 10px để có cùng kích thước */
     text-decoration: none;
     font-size: 18px;
     background-color: #535252;
@@ -86,14 +94,18 @@ nav a,
     transition: background-color 0.3s;
     cursor: pointer;
     border: none;
-    text-align: center;
+    width: 120px;
+    /* Đặt chiều rộng cố định */
+    height: 40px;
+    /* Đặt chiều cao cố định */
+    box-sizing: border-box;
+    /* Đảm bảo padding và border nằm trong kích thước */
 }
 
 nav a:hover,
 .collapsible-header:hover {
     background-color: #393838;
 }
-
 /* ------------ Divider Styles ------------ */
 .divider {
     display: block;
@@ -322,7 +334,6 @@ table a button:hover {
     z-index: 1000;
     display: flex;
     flex-direction: column;
-    padding-top: 10px;
 }
 
 #sidebar.active {
@@ -350,20 +361,28 @@ table a button:hover {
 /* ------------ Banner Styles ------------ */
 .banner-container {
     position: relative;
-    max-width: 100%;
-    height: 300px;
+    width: 100%;
+    height: 400px;
+    /* Bạn có thể thay đổi chiều cao nếu cần */
     overflow: hidden;
 }
 
 .banner-slide {
-    display: flex;
-    width: 300%;
-    transition: transform 0.5s ease-in-out;
+    width: 100%;
+    /* Chiếm toàn bộ chiều rộng của container */
+    height: auto;
+    /* Chiều cao sẽ tự động theo tỷ lệ của ảnh */
+    overflow: hidden;
+    /* Ẩn các phần dư thừa nếu ảnh quá lớn */
 }
 
 .banner-slide img {
     width: 100%;
-    height: 100%;
+    /* Ảnh chiếm toàn bộ chiều rộng của container */
+    height: auto;
+    /* Giữ tỷ lệ gốc của ảnh */
+    object-fit: contain;
+    /* Ảnh sẽ co lại nếu vượt quá kích thước container, nhưng không bị cắt */
 }
 
 button.prev,
@@ -376,6 +395,15 @@ button.next {
     border: none;
     padding: 10px;
     cursor: pointer;
+    z-index: 1;
+    transition: background-color 0.3s ease;
+    /* Chuyển màu mượt mà khi di chuột */
+}
+
+button.prev:hover,
+button.next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+    /* Hiệu ứng mượt khi hover */
 }
 
 button.prev {

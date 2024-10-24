@@ -11,18 +11,10 @@
 </head>
 
 <body>
-    <div class="banner-container">
-        <div class="banner-slide">
-            <img src="" alt="Image 1">
-            <img src="image2.jpg" alt="Image 2">
-            <img src="image3.jpg" alt="Image 3">
-        </div>
-        <button class="prev" onclick="prevSlide()">&#10094;</button>
-        <button class="next" onclick="nextSlide()">&#10095;</button>
-    </div>
 
     <div class="background"></div>
     <div class="container">
+
         <header>
             <nav>
                 <button class="collapsible-header" onclick="toggleHomeworks()">Homeworks</button>
@@ -32,6 +24,7 @@
                 <a href="https://lesontruong.github.io/WebDesign/">Contact</a>
             </nav>
         </header>
+
         <!-- Nút sidebar -->
         <button id="sidebarToggle" aria-label="Toggle Sidebar"
             style="position: fixed; top: 5px; right: 5px; z-index: 2000;">
@@ -48,7 +41,20 @@
                 <!-- Thêm các nút khác tương tự -->
             </nav>
         </div>
-        <div class="divider" style="margin-top: 100px" ;></div> <!-- Divider line -->
+
+        <div class="divider"></div> <!-- Divider line -->
+
+        <div class="banner-container">
+            <div class="banner-slide">
+                <img src="https://m.yodycdn.com/blog/hinh-nen-thien-nhien-4k-yody-vn-23.jpg" alt="Image 1">
+                <img src="https://m.yodycdn.com/blog/hinh-nen-thien-nhien-4k-yody-vn-14.jpg" alt="Image 2">
+                <img src="https://m.yodycdn.com/blog/hinh-nen-thien-nhien-4k-yody-vn-17.jpg" alt="Image 3">
+            </div>
+            <button class="prev" onclick="prevSlide()">&#10094;</button>
+            <button class="next" onclick="nextSlide()">&#10095;</button>
+        </div>
+
+        <div class="divider"></div> <!-- Divider line -->
 
         <section class="section intro">
             <img src="https://scontent.fhan20-1.fna.fbcdn.net/v/t1.6435-9/119353436_1266671233716847_8490199420470400579_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=odN_DNcuao4Q7kNvgGZcnfG&_nc_zt=23&_nc_ht=scontent.fhan20-1.fna&_nc_gid=A47vkHy89vAd06vceCyUZJV&oh=00_AYCZt-QAzC2Z820PwTyfAl2qh8JX1bMArIw8toG3o_2tcQ&oe=673A1DF0"
@@ -71,6 +77,26 @@
 
         <div class="divider"></div> <!-- Divider line -->
 
+        <footer>
+            <div>
+                <a href="mailto:LeSonTruong@icloud.com">
+                    <img src="https://cdn-icons-png.freepik.com/512/2099/2099100.png?ga=GA1.1.1279589366.1725373930"
+                        alt="Email Icon" style="width:20px; height:20px; vertical-align:middle; margin-right:8px;">
+                    LeSonTruong@icloud.com
+                </a>
+                <a href="https://www.facebook.com/0LeSonTruong0/" target="_blank">
+                    <img src="https://cdn-icons-png.freepik.com/512/4701/4701482.png?ga=GA1.1.1279589366.1725373930"
+                        alt="Facebook Icon" style="width:20px; height:20px; vertical-align:middle; margin-right:8px;">
+                    Facebook
+                </a>
+                <a href="https://www.instagram.com/le_son_truong/" target="_blank">
+                    <img src="https://cdn-icons-png.freepik.com/512/1400/1400829.png?ga=GA1.1.1279589366.1725373930"
+                        alt="Instagram Icon" style="width:20px; height:20px; vertical-align:middle; margin-right:8px;">
+                    Instagram
+                </a>
+            </div>
+        </footer>
+        <div class="divider"></div> <!-- Divider line -->
         <section class="clients content">
             <div class="collapsible-content" id="homeworks-content">
                 <div class="table-responsive" id="content">
@@ -157,28 +183,6 @@
             </div>
         </section>
 
-        <div class="divider"></div> <!-- Divider line -->
-
-        <footer>
-            <div>
-                <a href="mailto:LeSonTruong@icloud.com">
-                    <img src="https://cdn-icons-png.freepik.com/512/2099/2099100.png?ga=GA1.1.1279589366.1725373930"
-                        alt="Email Icon" style="width:20px; height:20px; vertical-align:middle; margin-right:8px;">
-                    LeSonTruong@icloud.com
-                </a>
-                <a href="https://www.facebook.com/0LeSonTruong0/" target="_blank">
-                    <img src="https://cdn-icons-png.freepik.com/512/4701/4701482.png?ga=GA1.1.1279589366.1725373930"
-                        alt="Facebook Icon" style="width:20px; height:20px; vertical-align:middle; margin-right:8px;">
-                    Facebook
-                </a>
-                <a href="https://www.instagram.com/le_son_truong/" target="_blank">
-                    <img src="https://cdn-icons-png.freepik.com/512/1400/1400829.png?ga=GA1.1.1279589366.1725373930"
-                        alt="Instagram Icon" style="width:20px; height:20px; vertical-align:middle; margin-right:8px;">
-                    Instagram
-                </a>
-            </div>
-        </footer>
-        <div class="divider"></div> <!-- Divider line -->
     </div>
 </body>
 
