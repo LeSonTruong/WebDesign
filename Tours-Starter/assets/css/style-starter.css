@@ -19298,7 +19298,7 @@ h3.title-style {
 .slideshow a.next {
   color: #fff;
   position: absolute;
-  bottom: 15px;
+  bottom: 200px;
   text-decoration: none;
   z-index: 1;
   background: var(--primary-color);
