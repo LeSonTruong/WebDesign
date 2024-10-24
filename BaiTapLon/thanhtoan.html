@@ -1,75 +1,192 @@
 <!DOCTYPE html>
-<html lang="vi">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Trang Thanh Toán Vé Du Lịch</title>
-    <link rel="stylesheet" href="assets/css/thanhtoan.css">
+    <title>Payment Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        .container {
+            width: 60%;
+            margin: auto;
+            background-color: white;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-top: 50px;
+        }
+
+        h2,
+        h3 {
+            color: #333;
+            text-align: center;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        input,
+        select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        .form-row {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .form-row .form-group {
+            width: 48%;
+        }
+
+        .btn-submit {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 20px;
+        }
+
+        .btn-submit:hover {
+            background-color: #218838;
+        }
+
+        .checkbox {
+            display: flex;
+            align-items: center;
+        }
+
+        .checkbox input {
+            margin-right: 10px;
+        }
+    </style>
 </head>
 
 <body>
+
     <div class="container">
-        <header>
-            <h1>Thanh Toán Vé Du Lịch</h1>
-        </header>
+        <h2>Payment</h2>
+        <form action="/process_payment" method="post">
 
-        <section class="trip-info">
-            <h2>Thông Tin Chuyến Đi</h2>
-            <div class="trip-details">
-                <p><strong>Điểm Khởi Hành:</strong> Hà Nội</p>
-                <p><strong>Điểm Đến:</strong> Đà Nẵng</p>
-                <p><strong>Ngày Khởi Hành:</strong> 15/11/2024</p>
-                <p><strong>Giá Vé:</strong> 1,500,000 VNĐ</p>
+            <!-- Payment Method -->
+            <div class="form-group">
+                <label for="payment-method">Payment Method</label>
+                <select id="payment-method" name="payment-method" required>
+                    <option value="">Please select a payment method</option>
+                    <option value="visa">Visa</option>
+                    <option value="mastercard">MasterCard</option>
+                    <option value="paypal">PayPal</option>
+                    <option value="local-bank">Local Bank</option>
+                </select>
             </div>
-        </section>
 
-        <section class="customer-info">
-            <h2>Thông Tin Khách Hàng</h2>
-            <form>
-                <label for="name">Họ và Tên:</label>
-                <input type="text" id="name" name="name" required>
+            <!-- Card Number -->
+            <div class="form-group">
+                <label for="card-number">Card Number</label>
+                <input type="text" id="card-number" name="card-number" placeholder="Enter your card number" required>
+            </div>
 
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required>
+            <!-- Expiry Date and Security Code -->
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="expiry-date">Expiry Date</label>
+                    <input type="text" id="expiry-date" name="expiry-date" placeholder="MM/YY" required>
+                </div>
+                <div class="form-group">
+                    <label for="security-code">Security Code (CVV)</label>
+                    <input type="text" id="security-code" name="security-code" placeholder="123" required>
+                </div>
+            </div>
 
-                <label for="phone">Số Điện Thoại:</label>
-                <input type="tel" id="phone" name="phone" required>
+            <!-- Email Address -->
+            <div class="form-group">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" name="email" placeholder="Enter your email address" required>
+            </div>
 
-                <label for="passport">Số Hộ Chiếu:</label>
-                <input type="text" id="passport" name="passport" required>
-            </form>
-        </section>
+            <!-- Billing Information -->
+            <h3>Billing Information</h3>
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="first-name">First Name</label>
+                    <input type="text" id="first-name" name="first-name" placeholder="Your first name" required>
+                </div>
+                <div class="form-group">
+                    <label for="last-name">Last Name</label>
+                    <input type="text" id="last-name" name="last-name" placeholder="Your last name" required>
+                </div>
+            </div>
 
-        <section class="payment-info">
-            <h2>Phương Thức Thanh Toán</h2>
-            <form>
-                <label>
-                    <input type="radio" name="payment-method" value="credit-card" required>
-                    Thẻ Tín Dụng
-                </label>
-                <label>
-                    <input type="radio" name="payment-method" value="paypal">
-                    PayPal
-                </label>
-                <label>
-                    <input type="radio" name="payment-method" value="cash">
-                    Tiền Mặt
-                </label>
-            </form>
-        </section>
+            <!-- Billing Address -->
+            <div class="form-group">
+                <label for="billing-address-1">Billing Address</label>
+                <input type="text" id="billing-address-1" name="billing-address-1" placeholder="Billing address"
+                    required>
+            </div>
+            <div class="form-group">
+                <label for="billing-address-2">Billing Address, Line 2</label>
+                <input type="text" id="billing-address-2" name="billing-address-2"
+                    placeholder="Address line 2 (optional)">
+            </div>
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="city">City</label>
+                    <input type="text" id="city" name="city" placeholder="City" required>
+                </div>
+                <div class="form-group">
+                    <label for="postal-code">Postal Code</label>
+                    <input type="text" id="postal-code" name="postal-code" placeholder="Postal code" required>
+                </div>
+            </div>
 
-        <section class="total-price">
-            <h2>Tổng Tiền</h2>
-            <p>1,500,000 VNĐ</p>
-        </section>
+            <!-- Country and Phone Number -->
+            <div class="form-group">
+                <label for="country">Country</label>
+                <select id="country" name="country" required>
+                    <option value="vn">Vietnam</option>
+                    <option value="us">United States</option>
+                    <option value="uk">United Kingdom</option>
+                    <!-- Add more countries as needed -->
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="phone">Phone Number</label>
+                <input type="text" id="phone" name="phone" placeholder="Your phone number" required>
+            </div>
 
-        <button class="submit-button">Thanh Toán</button>
+            <!-- Save Payment Info -->
+            <div class="checkbox">
+                <input type="checkbox" id="save-info" name="save-info">
+                <label for="save-info">Save my payment information for future purchases</label>
+            </div>
 
-        <footer>
-            <p>&copy; 2024 Công ty Du Lịch Việt Nam. Địa chỉ: Hà Nội, Việt Nam.</p>
-        </footer>
+            <!-- Submit Button -->
+            <button type="submit" class="btn-submit">Submit Payment</button>
+
+        </form>
+        <p>You will have the opportunity to review your order before submitting your payment.</p>
     </div>
+
 </body>
 
 </html>
