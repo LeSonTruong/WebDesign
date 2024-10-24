@@ -1,9 +1,11 @@
+/* ------------ Global Styles ------------ */
 html,
 body {
     overflow-x: hidden;
     height: 100%;
     margin: 0;
 }
+
 body {
     margin: 0;
     font-family: Arial, sans-serif;
@@ -18,6 +20,7 @@ body {
     flex-direction: column;
 }
 
+/* ------------ Container Styles ------------ */
 .container {
     max-width: 1200px;
     width: 100%;
@@ -34,6 +37,7 @@ body {
     background-color: rgba(26, 26, 26, 0.8);
 }
 
+/* ------------ Header Styles ------------ */
 header {
     top: 0;
     position: fixed;
@@ -62,21 +66,21 @@ header.scrolled {
     }
 }
 
+/* ------------ Navigation Styles ------------ */
 nav {
     display: flex;
     gap: 10px;
-    padding: 10px;
+    padding: 5px;
     flex-wrap: wrap;
     justify-content: center;
 }
 
 nav a,
 .collapsible-header {
-    width: 100px;
     color: #ffffff;
-    padding: 10px 20px;
+    padding: 20px 20px;
     text-decoration: none;
-    font-size: 14px;
+    font-size: 18px;
     background-color: #535252;
     border-radius: 4px;
     transition: background-color 0.3s;
@@ -90,14 +94,16 @@ nav a:hover,
     background-color: #393838;
 }
 
+/* ------------ Divider Styles ------------ */
 .divider {
-    díplay: block;
+    display: block;
     width: 100%;
     height: 1px;
     background-color: #444;
     margin: 20px 0;
 }
 
+/* ------------ Section Styles ------------ */
 .section {
     padding: 50px 0;
     display: flex;
@@ -107,6 +113,7 @@ nav a:hover,
     flex-wrap: wrap;
 }
 
+/* ------------ Intro & Student Section ------------ */
 .intro,
 .student-section {
     flex-direction: row;
@@ -140,6 +147,7 @@ nav a:hover,
     line-height: 1.6;
 }
 
+/* ------------ Clients Section ------------ */
 .clients {
     padding: 20px 0;
     display: flex;
@@ -155,6 +163,7 @@ nav a:hover,
     margin: 0 auto;
 }
 
+/* ------------ Footer Styles ------------ */
 footer {
     padding: 20px 0;
     background-color: #232323;
@@ -175,6 +184,7 @@ footer a {
     font-size: 14px;
 }
 
+/* ------------ Table Styles ------------ */
 table {
     background-color: #393838;
     width: 100%;
@@ -219,6 +229,7 @@ table a button:hover {
     overflow-x: auto;
 }
 
+/* ------------ Collapsible Content Styles ------------ */
 .collapsible-content {
     display: none;
     position: fixed;
@@ -231,33 +242,25 @@ table a button:hover {
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     max-width: 90%;
-    /* Đặt chiều rộng tối đa để tránh tràn ra khỏi màn hình */
 }
 
-/* Media query cho màn hình nhỏ hơn 768px */
 @media (max-width: 768px) {
     .collapsible-content {
         top: 70px;
-        /* Đặt vị trí cao hơn nếu cần */
         padding: 15px;
-        /* Giảm padding cho màn hình nhỏ */
     }
 }
 
-/* Media query cho màn hình nhỏ hơn 480px */
 @media (max-width: 480px) {
     .collapsible-content {
         top: 60px;
-        /* Điều chỉnh vị trí cho màn hình nhỏ hơn */
         padding: 10px;
-        /* Giảm padding hơn nữa */
         font-size: 14px;
-        /* Giảm kích thước font */
     }
 }
 
+/* ------------ Responsive Adjustments ------------ */
 @media (max-width: 768px) {
-
     .section,
     .intro,
     .student-section {
@@ -276,7 +279,7 @@ table a button:hover {
 
     nav a,
     .collapsible-header {
-        width: 100%;
+        width: 100px;
         text-align: match;
     }
 }
@@ -302,24 +305,20 @@ table a button:hover {
         display: flex;
         flex-wrap: wrap;
         gap: 20px;
-            justify-content: center;
+        justify-content: center;
     }
 }
 
+/* ------------ Sidebar Styles ------------ */
 #sidebar {
     position: fixed;
     top: -100%;
-    /* Đặt sidebar ẩn ở trên màn hình */
     left: 0;
     width: 100%;
-    /* Đặt chiều rộng full màn hình */
     height: content;
-    /* Đặt chiều cao cho sidebar */
     background-color: #2c2c2c;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
-    /* Đổ bóng */
     transition: top 0.3s ease;
-    /* Hiệu ứng trượt */
     z-index: 1000;
     display: flex;
     flex-direction: column;
@@ -328,8 +327,8 @@ table a button:hover {
 
 #sidebar.active {
     top: 0;
-    /* Trượt sidebar vào màn hình khi active */
 }
+
 #sidebarToggle {
     border: none;
     border-radius: 4px;
@@ -342,6 +341,47 @@ table a button:hover {
 #sidebarToggle.hidden {
     display: none;
 }
+
+/* ------------ Custom Scrollbar Styles ------------ */
 ::-webkit-scrollbar {
     width: 0vw;
+}
+
+/* ------------ Banner Styles ------------ */
+.banner-container {
+    position: relative;
+    max-width: 100%;
+    height: 300px;
+    overflow: hidden;
+}
+
+.banner-slide {
+    display: flex;
+    width: 300%;
+    transition: transform 0.5s ease-in-out;
+}
+
+.banner-slide img {
+    width: 100%;
+    height: 100%;
+}
+
+button.prev,
+button.next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+}
+
+button.prev {
+    left: 10px;
+}
+
+button.next {
+    right: 10px;
 }

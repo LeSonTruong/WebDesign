@@ -97,3 +97,24 @@ window.addEventListener('load', checkHeaderVisibility); // Gọi hàm khi tải 
 
 // Thêm sự kiện resize để kiểm tra khi kích thước cửa sổ thay đổi
 window.addEventListener('resize', checkHeaderVisibility);
+let currentIndex = 0;
+const slides = document.querySelectorAll('.banner-slide img');
+const totalSlides = slides.length;
+
+function showSlide(index) {
+    const bannerSlide = document.querySelector('.banner-slide');
+    bannerSlide.style.transform = `translateX(${-index * 100}%)`;
+}
+
+function nextSlide() {
+    currentIndex = (currentIndex + 1) % totalSlides;
+    showSlide(currentIndex);
+}
+
+function prevSlide() {
+    currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
+    showSlide(currentIndex);
+}
+
+// Tự động chuyển cảnh sau 3 giây
+setInterval(nextSlide, 3000);
