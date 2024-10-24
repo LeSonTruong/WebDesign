@@ -1,0 +1,568 @@
+/* Import URL if needed */
+/* @import url(''); */
+
+html, body {
+    width: 100%;
+    height: 100%;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 25px;
+}
+img{
+    overflow: hidden;
+}
+.nav-item
+{
+	display: flex;
+    align-items: center;
+}
+
+.navbar a
+{
+	color: black;
+}
+.navbar li a:hover {
+    color: red ;
+}
+.navbar .btn-secondary{
+    font-size: 80%;
+}
+.navbar-branch img{
+    transform: scale(4);
+    margin-top: 10px;
+}
+.carousel-inner{
+    text-align: center;
+}
+.carousel-item img {
+    width: 85%;
+    border-radius: 12px;
+    margin: 3px;
+}
+
+.navbar-toggler{
+    background-color: antiquewhite ;
+}
+.carousel-caption {
+    top: 20%;
+}
+
+.carousel-caption h1 {
+    font-size: 100%;
+    text-transform: uppercase;
+    text-shadow: 7px 7px 7px black;    
+}
+.carousel-caption .btn:hover{
+    transform: scale(1.03);
+    transition: transform 0.5s ease;
+}
+.carousel-caption h3 {
+    font-size: 150%;
+    text-transform: uppercase;
+    text-shadow: 2px 2px 2px black;    
+}
+
+.btn-primary {
+    background-color: yellow;
+    border: 2px solid white;
+}
+
+.btn-primary:hover {
+    background-color: rgb(221, 221, 7);
+    border: 2px solid white;
+}
+
+.jumbotron {
+    padding: 1rem;
+    border-radius: 0;
+}
+
+.welcome hr {
+    border-top: 2px solid rgba(62, 44, 100, 0.6);
+    width: 95%;    
+    margin-bottom: 2rem;
+}
+
+.fa-react {
+    color: #81D8F7;
+}
+
+.fa-angular {
+    color: rgb(177, 43, 55);
+}
+
+.fa-css3 {
+    color: #D76537;
+}
+
+.fa-react, .fa-angular, .fa-css3 {
+    font-size: 4em;
+    margin: 1rem;
+}
+
+.fun {
+    width: 100%;
+}
+
+.social a {
+    font-size: 3em;
+    padding: 3rem;
+}
+
+.fa-facebook {
+    color: #3b5998;
+}
+
+.fa-twitter {
+    color: #00aced;
+}
+
+.fa-google-plus-g {
+    color: #dd4b39;
+}
+
+.fa-instagram {
+    color: #517fa4;
+}
+
+.fa-youtube {
+    color: #bb0000;
+}
+
+footer {
+    background-color: #3f3f3f;
+    color: #d5d5d5;
+}
+
+hr.light {
+    border-top: 1px solid #d5d5d5;
+    width: 75%;
+}
+
+.light-100 {
+    border-top: 1px solid #d5d5d5;
+    width: 100%;
+}
+.dropdown-menu.show{
+    min-width:0.1px;
+    font-size: 1.3vw;
+} 
+/* Media Queries */
+/* Media Queries để thay đổi menu khi màn hình nhỏ */
+@media(max-width: 100000px){
+    .search-input.active{ 
+        max-width:309.5px;
+    }  
+    .navbar{
+        height: 8%;
+    }
+}
+@media (max-width: 1096px){
+    .nav-item{
+        font-size: 16px;
+    }
+    .search-input{
+        font-size: 16px;
+    }
+    .navbar-branch img{
+        font-size: 10px;
+    }
+    .carousel-caption {
+        top: 20%;
+    }
+    .carousel-caption h1 {
+        font-size: 250%;
+    }
+    .carousel-caption h3 {
+        font-size: 160%;        
+    }
+    .carousel-caption .btn {
+        font-size: 120%;        
+    }
+}
+@media (max-width: 992px) {
+    .nav-item{
+        font-size: 15px;
+    }
+    .search-input{
+        font-size: 15px;
+    }
+    .search-input.active{
+        width: 183px;
+    }
+    .btn-search {
+        font-size: 14px;
+    }
+    .carousel-caption {
+        top: 20%;
+    }
+    .carousel-caption h1 {
+        font-size: 250%;
+    }
+    .carousel-caption h3 {
+        font-size: 160%;        
+    }
+    .carousel-caption .btn {
+        font-size: 120%;        
+    }
+}
+@media (max-width: 800px){
+    .nav-item{
+        font-size: 15px;
+    }
+    .search-input{
+        font-size: 14px;
+    }
+    .search-input.active{
+        width: 153px;
+    }
+    .btn-search {
+        font-size: 14px;
+    }
+}
+@media (max-width: 768px) {
+    .carousel-caption {
+        top: 20%;
+    }
+    .carousel-caption h1 {
+        font-size: 220%;
+    }
+    .carousel-caption h3 {        
+        font-size: 140%;
+        padding-bottom: 0.2rem;
+    }
+    .carousel-caption .btn {        
+        font-size: 95%;
+        padding: 8px 14px;
+    }
+    .navbar-toggler{
+        font-size: 12px;
+        margin-bottom: 40px;
+    }
+    .navbar-branch img{
+        height: 30px;
+        margin-bottom: 40px;
+    }
+}
+
+@media (max-width: 576px) {
+    .carousel-caption {
+        top: 10%;
+    }
+    .carousel-caption h1 {
+        font-size: 150%;
+    }
+    .carousel-caption h3 {        
+        font-size: 110%;        
+    }
+    .carousel-caption .btn {        
+        font-size: 90%;
+        padding: 4px 8px;
+    }    
+}
+.btn-group{
+    gap: 7px;
+}
+.btn-secondary {
+    background-color: wheat !important;
+    border: none !important;
+}
+
+.down-menu.show {
+    background-color: wheat !important;
+}
+
+.btn-secondary:focus, .btn-secondary:active {
+    outline: none;
+    box-shadow: none;
+    border: none;
+}
+/* Search Input */
+.search-input {
+    width: 0;
+    padding: 0;
+    opacity: 0;
+    transition: width 1s ease, opacity 1s ease;
+    border: none;
+    visibility: hidden; /* Hidden when not active */
+	height: 50%;
+}
+
+.search-input.active {
+    padding: 0.375rem 0.75rem;
+    opacity: 1;
+    visibility: visible; /* Visible when active */
+    outline: none;
+    box-shadow: none;
+    border: none;
+    position: relative;
+    overflow: hidden; /* K TRÀN */
+}
+
+.btn-search {
+	position: relative; /* Để kích thước có thể được căn chỉnh */
+    background-color: transparent;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    outline: none;
+    box-shadow: none;
+    border: none;
+    color: black;
+}
+
+.btn-search i {
+    color: black; 
+    font-size: 1em; 
+    transition: transform 0.3s ease; /* Smooth transition for scaling */
+}
+
+/* Hover effects for search button */
+.btn-search:hover i {
+    transform: scale(1.2); 
+}
+
+.btn-search:focus {
+    outline: none;
+    box-shadow: none;
+    border: none;
+    background-color: transparent;
+}
+
+.btn-search:active {
+    color: white;
+    background-color: transparent!important;
+    outline: none!important;
+    box-shadow: none!important;
+    border: none!important;
+}
+
+.btn-search:hover {
+    color: black;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    box-shadow: none;
+}
+body{
+    background-color: #a0e5e5;
+}
+.carousel-inner img {
+    max-width: 75%; /* Điều chỉnh ảnh để chiếm toàn bộ chiều rộng */
+    height: auto; /* Tự động điều chỉnh chiều cao để giữ tỷ lệ */
+    max-height: 600px; /* Đặt chiều cao tối đa cho ảnh (có thể điều chỉnh theo nhu cầu) */
+    object-fit: cover; /* Đảm bảo ảnh không bị biến dạng */
+}
+#scrollToTopBtn {
+    position: fixed;
+    bottom: 0.5vw;
+    right: 0.5vw;
+    z-index: 99;
+    border: none;
+    outline: none;
+    background-color: rgba(255, 255, 255, 0.2);
+    color: #b4b49f97;
+    cursor: pointer;
+    padding: 0.75vw;
+    border-radius: 50%; 
+    font-size: 1.5vw;
+    display: none; 
+    transition: background-color 0.5s, color 0.5s; 
+}
+
+#scrollToTopBtn i {
+    font-size: 1.5vw; /* Kích thước mũi tên */
+}
+
+#scrollToTopBtn:hover {
+    background-color: rgba(255, 255, 255, 0.5); /* Nền thay đổi khi hover */
+    color: #555; /* Màu thay đổi khi hover */
+}
+
+/* Thêm responsive cho các phần khác */
+@media (max-width: 767px) {
+    #scrollToTopBtn {
+        padding: 0.5vw;
+        font-size: 0.9vw; /* Giảm kích thước nút trên màn hình nhỏ */
+    }
+}
+
+.navbar {
+    background-color: #1E88E5; /* Màu nền xanh đậm */
+}
+
+.navbar a {
+    color: black; /* Màu chữ trắng */
+}
+
+.navbar a:hover {
+    color: #FFB74D; /* Màu chữ cam nhạt khi hover */
+}
+.btn-outline-light {
+    background-color:  #4FC3F7; /* Màu cam sáng */
+    color: #FFFFFF;
+    border: 2px solid #FF9800;
+}
+
+.btn-outline-light:hover {
+    background-color: #E3F2FD; /* Màu cam đậm hơn khi hover */
+    border-color: white;
+    color: #FFFFFF;}
+    .card {
+        background-color: #FFFFFF; /* Nền trắng */
+        border: 1px solid #1E88E5; /* Viền xanh đậm */
+        border-radius: 10px; /* Bo tròn các góc */
+        padding: 15px;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    
+    .card:hover {
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.2); /* Hiệu ứng khi hover */
+        transform: scale(1.05); /* Tăng nhẹ kích thước khi hover */
+    }
+    
+    img {
+        border-radius: 10px; /* Bo tròn các góc của ảnh */
+        border: 2px solid #1E88E5; /* Viền ảnh xanh đậm */
+    }
+    .hero {
+        background: url('https://example.com/background-image.jpg') no-repeat center center/cover;
+        background-color: #B3E5FC; /* Màu nền khi ảnh không load */
+        color: #1E88E5; /* Màu chữ xanh đậm */
+        padding: 60px 20px;
+        text-align: center;
+    }
+    
+    .fun {
+        background-color:black;
+        color: #FFFFFF;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        transition: background-color 0.3s ease;
+    }
+    
+    .fun:hover {
+        background-color: #FB8C00; /* Màu đậm hơn khi hover */
+        color: #FFF;
+    }.information {
+        background-color: #F0F0F0;
+        color: #1E88E5;
+        padding: 20px;
+    }
+    
+    .information h2 {
+        color: #1E88E5;
+    }
+    
+    .social a {
+        color: #FF9800;
+    }
+    
+    .social a:hover {
+        color: #FB8C00; /* Màu nhấn khi hover */
+    }
+    img.logo {
+        border: none !important; /* Đảm bảo không có viền cho ảnh logo */
+    }
+    h1, h2, h3 {
+        font-family: 'Lora', serif;
+    }
+    p {
+        font-family: 'Merriweather', serif;
+    }
+    body {
+        font-family: 'Roboto', sans-serif; /* Dùng Roboto cho nội dung chính */
+    }
+
+    h1, h2, h3 {
+        font-family: 'Roboto', sans-serif; /* Roboto cho tiêu đề với font-weight đậm hơn */
+        font-weight: 700;
+    }
+
+    p, .description {
+        font-family: 'Lora', serif; /* Lora cho đoạn mô tả để tạo cảm giác trang nhã */
+    }
+
+    .btn {
+        font-family: 'Roboto', sans-serif; /* Phông chữ Roboto cho các nút */
+        background-color: #FF9800;
+        color: #FFFFFF;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+    }
+
+    .btn:hover {
+        background-color: #FB8C00;
+    }
+     body {
+            font-family: 'Roboto', sans-serif; /* Dùng Roboto cho nội dung chính */
+        }
+
+        h1, h2, h3 {
+            font-family: 'Roboto', sans-serif; /* Roboto cho tiêu đề với font-weight đậm hơn */
+            font-weight: 700;
+        }
+
+        p, .description {
+            font-family: 'Lora', serif; /* Lora cho đoạn mô tả để tạo cảm giác trang nhã */
+        }
+
+        .btn {
+            font-family: 'Roboto', sans-serif; /* Phông chữ Roboto cho các nút */
+            background-color: #FF9800;
+            color: #FFFFFF;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+        }
+
+        .btn:hover {
+            background-color: #FB8C00;
+        }
+         body {
+            font-family: 'Roboto', sans-serif; /* Dùng Roboto cho nội dung chính */
+        }
+
+        h1, h2, h3 {
+            font-family: 'Roboto', sans-serif; /* Roboto cho tiêu đề với font-weight đậm hơn */
+            font-weight: 700;
+        }
+
+        p, .description {
+            font-family: 'Lora', serif; /* Lora cho đoạn mô tả để tạo cảm giác trang nhã */
+        }
+
+        .btn {
+            font-family: 'Roboto', sans-serif; /* Phông chữ Roboto cho các nút */
+            background-color: #4FC3F7;
+            color:#FFFFFF;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+        }
+
+        .btn:hover {
+            background-color: #0288D1;}
+
+            body {
+                background: linear-gradient(135deg, #E3F2FD, #E0F7FA); /* Nền gradient xanh nhạt */
+                color: #333;
+            }
+            
+            .navbar {
+                background-color: rgba(25, 118, 210, 0.8); /* Thanh menu màu xanh đậm với độ trong suốt */
+                backdrop-filter: blur(10px); /* Hiệu ứng làm mờ phía sau thanh menu */
+            }
+            
+            .navbar a {
+                color: black;
+            }
+            
+            .navbar a:hover {
+                color: #FFEB3B; /* Màu vàng sáng khi di chuột */
+            }
+            .navbar-btn {
+                background-color: #4FC3F7 !important;
+                color: black;
+            }
