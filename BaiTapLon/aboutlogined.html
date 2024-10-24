@@ -35,19 +35,32 @@ Author URL: http://w3layouts.com
                 <div class="collapse navbar-collapse" id="navbarScroll">
                     <ul class="navbar-nav ms-auto my-2 my-lg-0 navbar-nav-scroll">
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+                            <a class="nav-link active" aria-current="page" href="indexlogined.html">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="about.html">About</a>
+                            <a class="nav-link" href="aboutlogined.html">About</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="tours.html">Tours</a>
+                            <a class="nav-link" href="tourslogined.html">Tours</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="contact.html">Contact</a>
+                            <a class="nav-link" href="contactlogined.html">Contact</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="login.html">Login/Signup</a>
+                            <div class="dropdown">
+                                <button class="btn btn-secondary dropdown-toggle p-0" type="button" id="userMenuButton"
+                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+                                    style="border-radius: 50%; width: 30px; height: 30px; overflow: auto;">
+                                    <img src="https://cdn-icons-png.freepik.com/512/13924/13924070.png?ga=GA1.1.1279589366.1725373930"
+                                        alt="User Icon" style="width:70%; height:70%; object-fit: fit;">
+                                </button>
+                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userMenuButton">
+                                    <a class="dropdown-item" href="#">Account Info</a>
+                                    <a class="dropdown-item" href="#">Account Setup</a>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="about.html">Logout</a>
+                                </div>
+                            </div>
                         </li>
                     </ul>
                     <form action="#search" method="GET" class="d-flex search-header ms-lg-2">

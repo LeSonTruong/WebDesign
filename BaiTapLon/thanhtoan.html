@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trang Thanh Toán Vé Du Lịch</title>
+    <link rel="stylesheet" href="assets/css/thanhtoan.css">
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1>Thanh Toán Vé Du Lịch</h1>
+        </header>
+
+        <section class="trip-info">
+            <h2>Thông Tin Chuyến Đi</h2>
+            <div class="trip-details">
+                <p><strong>Điểm Khởi Hành:</strong> Hà Nội</p>
+                <p><strong>Điểm Đến:</strong> Đà Nẵng</p>
+                <p><strong>Ngày Khởi Hành:</strong> 15/11/2024</p>
+                <p><strong>Giá Vé:</strong> 1,500,000 VNĐ</p>
+            </div>
+        </section>
+
+        <section class="customer-info">
+            <h2>Thông Tin Khách Hàng</h2>
+            <form>
+                <label for="name">Họ và Tên:</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="phone">Số Điện Thoại:</label>
+                <input type="tel" id="phone" name="phone" required>
+
+                <label for="passport">Số Hộ Chiếu:</label>
+                <input type="text" id="passport" name="passport" required>
+            </form>
+        </section>
+
+        <section class="payment-info">
+            <h2>Phương Thức Thanh Toán</h2>
+            <form>
+                <label>
+                    <input type="radio" name="payment-method" value="credit-card" required>
+                    Thẻ Tín Dụng
+                </label>
+                <label>
+                    <input type="radio" name="payment-method" value="paypal">
+                    PayPal
+                </label>
+                <label>
+                    <input type="radio" name="payment-method" value="cash">
+                    Tiền Mặt
+                </label>
+            </form>
+        </section>
+
+        <section class="total-price">
+            <h2>Tổng Tiền</h2>
+            <p>1,500,000 VNĐ</p>
+        </section>
+
+        <button class="submit-button">Thanh Toán</button>
+
+        <footer>
+            <p>&copy; 2024 Công ty Du Lịch Việt Nam. Địa chỉ: Hà Nội, Việt Nam.</p>
+        </footer>
+    </div>
+</body>
+
+</html>

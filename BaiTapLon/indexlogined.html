@@ -14,6 +14,7 @@ Author URL: http://w3layouts.com
     <link href="//fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
     <link href="//fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap" rel="stylesheet">
     <!-- Template CSS Style link -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/css/style-starter.css">
 </head>
 
@@ -34,19 +35,32 @@ Author URL: http://w3layouts.com
                 <div class="collapse navbar-collapse" id="navbarScroll">
                     <ul class="navbar-nav ms-auto my-2 my-lg-0 navbar-nav-scroll">
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+                            <a class="nav-link active" aria-current="page" href="indexlogined.html">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="about.html">About</a>
+                            <a class="nav-link" href="aboutlogined.html">About</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="tours.html">Tours</a>
+                            <a class="nav-link" href="tourslogined.html">Tours</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="contact.html">Contact</a>
+                            <a class="nav-link" href="contactlogined.html">Contact</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="login.html">Login/Signup</a>
+                            <div class="dropdown">
+                                <button class="btn btn-secondary dropdown-toggle p-0" type="button" id="userMenuButton"
+                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+                                    style="border-radius: 50%; width: 30px; height: 30px; overflow: auto;">
+                                    <img src="https://cdn-icons-png.freepik.com/512/13924/13924070.png?ga=GA1.1.1279589366.1725373930"
+                                        alt="User Icon" style="width:70%; height:70%; object-fit: fit;">
+                                </button>
+                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userMenuButton">
+                                    <a class="dropdown-item" href="#">Account Info</a>
+                                    <a class="dropdown-item" href="#">Account Setup</a>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="index.html">Logout</a>
+                                </div>
+                            </div>
                         </li>
                     </ul>
                     <form action="#search" method="GET" class="d-flex search-header ms-lg-2">
@@ -75,19 +89,141 @@ Author URL: http://w3layouts.com
     </header>
     <!-- //header -->
 
-    <!-- inner banner -->
-    <section class="inner-banner py-sm-5 py-4">
-        <div class="w3l-breadcrumb pt-5 pb-4">
-            <div class="container py-xl-5 py-lg-4">
-                <h4 class="inner-text-title font-weight-bold pt-5">Explore the World</h4>
-                <ul class="breadcrumbs-custom-path">
-                    <li><a href="index.html">Home</a></li>
-                    <li class="active"><i class="fas fa-angle-right mx-2"></i>Tours</li>
-                </ul>
+    <!-- banner section -->
+    <div class="slideshow">
+        <div class="holder">
+            <div class="slide slide-1">
+                <span class="container">
+                    <span class="banner-content">
+                        <h3>VietNam Travel & Adventures</h3>
+                        <p>Discover amzaing places at exclusive deals.</p>
+                        <a class="btn btn-style mt-sm-5 mt-4" href="about.html">Explore More</a>
+                    </span>
+                </span>
+            </div>
+            <div class="slide slide-2">
+                <span class="container">
+                    <span class="banner-content">
+                        <h3 class="mb-2">Your Journey Begins</h3>
+                        <p>Take advantage of this amazing exclusive offers.</p>
+                        <a class="btn btn-style mt-sm-5 mt-4" href="about.html">Explore More</a>
+                    </span>
+                </span>
+            </div>
+            <div class="slide slide-3">
+                <span class="container">
+                    <span class="banner-content">
+                        <h3>Love and Travel</h3>
+                        <p>Discover amzaing places at exclusive deals.</p>
+                        <a class="btn btn-style mt-sm-5 mt-4" href="about.html">Explore More</a>
+                    </span>
+                </span>
+            </div>
+            <div class="slide slide-4">
+                <span class="container">
+                    <span class="banner-content">
+                        <h3>Live your Adventure</h3>
+                        <p>Take advantage of this amazing exclusive offers.</p>
+                        <a class="btn btn-style mt-sm-5 mt-4" href="about.html">Explore More</a>
+                    </span>
+                </span>
+            </div>
+        </div>
+        <div class="steps"></div>
+        <a href="#" class="prev"><i class="fas fa-arrow-left"></i></a>
+        <a href="#" class="next"><i class="fas fa-arrow-right"></i></a>
+    </div>
+    <!-- //banner section -->
+
+    <!-- booking form section -->
+    <section class="w3l-form-main py-5" id="book">
+        <div class="container py-lg-5 py-md-4 py-2">
+            <form action="#" method="post" class="form-styles">
+                <div class="">
+                    <label for="inputtextnumber" class="form-label">Date from:</label>
+                    <input type="date" name="date" id="dateofbirth" required="">
+                </div>
+                <div class="">
+                    <label for="inputtextnumber" class="form-label">Destinations:</label>
+                    <span class="input-group-btn">
+                        <select class="btn btn-default" name="ext" required>
+                            <option selected="">Select Location</option>
+                            <option>Ha Noi</option>
+                            <option>Ha Long</option>
+                            <option>Hue</option>
+                            <option>Da Nang</option>
+                            <option>Ho Chi Minh</option>
+                            <option>Ca Mau</option>
+                            <option>Phu Quoc</option>
+                        </select>
+                    </span>
+                </div>
+                <div class="">
+                    <label for="inputtextnumber" class="form-label">Activity:</label>
+                    <span class="input-group-btn">
+                        <select class="btn btn-default" name="ext" required>
+                            <option selected="">Select Any</option>
+                            <option>Adventure</option>
+                            <option>Beache</option>
+                            <option>City Tours</option>
+                            <option>Cruises</option>
+                            <option>Discovery</option>
+                            <option>Historical</option>
+                            <option>Relaxation Tours</option>
+                        </select>
+                    </span>
+                </div>
+                <div class="">
+                    <label for="inputtextnumber" class="form-label">Guests:</label>
+                    <span class="input-group-btn">
+                        <select class="btn btn-default" name="ext" required>
+                            <option selected="">0</option>
+                            <option>1</option>
+                            <option>2</option>
+                            <option>3</option>
+                            <option>4</option>
+                            <option>5</option>
+                            <option>6</option>
+                        </select>
+                    </span>
+                </div>
+                <button class="btn btn-style" type="submit">Find Tour</button>
+            </form>
+        </div>
+    </section>
+    <!-- //booking form section -->
+
+    <!-- about section -->
+    <section class="w3l-aboutblock py-lg-5 py-4" id="about">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <img src="assets/images/about.jpg" alt="" class="img-fluid radius-image">
+                </div>
+                <div class="col-lg-6 ps-xl-5 ps-lg-4 mt-lg-0 mt-5">
+                    <div class="title-main">
+                        <p>About Us</p>
+                        <h3 class="title-style">Plan Your Trip with VietNam Travel</h3>
+                    </div>
+                    <p class="mt-3">Vietnam Travels stands as one of the leading tour operators in Vietnam, offering
+                        expertly crafted travel experiences
+                        that showcase the best of this enchanting country. With years of experience and deep local
+                        knowledge, our company
+                        specializes in creating unforgettable journeys that cater to every traveler's desires, from
+                        luxury tours to authentic
+                        cultural adventures.</p>
+                    <ul class="mt-4 list-style-lis">
+                        <li><i class="fas fa-check-circle"></i>2000+ Our Worldwide Guide</li>
+                        <li class="mt-2"><i class="fas fa-check-circle"></i>100% Trusted Tour Agency</li>
+                        <li class="mt-2"><i class="fas fa-check-circle"></i>24+ Years of Experience</li>
+                        <li class="mt-2"><i class="fas fa-check-circle"></i>100% Travelers are Happy</li>
+                    </ul>
+                    <a href="contact.html" class="btn btn-style mt-5">Booking Now</a>
+                </div>
             </div>
         </div>
     </section>
-    <!-- //inner banner -->
+    <!-- //about section -->
 
     <!-- tours slider section -->
     <section class="w3l-index5 pb-5 pt-4">
@@ -100,8 +236,8 @@ Author URL: http://w3layouts.com
                 <div class="owl-three owl-carousel owl-theme">
                     <div class="item">
                         <div class="content-left-sec">
-                            <a class="blog-link d-block zoom-image" href="tours.html"><img src="assets/images/s1.jpg"
-                                    class="img-fluid scale-image" alt=""></a>
+                            <a class="blog-link d-block zoom-image" href="indexlogined.html"><img
+                                    src="assets/images/s1.jpg" class="img-fluid scale-image" alt=""></a>
                             <div class="blog-info">
                                 <ul class="rating-list mb-2">
                                     <li><i class="fas fa-star" aria-hidden="true"></i></li>
@@ -111,14 +247,14 @@ Author URL: http://w3layouts.com
                                     <li><i class="fas fa-star-half-alt"></i></li>
                                     <li class="ms-1">4.07</li>
                                 </ul>
-                                <a href="tours.html" class="to-title">Discovery Best Tours</a>
+                                <a href="indexlogined.html" class="to-title">Discovery Best Tours</a>
                                 <p class="mt-1"><i class="fas fa-map-marker-alt me-1"></i>Central Park West NY, USA</p>
                                 <div class="to-price mt-2">
                                     <label>From</label> <span>$39.00</span>
                                 </div>
                                 <div class="d-flex align-items-center justify-content-between mt-4">
                                     <p><i class="far fa-clock me-1"></i>10 Days</p>
-                                    <a href="tours.html" class="btn btn-style btn-style-primary">Explore<i
+                                    <a href="indexlogined.html" class="btn btn-style btn-style-primary">Explore<i
                                             class="fas fa-arrow-right"></i></a>
                                 </div>
                             </div>
@@ -126,8 +262,8 @@ Author URL: http://w3layouts.com
                     </div>
                     <div class="item">
                         <div class="content-left-sec">
-                            <a class="blog-link d-block zoom-image" href="tours.html"><img src="assets/images/s2.jpg"
-                                    class="img-fluid scale-image" alt=""></a>
+                            <a class="blog-link d-block zoom-image" href="indexlogined.html"><img
+                                    src="assets/images/s2.jpg" class="img-fluid scale-image" alt=""></a>
                             <div class="blog-info">
                                 <ul class="rating-list mb-2">
                                     <li><i class="fas fa-star" aria-hidden="true"></i></li>
@@ -137,14 +273,14 @@ Author URL: http://w3layouts.com
                                     <li><i class="fas fa-star-half-alt"></i></li>
                                     <li class="ms-1">4.05</li>
                                 </ul>
-                                <a href="tours.html" class="to-title">Dubai – Stunning Places</a>
+                                <a href="indexlogined.html" class="to-title">Dubai – Stunning Places</a>
                                 <p class="mt-1"><i class="fas fa-map-marker-alt me-1"></i>5th Avenue, London</p>
                                 <div class="to-price mt-2">
                                     <label>From</label> <span>$69.00</span>
                                 </div>
                                 <div class="d-flex align-items-center justify-content-between mt-4">
                                     <p><i class="far fa-clock me-1"></i>15 Days</p>
-                                    <a href="tours.html" class="btn btn-style btn-style-primary">Explore<i
+                                    <a href="indexlogined.html" class="btn btn-style btn-style-primary">Explore<i
                                             class="fas fa-arrow-right"></i></a>
                                 </div>
                             </div>
@@ -152,8 +288,8 @@ Author URL: http://w3layouts.com
                     </div>
                     <div class="item">
                         <div class="content-left-sec">
-                            <a class="blog-link d-block zoom-image" href="tours.html"><img src="assets/images/s3.jpg"
-                                    class="img-fluid scale-image" alt=""></a>
+                            <a class="blog-link d-block zoom-image" href="indexlogined.html"><img
+                                    src="assets/images/s3.jpg" class="img-fluid scale-image" alt=""></a>
                             <div class="blog-info">
                                 <ul class="rating-list mb-2">
                                     <li><i class="fas fa-star" aria-hidden="true"></i></li>
@@ -163,14 +299,14 @@ Author URL: http://w3layouts.com
                                     <li><i class="fas fa-star-half-alt"></i></li>
                                     <li class="ms-1">4.07</li>
                                 </ul>
-                                <a href="tours.html" class="to-title">Enquiry Form Only – Italy</a>
+                                <a href="indexlogined.html" class="to-title">Enquiry Form Only – Italy</a>
                                 <p class="mt-1"><i class="fas fa-map-marker-alt me-1"></i>Henley Street, Italy</p>
                                 <div class="to-price mt-2">
                                     <label>From</label> <span>$39.00</span>
                                 </div>
                                 <div class="d-flex align-items-center justify-content-between mt-4">
                                     <p><i class="far fa-clock me-1"></i>6 Days</p>
-                                    <a href="tours.html" class="btn btn-style btn-style-primary">Explore<i
+                                    <a href="indexlogined.html" class="btn btn-style btn-style-primary">Explore<i
                                             class="fas fa-arrow-right"></i></a>
                                 </div>
                             </div>
@@ -178,8 +314,8 @@ Author URL: http://w3layouts.com
                     </div>
                     <div class="item">
                         <div class="content-left-sec">
-                            <a class="blog-link d-block zoom-image" href="tours.html"><img src="assets/images/s4.jpg"
-                                    class="img-fluid scale-image" alt=""></a>
+                            <a class="blog-link d-block zoom-image" href="indexlogined.html"><img
+                                    src="assets/images/s4.jpg" class="img-fluid scale-image" alt=""></a>
                             <div class="blog-info">
                                 <ul class="rating-list mb-2">
                                     <li><i class="fas fa-star" aria-hidden="true"></i></li>
@@ -189,14 +325,14 @@ Author URL: http://w3layouts.com
                                     <li><i class="fas fa-star-half-alt"></i></li>
                                     <li class="ms-1">4.08</li>
                                 </ul>
-                                <a href="tours.html" class="to-title">Switzerland – best Zurich </a>
+                                <a href="indexlogined.html" class="to-title">Switzerland – best Zurich </a>
                                 <p class="mt-1"><i class="fas fa-map-marker-alt me-1"></i>Zermatt, USA</p>
                                 <div class="to-price mt-2">
                                     <label>From</label> <span>$49.00</span>
                                 </div>
                                 <div class="d-flex align-items-center justify-content-between mt-4">
                                     <p><i class="far fa-clock me-1"></i>7 Days</p>
-                                    <a href="tours.html" class="btn btn-style btn-style-primary">Explore<i
+                                    <a href="indexlogined.html" class="btn btn-style btn-style-primary">Explore<i
                                             class="fas fa-arrow-right"></i></a>
                                 </div>
                             </div>
@@ -204,8 +340,8 @@ Author URL: http://w3layouts.com
                     </div>
                     <div class="item">
                         <div class="content-left-sec">
-                            <a class="blog-link d-block zoom-image" href="tours.html"><img src="assets/images/s6.jpg"
-                                    class="img-fluid scale-image" alt=""></a>
+                            <a class="blog-link d-block zoom-image" href="indexlogined.html"><img
+                                    src="assets/images/s6.jpg" class="img-fluid scale-image" alt=""></a>
                             <div class="blog-info">
                                 <ul class="rating-list mb-2">
                                     <li><i class="fas fa-star" aria-hidden="true"></i></li>
@@ -215,7 +351,7 @@ Author URL: http://w3layouts.com
                                     <li><i class="fas fa-star-half-alt"></i></li>
                                     <li class="ms-1">4.09</li>
                                 </ul>
-                                <a href="tours.html" class="to-title">Paris – Eiffel Tower</a>
+                                <a href="indexlogined.html" class="to-title">Paris – Eiffel Tower</a>
                                 <p class="mt-1"><i class="fas fa-map-marker-alt me-1"></i>Northern central France, Paris
                                 </p>
                                 <div class="to-price mt-2">
@@ -223,7 +359,7 @@ Author URL: http://w3layouts.com
                                 </div>
                                 <div class="d-flex align-items-center justify-content-between mt-4">
                                     <p><i class="far fa-clock me-1"></i>15 Days</p>
-                                    <a href="tours.html" class="btn btn-style btn-style-primary">Explore<i
+                                    <a href="indexlogined.html" class="btn btn-style btn-style-primary">Explore<i
                                             class="fas fa-arrow-right"></i></a>
                                 </div>
                             </div>
@@ -231,8 +367,8 @@ Author URL: http://w3layouts.com
                     </div>
                     <div class="item">
                         <div class="content-left-sec">
-                            <a class="blog-link d-block zoom-image" href="tours.html"><img src="assets/images/s5.jpg"
-                                    class="img-fluid scale-image" alt=""></a>
+                            <a class="blog-link d-block zoom-image" href="indexlogined.html"><img
+                                    src="assets/images/s5.jpg" class="img-fluid scale-image" alt=""></a>
                             <div class="blog-info">
                                 <ul class="rating-list mb-2">
                                     <li><i class="fas fa-star" aria-hidden="true"></i></li>
@@ -242,7 +378,7 @@ Author URL: http://w3layouts.com
                                     <li><i class="fas fa-star-half-alt"></i></li>
                                     <li class="ms-1">4.06</li>
                                 </ul>
-                                <a href="tours.html" class="to-title">America – Lake Tahoe</a>
+                                <a href="indexlogined.html" class="to-title">America – Lake Tahoe</a>
                                 <p class="mt-1"><i class="fas fa-map-marker-alt me-1"></i>Figueroa Mountain Road, USA
                                 </p>
                                 <div class="to-price mt-2">
@@ -250,7 +386,7 @@ Author URL: http://w3layouts.com
                                 </div>
                                 <div class="d-flex align-items-center justify-content-between mt-4">
                                     <p><i class="far fa-clock me-1"></i>12 Days</p>
-                                    <a href="tours.html" class="btn btn-style btn-style-primary">Explore<i
+                                    <a href="indexlogined.html" class="btn btn-style btn-style-primary">Explore<i
                                             class="fas fa-arrow-right"></i></a>
                                 </div>
                             </div>
@@ -262,109 +398,198 @@ Author URL: http://w3layouts.com
     </section>
     <!-- //tours slider section -->
 
-    <!-- places section -->
-    <div class="w3l-placesblock2 py-5" id="destinations">
+    <!-- services section -->
+    <section class="w3l-grids-block py-5">
         <div class="container py-lg-5 py-md-4 py-2">
             <div class="title-main text-center mx-auto mb-md-5 mb-4" style="max-width:600px;">
-                <p>Destinations</p>
-                <h3 class="title-style">Go Awesome Places</h3>
+                <p>Our Services</p>
+                <h3 class="title-style">Our Amazing Services for your Travel</h3>
             </div>
-            <div class="row">
-                <div class="col-lg-4 col-sm-6">
-                    <div class="grids5-info">
-                        <a href="#destination" class="place-image d-block zoom"><img src="assets/images/s1.jpg" alt=""
-                                class="img-fluid radius-image" />
-                            <div class="image-overlay">
-                                <h4>Paris</h4>
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse, consectetur.</p>
-                            </div>
-                            <div class="iconic-plus">
-                                <p>3 tours</p>
-                            </div>
+            <div class="row text-center justify-content-center">
+                <div class="col-lg-4 col-md-6 col-sm-10">
+                    <div class="bottom-block">
+                        <a href="indexlogined.html" class="d-block">
+                            <i class="fas fa-dragon"></i>
+                            <h3 class="my-3">Wildlife Tours</h3>
+                            <p class="">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium tempora
+                                rerum perspiciatis?</p>
                         </a>
                     </div>
                 </div>
-                <div class="col-lg-4 col-sm-6 mt-sm-0 mt-4">
-                    <div class="grids5-info">
-                        <a href="#destination" class="place-image d-block zoom"><img src="assets/images/s2.jpg" alt=""
-                                class="img-fluid radius-image" />
-                            <div class="image-overlay">
-                                <h4>Singapore</h4>
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse, consectetur.</p>
-                            </div>
-                            <div class="iconic-plus">
-                                <p>4 tours</p>
-                            </div>
+                <div class="col-lg-4 col-md-6 col-sm-10 mt-md-0 mt-4">
+                    <div class="bottom-block">
+                        <a href="indexlogined.html" class="d-block">
+                            <i class="fas fa-plane-departure"></i>
+                            <h3 class="my-3">Adventure Tours</h3>
+                            <p class="">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium tempora
+                                rerum perspiciatis?</p>
                         </a>
                     </div>
                 </div>
-                <div class="col-lg-4 col-sm-6 mt-lg-0 mt-4">
-                    <div class="grids5-info">
-                        <a href="#destination" class="place-image d-block zoom"><img src="assets/images/s3.jpg" alt=""
-                                class="img-fluid radius-image" />
-                            <div class="image-overlay">
-                                <h4>France</h4>
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse, consectetur.</p>
-                            </div>
-                            <div class="iconic-plus">
-                                <p>5 tours</p>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-sm-6 mt-4">
-                    <div class="grids5-info">
-                        <a href="#destination" class="place-image d-block zoom"><img src="assets/images/blog3.jpg"
-                                alt="" class="img-fluid radius-image" />
-                            <div class="image-overlay">
-                                <h4>Italy</h4>
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse, consectetur.</p>
-                            </div>
-                            <div class="iconic-plus">
-                                <p>6 tours</p>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-sm-6 mt-4">
-                    <div class="grids5-info">
-                        <a href="#destination" class="place-image d-block zoom"><img src="assets/images/blog2.jpg"
-                                alt="" class="img-fluid radius-image" />
-                            <div class="image-overlay">
-                                <h4>USA</h4>
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse, consectetur.</p>
-                            </div>
-                            <div class="iconic-plus">
-                                <p>2 tours</p>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-sm-6 mt-4">
-                    <div class="grids5-info">
-                        <a href="#destination" class="place-image d-block zoom"><img src="assets/images/blog1.jpg"
-                                alt="" class="img-fluid radius-image" />
-                            <div class="image-overlay">
-                                <h4>London</h4>
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse, consectetur.</p>
-                            </div>
-                            <div class="iconic-plus">
-                                <p>8 tours</p>
-                            </div>
+                <div class="col-lg-4 col-md-6 col-sm-10 mt-lg-0 mt-4">
+                    <div class="bottom-block">
+                        <a href="indexlogined.html" class="d-block">
+                            <i class="fab fa-discourse"></i>
+                            <h3 class="my-3">Trip Planing</h3>
+                            <p class="">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium tempora
+                                rerum perspiciatis?</p>
                         </a>
                     </div>
                 </div>
             </div>
         </div>
+    </section>
+    <!-- //services section -->
+
+    <!-- why section -->
+    <section class="w3l-whyblock pb-5 pt-2">
+        <div class="container pb-lg-5 pb-md-4 pb-2">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <img src="assets/images/about2.jpg" alt="" class="img-fluid radius-image">
+                </div>
+                <div class="col-lg-6 ps-xl-5 ps-lg-4 mt-lg-0 mt-5">
+                    <div class="title-main mb-4" style="max-width:600px;">
+                        <p>Our Features</p>
+                        <h3 class="title-style">Why Choose Tours!</h3>
+                    </div>
+                    <p>Lorem ipsum viverra feugiat. Pellen tesque libero ut justo,
+                        ultrices in ligula. Semper at tempufddfel. Lorem ipsum dolor sit amet consectetur adipisicing
+                        elit.</p>
+                    <div class="two-grids mt-5">
+                        <div class="grids_info">
+                            <i class="fas fa-certificate"></i>
+                            <div class="detail">
+                                <h4>Professional and Certified</h4>
+                                <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
+                                    mollit.</p>
+                            </div>
+                        </div>
+                        <div class="grids_info mt-xl-5 mt-4">
+                            <i class="fas fa-money-bill-wave"></i>
+                            <div class="detail">
+                                <h4>Get Instant Tour Bookings</h4>
+                                <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
+                                    mollit.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- //why section -->
+
+    <!-- blog section -->
+    <div class="w3l-blog-content py-5">
+        <div class="container py-lg-5 py-md-4 py-2">
+            <div class="title-main text-center mx-auto mb-md-5 mb-4" style="max-width:600px;">
+                <p>Our Blog</p>
+                <h3 class="title-style">Learn more from our latest Blog Posts</h3>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-lg-4 col-md-6">
+                    <div class="blog-grid-1">
+                        <div class="card-header p-0 position-relative">
+                            <a href="#blog" class="zoom d-block">
+                                <img class="card-img-bottom d-block" src="assets/images/blog1.jpg" alt="Card image cap">
+                            </a>
+                            <div class="course-price-badge">Trips</div>
+                        </div>
+                        <div class="card-body course-details">
+                            <div class="course-meta mb-3">
+                                <div class="meta-item course-students">
+                                    <a href="#author"><span class="fas fa-user"></span>
+                                        <span class="meta-value"></span>John</a>
+                                </div>
+                                <div class="meta-item course-lesson">
+                                    <span class="fa fa-heart"></span>
+                                    <span class="meta-value"> 23 </span>
+                                </div>
+                                <div class="meta-item course-students">
+                                    <span class="fa fa-calendar"></span>
+                                    <span class="meta-value">Dec 06, 2021</span>
+                                </div>
+                            </div>
+                            <a href="#blog" class="course-desc">Travel the Most Beautiful Places in the
+                                World</a>
+                            <p class="mt-2">Lorem ipsum dolor sit, amet consectetur elit. Earum mollitia
+                                ipsam autem.</p>
+                            <a href="#blog" class="btn btn-style mt-4">Read more</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mt-md-0 mt-4">
+                    <div class="blog-grid-1">
+                        <div class="card-header p-0 position-relative">
+                            <a href="#blog" class="zoom d-block">
+                                <img class="card-img-bottom d-block" src="assets/images/blog2.jpg" alt="Card image cap">
+                            </a>
+                            <div class="course-price-badge">Travels</div>
+                        </div>
+                        <div class="card-body course-details">
+                            <div class="course-meta mb-3">
+                                <div class="meta-item course-students">
+                                    <a href="#author"><span class="fas fa-user"></span>
+                                        <span class="meta-value"></span>Anton</a>
+                                </div>
+                                <div class="meta-item course-lesson">
+                                    <span class="fa fa-heart"></span>
+                                    <span class="meta-value"> 24 </span>
+                                </div>
+                                <div class="meta-item course-students">
+                                    <span class="fa fa-calendar"></span>
+                                    <span class="meta-value">Dec 07, 2021</span>
+                                </div>
+                            </div>
+                            <a href="#blog" class="course-desc">A Place where Start New Life with Peace</a>
+                            <p class="mt-2">Lorem ipsum dolor sit, amet consectetur elit. Earum mollitia
+                                ipsam autem.</p>
+                            <a href="#blog" class="btn btn-style mt-4">Read more</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mt-lg-0 mt-4">
+                    <div class="blog-grid-1">
+                        <div class="card-header p-0 position-relative">
+                            <a href="#blog" class="zoom d-block">
+                                <img class="card-img-bottom d-block" src="assets/images/blog3.jpg" alt="Card image cap">
+                            </a>
+                            <div class="course-price-badge">Journey</div>
+                        </div>
+                        <div class="card-body course-details">
+                            <div class="course-meta mb-3">
+                                <div class="meta-item course-students">
+                                    <a href="#author"><span class="fas fa-user"></span>
+                                        <span class="meta-value"></span>Miche</a>
+                                </div>
+                                <div class="meta-item course-lesson">
+                                    <span class="fa fa-heart"></span>
+                                    <span class="meta-value"> 22 </span>
+                                </div>
+                                <div class="meta-item course-students">
+                                    <span class="fa fa-calendar"></span>
+                                    <span class="meta-value">Dec 08, 2021</span>
+                                </div>
+                            </div>
+                            <a href="#blog" class="course-desc">Top 10 Destinations & Adventure Trips</a>
+                            <p class="mt-2">Lorem ipsum dolor sit, amet consectetur elit. Earum mollitia
+                                ipsam autem.</p>
+                            <a href="#blog" class="btn btn-style mt-4">Read more</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-    <!-- //places section -->
+    <!-- //blog section -->
 
     <!-- promocode section -->
     <section class="w3l-promocode py-5">
         <div class="container ppy-lg-5 py-md-4 py-2">
             <div class="row aap-4-section align-items-center">
                 <div class="col-lg-6 col-8 m-auto app4-right-image pe-md-5 text-center">
-                    <img src="assets/images/img.jpg" class="img-fluid" alt="App Device" />
+                    <img src="assets/images/img.jpg" class="img-fluid radius-image" alt="App Device" />
                 </div>
                 <div class="col-lg-6 app4-left-text ps-lg-0 mb-lg-0 mb-5">
                     <h6>For 30% Discount</h6>
@@ -491,7 +716,11 @@ Author URL: http://w3layouts.com
     <script src="assets/js/jquery-3.3.1.min.js"></script>
     <!-- //common jquery plugin -->
 
-    <!-- for tours carousel slider -->
+    <!-- banner slider -->
+    <script src="assets/js/slideshow.js"></script>
+    <!-- //banner slider -->
+
+    <!-- for services carousel slider -->
     <script src="assets/js/owl.carousel.js"></script>
     <script>
         $(document).ready(function () {
@@ -521,7 +750,11 @@ Author URL: http://w3layouts.com
             })
         })
     </script>
-    <!-- //for tours carousel slider -->
+    <!-- //for services carousel slider -->
+
+    <!-- counter-->
+    <script src="assets/js/counter.js"></script>
+    <!-- //counter-->
 
     <!-- theme switch js (light and dark)-->
     <script src="assets/js/theme-change.js"></script>
@@ -570,6 +803,7 @@ Author URL: http://w3layouts.com
     <script src="assets/js/bootstrap.min.js"></script>
     <!-- //bootstrap -->
     <!-- //Js scripts -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
 </body>

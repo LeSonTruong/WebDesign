@@ -20957,3 +20957,6 @@ a.place-image .iconic-plus p {
 }
 
 /* //contact */
+::-webkit-scrollbar {
+  width: 0vw;
+}

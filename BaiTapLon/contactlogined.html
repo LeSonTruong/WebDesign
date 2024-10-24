@@ -35,19 +35,32 @@ Author URL: http://w3layouts.com
                 <div class="collapse navbar-collapse" id="navbarScroll">
                     <ul class="navbar-nav ms-auto my-2 my-lg-0 navbar-nav-scroll">
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+                            <a class="nav-link active" aria-current="page" href="indexlogined.html">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="about.html">About</a>
+                            <a class="nav-link" href="aboutlogined.html">About</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="tours.html">Tours</a>
+                            <a class="nav-link" href="tourslogined.html">Tours</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="contact.html">Contact</a>
+                            <a class="nav-link" href="contactlogined.html">Contact</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="login.html">Login/Signup</a>
+                            <div class="dropdown">
+                                <button class="btn btn-secondary dropdown-toggle p-0" type="button" id="userMenuButton"
+                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+                                    style="border-radius: 50%; width: 30px; height: 30px; overflow: auto;">
+                                    <img src="https://cdn-icons-png.freepik.com/512/13924/13924070.png?ga=GA1.1.1279589366.1725373930"
+                                        alt="User Icon" style="width:70%; height:70%; object-fit: fit;">
+                                </button>
+                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userMenuButton">
+                                    <a class="dropdown-item" href="#">Account Info</a>
+                                    <a class="dropdown-item" href="#">Account Setup</a>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="contact.html">Logout</a>
+                                </div>
+                            </div>
                         </li>
                     </ul>
                     <form action="#search" method="GET" class="d-flex search-header ms-lg-2">
@@ -138,7 +151,7 @@ Author URL: http://w3layouts.com
         <div class="container">
             <div class="map pt-lg-3">
                 <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d387193.3059445135!2d-74.25986613799748!3d40.69714941774136!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m3!3e3!4m0!4m0!5e0!3m2!1sen!2sin!4v1570181661801!5m2!1sen!2sin"
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3724.5303158158535!2d105.7989815149327!3d21.036237492649768!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135ab5a76587cfd%3A0x97be76e6343eaa8b!2zVHLGsOG7nW5nIMSQ4buLbmggVGjhu6cgVGjhuqFvIEjDoG5v4buNYg!5e0!3m2!1svi!2s!4v1698133206813!5m2!1svi!2s"
                     allowfullscreen=""></iframe>
             </div>
         </div>
