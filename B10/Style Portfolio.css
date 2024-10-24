@@ -340,3 +340,6 @@ table a button:hover {
 #sidebarToggle.hidden {
     display: none;
 }
+::-webkit-scrollbar {
+    width: 0vw;
+}
