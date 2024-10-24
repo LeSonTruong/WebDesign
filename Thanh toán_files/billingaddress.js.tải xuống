@@ -1,0 +1,124 @@
+
+function BillingAddress_VerifyAddressFields( rgBadFields, bHasBillingStates, input_suffix = '' )
+{
+	var errorString = '';
+	rgBadFields.first_name = false;
+	rgBadFields.last_name = false;
+	rgBadFields.billing_address = false;
+	rgBadFields.billing_city = false;
+	rgBadFields.billing_state_select_trigger = false;
+	rgBadFields.billing_phone = false;
+	rgBadFields.billing_postal_code = false;
+
+	if ( $( 'first_name'+input_suffix ).value.length < 1 )
+	{
+		errorString += 'Vui lòng nhập tên cho địa chỉ thanh toán của bạn.<br/>';
+		rgBadFields.first_name = true;
+	}
+	
+	if ( $( 'last_name'+input_suffix ).value.length < 1 )
+	{
+		errorString += 'Vui lòng nhập họ cho địa chỉ thanh toán của bạn.<br/>';
+		rgBadFields.last_name = true;
+	}
+	
+	if ( $( 'billing_address'+input_suffix ).value.length < 1 )
+	{
+		errorString += 'Vui lòng nhập địa chỉ thanh toán của bạn.<br/>';
+		rgBadFields.billing_address = true;
+	}
+		
+	
+	if ( $( 'billing_city'+input_suffix ).value.length < 1 )
+	{
+		errorString += 'Vui lòng nhập thành phố thanh toán.<br/>';
+		rgBadFields.billing_city = true;
+	}
+	
+		if  ( bHasBillingStates )
+	{
+		if ( $('billing_state_select'+input_suffix).value.length < 1 )
+		{
+			errorString += 'Vui lòng nhập một tỉnh hoặc bang.<br/>';
+			rgBadFields.billing_state_select_trigger = true;
+		}
+				if ( $('billing_country'+input_suffix).value == 'US' )
+		{
+			if ( $('billing_state_select'+input_suffix).value == 'AE' || $('billing_state_select'+input_suffix).value == 'AP' || $('billing_state_select'+input_suffix).value == 'AA' )
+			{
+				if ( $('billing_city'+input_suffix).value != 'APO' && $('billing_city'+input_suffix).value != 'FPO' && $('billing_city'+input_suffix).value != 'DPO' )
+				{
+					errorString += 'Vui lòng nhập địa chỉ quân sự hợp lệ.<br/>';
+					rgBadFields.billing_city = true;
+				}
+			}
+		}
+	}
+
+		if ( $( 'payment_row_phone' ) && $( 'payment_row_phone' ).visible() )
+	{
+		if ( $( 'billing_phone'+input_suffix ).value.length < 3 )
+		{
+			errorString += 'Vui lòng nhập số điện thoại thanh toán, bao gồm cả mã vùng.<br/>';
+			rgBadFields.billing_phone = true;
+		}
+		else if  ( $( 'billing_country'+input_suffix ).value == 'US' )
+		{
+						var num = $( 'billing_phone'+input_suffix).value;
+			var digitsFound = 0;
+			for ( i = 0; i < num.length; ++i )
+			{
+				var c = num.charAt(i);
+				if ( c >= '0' && c <= '9' )
+					++digitsFound;
+			}
+			if ( digitsFound < 10 )
+			{
+				errorString += 'Vui lòng nhập số điện thoại thanh toán, bao gồm cả mã vùng.<br/>';
+				rgBadFields.billing_phone = true;
+			}
+		}
+	}
+		
+	if ( $( 'billing_country'+input_suffix ).value == 'US' )
+	{
+		if ( $( 'billing_postal_code'+input_suffix ).value.length < 5 )
+		{
+			errorString += 'Vui lòng nhập mã zip hoặc bưu điện.<br/>';
+			rgBadFields.billing_postal_code = true;
+		}
+	}
+	else if ( $( 'billing_postal_code'+input_suffix ).value.length < 1 )
+	{
+		errorString += 'Vui lòng nhập mã zip hoặc bưu điện.<br/>';
+		rgBadFields.billing_postal_code = true;
+	}
+
+	return errorString;
+}
+
+function BillingAddress_SaveBillingAddress( sessionID, ajax_url, callbacks )
+{
+	$J.ajax( {
+		url: ajax_url,
+		type: "POST",
+		dataType: "json",
+		data: {
+			'sessionid': sessionID,
+			'FirstName' : $J('#first_name') ? $J('#first_name').val() : '',
+			'LastName' : $J('#last_name').val(),
+			'Address' : $J('#billing_address').val(),
+			'AddressTwo' : $J('#billing_address_two').val(),
+			'Country' : $J('#billing_country').val(),
+			'City' : $J('#billing_city').val(),
+			'State' : ($('billing_state_select') && $('billing_state_select').visible() ? $J('#billing_state_select').val() : $J('#billing_state_text').val()),
+			'PostalCode' : $J('#billing_postal_code').val(),
+			'Phone' : $J('#billing_phone').val()
+		}
+	} ).fail( function( jqxhr ) {
+		callbacks.onFailure();
+	} ).done( function( data ) {
+		callbacks.onSuccess( data );
+	} );
+}
+
