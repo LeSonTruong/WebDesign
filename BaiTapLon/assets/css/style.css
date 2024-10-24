@@ -91,6 +91,7 @@ body {
   margin-bottom: -0.2em;
 }
 .screen-1 .password .show-hide {
+  cursor: pointer;
   margin-right: -5em;
 }
 .screen-1 .login {

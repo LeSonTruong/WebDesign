@@ -23,9 +23,7 @@ Author URL: http://w3layouts.com
     <header id="site-header" class="fixed-top">
         <div class="container">
             <nav class="navbar navbar-expand-lg navbar-light">
-                <a class="navbar-brand" href="index.html">
-                    VietNam Travels
-                </a>
+                <a class="navbar-brand" href="index.html">VietNam Travels</a>
                 <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false"
                     aria-label="Toggle navigation">
@@ -47,33 +45,31 @@ Author URL: http://w3layouts.com
                             <a class="nav-link" href="contact.html">Contact</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="login.html">Login/Signup</a>
+                            <a id="loginNavItem" class="nav-link" href="login.html">Login/Signup</a>
+                        </li>
+                        <li class="nav-item dropdown" id="userMenu" style="display: none;">
+                            <a class="nav-link dropdown-toggle" href="#" id="userIcon" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                <i class="fas fa-user"></i>
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="userIcon">
+                                <li><a class="dropdown-item" href="account-info.html">Account Info</a></li>
+                                <li><a class="dropdown-item" href="account-setup.html">Account Setup</a></li>
+                                <li><a class="dropdown-item" href="#" id="logout">Logout</a></li>
+                            </ul>
                         </li>
                     </ul>
+                    <!-- Search form -->
                     <form action="#search" method="GET" class="d-flex search-header ms-lg-2">
                         <input class="form-control" type="search" placeholder="Enter Keyword..." aria-label="Search"
                             required>
                         <button class="btn btn-style" type="submit"><i class="fas fa-search"></i></button>
                     </form>
                 </div>
-                <!-- toggle switch for light and dark theme -->
-                <div class="cont-ser-position">
-                    <nav class="navigation">
-                        <div class="theme-switch-wrapper">
-                            <label class="theme-switch" for="checkbox">
-                                <input type="checkbox" id="checkbox">
-                                <div class="mode-container">
-                                    <i class="gg-sun"></i>
-                                    <i class="gg-moon"></i>
-                                </div>
-                            </label>
-                        </div>
-                    </nav>
-                </div>
-                <!-- //toggle switch for light and dark theme -->
             </nav>
         </div>
     </header>
+
     <!-- //header -->
 
     <!-- banner section -->
@@ -792,6 +788,29 @@ Author URL: http://w3layouts.com
     <!-- //Js scripts -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const isLoggedIn = localStorage.getItem('loggedIn') === 'true'; // Kiểm tra trạng thái đăng nhập
+            const loginNavItem = document.getElementById('loginNavItem');
+            const userMenu = document.getElementById('userMenu');
+            const logoutButton = document.getElementById('logout');
+
+            // Hiển thị hoặc ẩn nút đăng nhập và biểu tượng người dùng
+            if (isLoggedIn) {
+                loginNavItem.style.display = 'none'; // Ẩn nút đăng nhập
+                userMenu.style.display = 'block'; // Hiện biểu tượng người dùng
+            } else {
+                loginNavItem.style.display = 'block'; // Hiện nút đăng nhập
+                userMenu.style.display = 'none'; // Ẩn biểu tượng người dùng
+            }
+
+            // Xử lý đăng xuất
+            logoutButton.addEventListener('click', function () {
+                localStorage.removeItem('loggedIn'); // Xóa trạng thái đăng nhập
+                location.reload(); // Tải lại trang hiện tại
+            });
+        });
+    </script>
 </body>
 
 </html>
