@@ -15,6 +15,7 @@ Author URL: http://w3layouts.com
     <link href="//fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap" rel="stylesheet">
     <!-- Template CSS Style link -->
     <link rel="stylesheet" href="assets/css/style-starter.css">
+    <link rel="stylesheet" href="assets/css/book.css">
 </head>
 
 <body>
@@ -97,6 +98,78 @@ Author URL: http://w3layouts.com
         </div>
     </section>
     <!-- //inner banner -->
+    <div id="book">
+        <div class="book">
+            <div class="text">
+                <h3>Bus & Shuttle Ticket</h3>
+            </div>
+            <div class="content1">
+                <div class="from">
+                    <div class="text">
+                        <h4>From</h4>
+                    </div>
+                    <div class="main">
+                        <i class="fa-light fa-bus"></i>
+                        <input type="text" id="from-input" placeholder="Enter City, Terminal, or other">
+                    </div>
+                </div>
+                <div class="button">
+                    <button type="button" id="swap-button">
+                        <i class="fa-solid fa-rotate"></i>
+                    </button>
+                </div>
+
+                <div class="to">
+                    <div class="text">
+                        <h4>To</h4>
+                    </div>
+                    <div class="main">
+                        <i class="fa-light fa-bus"></i>
+                        <input type="text" id="to-input" placeholder="Enter City, Terminal, or other">
+                    </div>
+                </div>
+            </div>
+            <div class="content2">
+                <div class="date">
+                    <div class="text">
+                        <h4>Date</h4>
+                    </div>
+                    <div class="main">
+                        <i class="fa-light fa-calendar-days"></i>
+                        <input type="date">
+                    </div>
+                </div>
+                <div class="check">
+                    <div class="text">
+                        <h4>Roundtrip</h4>
+                    </div>
+                    <label class="custom-checkbox">
+                        <input type="checkbox">
+                        <i class="fa-solid fa-check"></i>
+                    </label>
+                </div>
+                <div class="seat">
+                    <div class="text">
+                        <h4>No. of Seats</h4>
+                    </div>
+                    <div class="main">
+                        <i class="fa-light fa-user"></i>
+                        <input type="text" id="seat-input" readonly>
+                        <div class="dropdown" id="dropdown">
+                            <div class="option">1 </div>
+                            <div class="option">2 </div>
+                            <div class="option">3 </div>
+                            <div class="option">4 </div>
+                            <div class="option">5 </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="content3">
+                <input type="submit" value="SEARCH">
+            </div>
+        </div>
+    </div>
 
     <!-- tours slider section -->
     <section class="w3l-index5 pb-5 pt-4">
@@ -604,6 +677,7 @@ Author URL: http://w3layouts.com
             });
         });
     </script>
+    <script src="assets/js/book.js"></script>
 </body>
 
 </html>
