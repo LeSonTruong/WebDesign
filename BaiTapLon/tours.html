@@ -15,6 +15,7 @@ Author URL: http://w3layouts.com
     <link href="//fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap" rel="stylesheet">
     <!-- Template CSS Style link -->
     <link rel="stylesheet" href="assets/css/style-starter.css">
+    <link rel="stylesheet" href="assets/css/book.css">
 </head>
 
 <body>
@@ -85,10 +86,10 @@ Author URL: http://w3layouts.com
     <!-- //header -->
 
     <!-- inner banner -->
-    <section class="inner-banner py-sm-5 py-4">
+    <section class="inner-banner py-lg-6 py-sm-5 py-4">
         <div class="w3l-breadcrumb pt-5 pb-4">
             <div class="container py-xl-5 py-lg-4">
-                <h4 class="inner-text-title font-weight-bold pt-5">Explore the World</h4>
+                <h4 class="inner-text-title font-weight-bold pt-5">Discover Viet Nam</h4>
                 <ul class="breadcrumbs-custom-path">
                     <li><a href="index.html">Home</a></li>
                     <li class="active"><i class="fas fa-angle-right mx-2"></i>Tours</li>
@@ -98,22 +99,544 @@ Author URL: http://w3layouts.com
     </section>
     <!-- //inner banner -->
 
+    <!-- Service Type Tabs -->
+    <div class="w3l-placesblock2 py-5" id="destinations">
+        <div class="title-main text-center mx-auto mb-md-5 mb-4" style="max-width:600px;">
+            <p>Find Your Tour</p>
+            <h3 class="title-style">Booking ticket</h3>
+        </div>
+
+        <div class="tabs">
+            <button class="tablink active" onclick="openTab(event, 'flight')">Flight</button>
+            <button class="tablink" onclick="openTab(event, 'bus')">Bus</button>
+            <button class="tablink" onclick="openTab(event, 'airportTransfer')">Airport Transfer</button>
+            <button class="tablink" onclick="openTab(event, 'carRental')">Car Rental</button>
+            <button class="tablink" onclick="openTab(event, 'hotel')">Hotel</button>
+        </div>
+
+        <!-- Tab Content -->
+        <div id="flight" class="tabcontent" style="display: block;">
+            <h2>Flight Booking</h2>
+            <div class="form-group">
+                <label for="fromAirport">Departure Airport</label>
+                <select id="fromAirport">
+                    <option>Select an airport</option>
+                    <option value="SGN">Ho Chi Minh City - Tan Son Nhat International Airport (SGN)</option>
+                    <option value="HAN">Hanoi - Noi Bai International Airport (HAN)</option>
+                    <option value="DAD">Da Nang - Da Nang International Airport (DAD)</option>
+                    <option value="CXR">Nha Trang - Cam Ranh International Airport (CXR)</option>
+                    <option value="VCA">Can Tho - Can Tho International Airport (VCA)</option>
+                    <option value="VII">Vinh - Vinh International Airport (VII)</option>
+                    <option value="HUI">Hue - Phu Bai International Airport (HUI)</option>
+                    <option value="PXU">Pleiku - Pleiku Airport (PXU)</option>
+                    <option value="PQC">Phu Quoc - Phu Quoc International Airport (PQC)</option>
+                    <option value="VCS">Con Dao - Co Ong Airport (VCS)</option>
+                    <option value="VDO">Van Don - Van Don International Airport (VDO)</option>
+                    <option value="THD">Thanh Hoa - Tho Xuan Airport (THD)</option>
+                    <option value="DIN">Dien Bien Phu - Dien Bien Phu Airport (DIN)</option>
+                    <option value="VDH">Dong Hoi - Dong Hoi Airport (VDH)</option>
+                    <option value="TBB">Tuy Hoa - Tuy Hoa Airport (TBB)</option>
+                    <option value="UIH">Quy Nhon - Phu Cat Airport (UIH)</option>
+                    <option value="VKG">Rach Gia - Rach Gia Airport (VKG)</option>
+                    <option value="CAH">Ca Mau - Ca Mau Airport (CAH)</option>
+                    <option value="BMV">Buon Ma Thuot - Buon Ma Thuot Airport (BMV)</option>
+                    <option value="DLI">Da Lat - Lien Khuong Airport (DLI)</option>
+                    <option value="CJJ">Chu Lai - Chu Lai Airport (CJJ)</option>
+                    <option value="SOA">Son La - Na San Airport (SOA)</option>
+                </select>
+                <button onclick="swapLocations()" class="swap-button">⇄</button>
+                <label for="toAirport">Arrival Airport</label>
+                <select id="toAirport">
+                    <option>Select an airport</option>
+                    <option value="SGN">Ho Chi Minh City - Tan Son Nhat International Airport (SGN)</option>
+                    <option value="HAN">Hanoi - Noi Bai International Airport (HAN)</option>
+                    <option value="DAD">Da Nang - Da Nang International Airport (DAD)</option>
+                    <option value="CXR">Nha Trang - Cam Ranh International Airport (CXR)</option>
+                    <option value="VCA">Can Tho - Can Tho International Airport (VCA)</option>
+                    <option value="VII">Vinh - Vinh International Airport (VII)</option>
+                    <option value="HUI">Hue - Phu Bai International Airport (HUI)</option>
+                    <option value="PXU">Pleiku - Pleiku Airport (PXU)</option>
+                    <option value="PQC">Phu Quoc - Phu Quoc International Airport (PQC)</option>
+                    <option value="VCS">Con Dao - Co Ong Airport (VCS)</option>
+                    <option value="VDO">Van Don - Van Don International Airport (VDO)</option>
+                    <option value="THD">Thanh Hoa - Tho Xuan Airport (THD)</option>
+                    <option value="DIN">Dien Bien Phu - Dien Bien Phu Airport (DIN)</option>
+                    <option value="VDH">Dong Hoi - Dong Hoi Airport (VDH)</option>
+                    <option value="TBB">Tuy Hoa - Tuy Hoa Airport (TBB)</option>
+                    <option value="UIH">Quy Nhon - Phu Cat Airport (UIH)</option>
+                    <option value="VKG">Rach Gia - Rach Gia Airport (VKG)</option>
+                    <option value="CAH">Ca Mau - Ca Mau Airport (CAH)</option>
+                    <option value="BMV">Buon Ma Thuot - Buon Ma Thuot Airport (BMV)</option>
+                    <option value="DLI">Da Lat - Lien Khuong Airport (DLI)</option>
+                    <option value="CJJ">Chu Lai - Chu Lai Airport (CJJ)</option>
+                    <option value="SOA">Son La - Na San Airport (SOA)</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="departDate">Departure Date</label>
+                <input type="date" id="departDate">
+                <input type="checkbox" id="roundTrip" onclick="toggleReturnDate()">
+                <label for="roundTrip">Round Trip</label>
+                <label for="returnDate">Return Date</label>
+                <input type="date" id="returnDate" disabled>
+            </div>
+            <div class="form-group">
+                <label for="seatCount">Seat Count</label>
+                <select id="seatCount">
+                    <option>Adult</option>
+                    <option>Child</option>
+                    <option>Infant</option>
+                </select>
+                <label for="seatClass">Seat Class</label>
+                <select id="seatClass">
+                    <option>Economy</option>
+                    <option>Premium Economy</option>
+                    <option>Business</option>
+                    <option>First Class</option>
+                </select>
+            </div>
+            <button class="search-button">🔍 Search</button>
+        </div>
+
+        <div id="bus" class="tabcontent">
+            <h2>Bus Ticket Booking</h2>
+            <div class="form-group">
+                <label for="fromStation">Departure Station</label>
+                <select id="fromStation">
+                    <option>Select Station</option>
+                    <option value="mienDong">Mien Dong Bus Station - Ho Chi Minh City</option>
+                    <option value="mienTay">Mien Tay Bus Station - Ho Chi Minh City</option>
+                    <option value="anSuong">An Suong Bus Station - Ho Chi Minh City</option>
+                    <option value="myDinh">My Dinh Bus Station - Hanoi</option>
+                    <option value="giapBat">Giap Bat Bus Station - Hanoi</option>
+                    <option value="nuocNgam">Nuoc Ngam Bus Station - Hanoi</option>
+                    <option value="cauRang">Cau Rang Bus Station - Can Tho</option>
+                    <option value="daNang">Da Nang Central Bus Station - Da Nang</option>
+                    <option value="benXeHue">Southern Bus Station - Hue</option>
+                    <option value="benXeNhaTrang">Nha Trang Bus Station - Nha Trang</option>
+                    <option value="quyNhon">Quy Nhon Bus Station - Binh Dinh</option>
+                    <option value="pleiku">Pleiku Bus Station - Gia Lai</option>
+                    <option value="benXeBuonMaThuot">Buon Ma Thuot Bus Station - Dak Lak</option>
+                    <option value="benXeVungTau">Vung Tau Bus Station - Ba Ria - Vung Tau</option>
+                    <option value="benXeBienHoa">Bien Hoa Bus Station - Dong Nai</option>
+                    <option value="benXeBinhDuong">Binh Duong Bus Station - Binh Duong</option>
+                    <option value="benXeLongXuyen">Long Xuyen Bus Station - An Giang</option>
+                    <option value="benXeRachGia">Rach Gia Bus Station - Kien Giang</option>
+                    <option value="benXeCaMau">Ca Mau Bus Station - Ca Mau</option>
+                    <option value="benXeNamDinh">Nam Dinh Bus Station - Nam Dinh</option>
+                    <option value="benXeThanhHoa">Thanh Hoa Bus Station - Thanh Hoa</option>
+                    <option value="benXeVinh">Vinh Bus Station - Nghe An</option>
+                    <option value="benXeHaiPhong">Hai Phong Bus Station - Hai Phong</option>
+                    <option value="benXeHaLong">Ha Long Bus Station - Quang Ninh</option>
+                </select>
+
+                <button onclick="swapLocations()">⇄</button>
+
+                <label for="toStation">Arrival Station</label>
+                <select id="toStation">
+                    <option>Select Station</option>
+                    <option value="mienDong">Mien Dong Bus Station - Ho Chi Minh City</option>
+                    <option value="mienTay">Mien Tay Bus Station - Ho Chi Minh City</option>
+                    <option value="anSuong">An Suong Bus Station - Ho Chi Minh City</option>
+                    <option value="myDinh">My Dinh Bus Station - Hanoi</option>
+                    <option value="giapBat">Giap Bat Bus Station - Hanoi</option>
+                    <option value="nuocNgam">Nuoc Ngam Bus Station - Hanoi</option>
+                    <option value="cauRang">Cau Rang Bus Station - Can Tho</option>
+                    <option value="daNang">Da Nang Central Bus Station - Da Nang</option>
+                    <option value="benXeHue">Southern Bus Station - Hue</option>
+                    <option value="benXeNhaTrang">Nha Trang Bus Station - Nha Trang</option>
+                    <option value="quyNhon">Quy Nhon Bus Station - Binh Dinh</option>
+                    <option value="pleiku">Pleiku Bus Station - Gia Lai</option>
+                    <option value="benXeBuonMaThuot">Buon Ma Thuot Bus Station - Dak Lak</option>
+                    <option value="benXeVungTau">Vung Tau Bus Station - Ba Ria - Vung Tau</option>
+                    <option value="benXeBienHoa">Bien Hoa Bus Station - Dong Nai</option>
+                    <option value="benXeBinhDuong">Binh Duong Bus Station - Binh Duong</option>
+                    <option value="benXeLongXuyen">Long Xuyen Bus Station - An Giang</option>
+                    <option value="benXeRachGia">Rach Gia Bus Station - Kien Giang</option>
+                    <option value="benXeCaMau">Ca Mau Bus Station - Ca Mau</option>
+                    <option value="benXeNamDinh">Nam Dinh Bus Station - Nam Dinh</option>
+                    <option value="benXeThanhHoa">Thanh Hoa Bus Station - Thanh Hoa</option>
+                    <option value="benXeVinh">Vinh Bus Station - Nghe An</option>
+                    <option value="benXeHaiPhong">Hai Phong Bus Station - Hai Phong</option>
+                    <option value="benXeHaLong">Ha Long Bus Station - Quang Ninh</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="departDateBus">Departure Date</label>
+                <input type="date" id="departDateBus">
+                <input type="checkbox" id="roundTripBus" onclick="toggleReturnDateBus()">
+                <label for="roundTripBus">Round Trip</label>
+                <label for="returnDateBus">Return Date</label>
+                <input type="date" id="returnDateBus" disabled>
+            </div>
+            <div class="form-group">
+                <label for="seatCountBus">Seat Count</label>
+                <select id="seatCountBus">
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                </select>
+            </div>
+            <button class="search-button">🔍 Search</button>
+        </div>
+
+        <div id="airportTransfer" class="tabcontent">
+            <h2>Airport Transfer</h2>
+            <div class="form-group">
+                <label for="airportPickup">From Airport / Location</label>
+                <select id="airportPickup">
+                    <option>Select Airport or Location</option>
+                </select>
+                <button onclick="swapLocations()">⇄</button>
+                <label for="locationDrop">To Location / Airport</label>
+                <select id="locationDrop">
+                    <option>Select Location or Airport</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="pickupDate">Pickup Date</label>
+                <input type="date" id="pickupDate">
+                <label for="pickupTime">Pickup Time</label>
+                <input type="time" id="pickupTime">
+            </div>
+            <button class="search-button">🔍 Search</button>
+        </div>
+
+        <div id="carRental" class="tabcontent">
+            <h2>Car Rental</h2>
+            <div class="form-group">
+                <label for="driveType">Drive Type</label>
+                <select id="driveType">
+                    <option>Self-drive</option>
+                    <option>With driver</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="pickupLocation">Pickup Location</label>
+                <select id="pickupLocation">
+                    <option>Select Pickup Location</option>
+                </select>
+                <label for="pickupDateCar">Pickup Date</label>
+                <input type="date" id="pickupDateCar">
+                <label for="pickupTimeCar">Start Time</label>
+                <input type="time" id="pickupTimeCar">
+                <label for="returnDateCar">Return Date</label>
+                <input type="date" id="returnDateCar">
+                <label for="returnTimeCar">Return Time</label>
+                <input type="time" id="returnTimeCar">
+            </div>
+            <button class="search-button">🔍 Search</button>
+        </div>
+
+        <div id="hotel" class="tabcontent">
+            <h2>Hotel Booking</h2>
+            <div class="form-group">
+                <label for="hotelLocation">Location</label>
+                <select id="hotelLocation">
+                    <option>Select Hotel</option>
+                    <option value="sofitel">Sofitel Legend Metropole Hanoi</option>
+                    <option value="opera">Hotel de l'Opera Hanoi - MGallery</option>
+                    <option value="vinpearl_halong">Vinpearl Resort & Spa Hạ Long</option>
+                    <option value="paradise">Paradise Suites Hotel</option>
+                    <option value="hotel_coupole">Hotel de la Coupole - MGallery</option>
+                    <option value="sapa_jade">Sapa Jade Hill Resort</option>
+                    <option value="intercontinental">InterContinental Danang Sun Peninsula Resort</option>
+                    <option value="furama">Furama Resort Danang</option>
+                    <option value="azerai_hue">Azerai La Residence, Hue</option>
+                    <option value="saigon_morin">Hotel Saigon Morin</option>
+                    <option value="intercontinental_nhatrang">InterContinental Nha Trang</option>
+                    <option value="the_anam">The Anam Resort</option>
+                    <option value="reverie">The Reverie Saigon</option>
+                    <option value="park_hyatt">Park Hyatt Saigon</option>
+                    <option value="jw_marriott">JW Marriott Phu Quoc Emerald Bay Resort & Spa</option>
+                    <option value="vinpearl_phuquoc">Vinpearl Resort Phu Quoc</option>
+                    <option value="azerai_cantho">Azerai Can Tho</option>
+                    <option value="victoria_cantho">Victoria Can Tho Resort</option>
+                    <option value="dalat_palace">Dalat Palace Heritage Hotel</option>
+                    <option value="reverie_dalat">The Reverie Saigon</option>
+                    <option value="dakruco">Dakruco Hotel</option>
+                    <option value="muong_thanh">Muong Thanh Grand Buon Ma Thuot Hotel</option>
+
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="checkInDate">Check-In Date</label>
+                <input type="date" id="checkInDate">
+                <label for="checkOutDate">Check-Out Date</label>
+                <input type="date" id="checkOutDate">
+            </div>
+            <div class="form-group">
+                <label for="guestCount">Guest Count</label>
+                <input type="number" id="guestCount" min="1" max="10">
+                <label for="roomCount">Room Count</label>
+                <input type="number" id="roomCount" min="1" max="5">
+            </div>
+            <button class="search-button">🔍 Search</button>
+        </div>
+    </div>
+
+    <script src="assets/js/book.js"></script>
+
+    <!-- tours slider section -->
+    <section class="w3l-index5 pb-5 pt-4">
+
+        <div class="container-fluid py-lg-5 py-md-4 py-2">
+            <div class="title-main text-center mx-auto mb-md-5 mb-4" style="max-width:600px;">
+                <p>Featured tours</p>
+                <h3 class="title-style">Most Popular Tours</h3>
+            </div>
+            <div class="inner-sec-w3layouts pb-4">
+                <div class="owl-three owl-carousel owl-theme">
+                    <div class="item">
+                        <div class="content-left-sec">
+                            <a class="blog-link d-block zoom-image" href="tours.html"><img src="assets/images/s1.jpg"
+                                    class="img-fluid scale-image" alt=""></a>
+                            <div class="blog-info">
+                                <ul class="rating-list mb-2">
+                                    <li><i class="fas fa-star" aria-hidden="true"></i></li>
+                                    <li><i class="fas fa-star" aria-hidden="true"></i></li>
+                                    <li><i class="fas fa-star" aria-hidden="true"></i></li>
+                                    <li><i class="fas fa-star" aria-hidden="true"></i></li>
+                                    <li><i class="fas fa-star-half-alt"></i></li>
+                                    <li class="ms-1">4.07</li>
+                                </ul>
+                                <a href="tours.html" class="to-title">Travel Around Vietnam</a>
+                                <p class="mt-1"><i class="fas fa-map-marker-alt me-1"></i>Vietnam</p>
+                                <div class="to-price mt-2">
+                                    <label>From</label> <span>$39.00</span>
+                                </div>
+                                <div class="d-flex align-items-center justify-content-between mt-4">
+                                    <p><i class="far fa-clock me-1"></i>10 Days</p>
+                                    <a href="tours.html" class="btn btn-style btn-style-primary">Explore<i
+                                            class="fas fa-arrow-right"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="content-left-sec">
+                            <a class="blog-link d-block zoom-image" href="tours.html"><img src="assets/images/s2.jpg"
+                                    class="img-fluid scale-image" alt=""></a>
+                            <div class="blog-info">
+                                <ul class="rating-list mb-2">
+                                    <li><i class="fas fa-star" aria-hidden="true"></i></li>
+                                    <li><i class="fas fa-star" aria-hidden="true"></i></li>
+                                    <li><i class="fas fa-star" aria-hidden="true"></i></li>
+                                    <li><i class="fas fa-star" aria-hidden="true"></i></li>
+                                    <li><i class="fas fa-star-half-alt"></i></li>
+                                    <li class="ms-1">4.05</li>
+                                </ul>
+                                <a href="tours.html" class="to-title">Ha Noi</a>
+                                <p class="mt-1"><i class="fas fa-map-marker-alt me-1"></i>Northern city of Vietnam
+                                </p>
+                                <div class="to-price mt-2">
+                                    <label>From</label> <span>$69.00</span>
+                                </div>
+                                <div class="d-flex align-items-center justify-content-between mt-4">
+                                    <p><i class="far fa-clock me-1"></i>15 Days</p>
+                                    <a href="tours.html" class="btn btn-style btn-style-primary">Explore<i
+                                            class="fas fa-arrow-right"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="content-left-sec">
+                            <a class="blog-link d-block zoom-image" href="tours.html"><img src="assets/images/s3.jpg"
+                                    class="img-fluid scale-image" alt=""></a>
+                            <div class="blog-info">
+                                <ul class="rating-list mb-2">
+                                    <li><i class="fas fa-star" aria-hidden="true"></i></li>
+                                    <li><i class="fas fa-star" aria-hidden="true"></i></li>
+                                    <li><i class="fas fa-star" aria-hidden="true"></i></li>
+                                    <li><i class="fas fa-star" aria-hidden="true"></i></li>
+                                    <li><i class="fas fa-star-half-alt"></i></li>
+                                    <li class="ms-1">4.07</li>
+                                </ul>
+                                <a href="tours.html" class="to-title">Hue</a>
+                                <p class="mt-1"><i class="fas fa-map-marker-alt me-1"></i>Thua Thien Hue Province,
+                                    Central
+                                    Vietnam</p>
+                                <div class="to-price mt-2">
+                                    <label>From</label> <span>$39.00</span>
+                                </div>
+                                <div class="d-flex align-items-center justify-content-between mt-4">
+                                    <p><i class="far fa-clock me-1"></i>6 Days</p>
+                                    <a href="tours.html" class="btn btn-style btn-style-primary">Explore<i
+                                            class="fas fa-arrow-right"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="content-left-sec">
+                            <a class="blog-link d-block zoom-image" href="tours.html"><img src="assets/images/s4.jpg"
+                                    class="img-fluid scale-image" alt=""></a>
+                            <div class="blog-info">
+                                <ul class="rating-list mb-2">
+                                    <li><i class="fas fa-star" aria-hidden="true"></i></li>
+                                    <li><i class="fas fa-star" aria-hidden="true"></i></li>
+                                    <li><i class="fas fa-star" aria-hidden="true"></i></li>
+                                    <li><i class="fas fa-star" aria-hidden="true"></i></li>
+                                    <li><i class="fas fa-star-half-alt"></i></li>
+                                    <li class="ms-1">4.08</li>
+                                </ul>
+                                <a href="tours.html" class="to-title">Ho Chi Minh City </a>
+                                <p class="mt-1"><i class="fas fa-map-marker-alt me-1"></i>Southern city of vietnam
+                                </p>
+                                <div class="to-price mt-2">
+                                    <label>From</label> <span>$49.00</span>
+                                </div>
+                                <div class="d-flex align-items-center justify-content-between mt-4">
+                                    <p><i class="far fa-clock me-1"></i>7 Days</p>
+                                    <a href="tours.html" class="btn btn-style btn-style-primary">Explore<i
+                                            class="fas fa-arrow-right"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="content-left-sec">
+                            <a class="blog-link d-block zoom-image" href="tours.html"><img src="assets/images/s6.jpg"
+                                    class="img-fluid scale-image" alt=""></a>
+                            <div class="blog-info">
+                                <ul class="rating-list mb-2">
+                                    <li><i class="fas fa-star" aria-hidden="true"></i></li>
+                                    <li><i class="fas fa-star" aria-hidden="true"></i></li>
+                                    <li><i class="fas fa-star" aria-hidden="true"></i></li>
+                                    <li><i class="fas fa-star" aria-hidden="true"></i></li>
+                                    <li><i class="fas fa-star-half-alt"></i></li>
+                                    <li class="ms-1">4.09</li>
+                                </ul>
+                                <a href="tours.html" class="to-title">Ha Long</a>
+                                <p class="mt-1"><i class="fas fa-map-marker-alt me-1"></i>The northeastern island
+                                    region
+                                    of
+                                    Vietnam
+                                </p>
+                                <div class="to-price mt-2">
+                                    <label>From</label> <span>$69.00</span>
+                                </div>
+                                <div class="d-flex align-items-center justify-content-between mt-4">
+                                    <p><i class="far fa-clock me-1"></i>15 Days</p>
+                                    <a href="tours.html" class="btn btn-style btn-style-primary">Explore<i
+                                            class="fas fa-arrow-right"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="content-left-sec">
+                            <a class="blog-link d-block zoom-image" href="tours.html"><img src="assets/images/s5.jpg"
+                                    class="img-fluid scale-image" alt=""></a>
+                            <div class="blog-info">
+                                <ul class="rating-list mb-2">
+                                    <li><i class="fas fa-star" aria-hidden="true"></i></li>
+                                    <li><i class="fas fa-star" aria-hidden="true"></i></li>
+                                    <li><i class="fas fa-star" aria-hidden="true"></i></li>
+                                    <li><i class="fas fa-star" aria-hidden="true"></i></li>
+                                    <li><i class="fas fa-star-half-alt"></i></li>
+                                    <li class="ms-1">4.06</li>
+                                </ul>
+                                <a href="tours.html" class="to-title">Đa Nang</a>
+                                <p class="mt-1"><i class="fas fa-map-marker-alt me-1"></i>South Central Coast,
+                                    Vietnam
+                                </p>
+                                <div class="to-price mt-2">
+                                    <label>From</label> <span>$59.00</span>
+                                </div>
+                                <div class="d-flex align-items-center justify-content-between mt-4">
+                                    <p><i class="far fa-clock me-1"></i>12 Days</p>
+                                    <a href="tours.html" class="btn btn-style btn-style-primary">Explore<i
+                                            class="fas fa-arrow-right"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="content-left-sec">
+                            <a class="blog-link d-block zoom-image" href="tours.html"><img src="assets/images/s7.jpg"
+                                    class="img-fluid scale-image" alt=""></a>
+                            <div class="blog-info">
+                                <ul class="rating-list mb-2">
+                                    <li><i class="fas fa-star" aria-hidden="true"></i></li>
+                                    <li><i class="fas fa-star" aria-hidden="true"></i></li>
+                                    <li><i class="fas fa-star" aria-hidden="true"></i></li>
+                                    <li><i class="fas fa-star" aria-hidden="true"></i></li>
+                                    <li><i class="fas fa-star-half-alt"></i></li>
+                                    <li class="ms-1">4.06</li>
+                                </ul>
+                                <a href="tours.html" class="to-title">Ca Mau</a>
+                                <p class="mt-1"><i class="fas fa-map-marker-alt me-1"></i>Southern coastal province
+                                    of
+                                    Vietnam
+                                </p>
+                                <div class="to-price mt-2">
+                                    <label>From</label> <span>$59.00</span>
+                                </div>
+                                <div class="d-flex align-items-center justify-content-between mt-4">
+                                    <p><i class="far fa-clock me-1"></i>12 Days</p>
+                                    <a href="tours.html" class="btn btn-style btn-style-primary">Explore<i
+                                            class="fas fa-arrow-right"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="content-left-sec">
+                            <a class="blog-link d-block zoom-image" href="tours.html"><img src="assets/images/s8.jpg"
+                                    class="img-fluid scale-image" alt=""></a>
+                            <div class="blog-info">
+                                <ul class="rating-list mb-2">
+                                    <li><i class="fas fa-star" aria-hidden="true"></i></li>
+                                    <li><i class="fas fa-star" aria-hidden="true"></i></li>
+                                    <li><i class="fas fa-star" aria-hidden="true"></i></li>
+                                    <li><i class="fas fa-star" aria-hidden="true"></i></li>
+                                    <li><i class="fas fa-star-half-alt"></i></li>
+                                    <li class="ms-1">4.08</li>
+                                </ul>
+                                <a href="tours.html" class="to-title">Da Nang - Hoi An </a>
+                                <p class="mt-1"><i class="fas fa-map-marker-alt me-1"></i>South Central Coast
+                                    Vietnam
+                                </p>
+                                <div class="to-price mt-2">
+                                    <label>From</label> <span>$49.00</span>
+                                </div>
+                                <div class="d-flex align-items-center justify-content-between mt-4">
+                                    <p><i class="far fa-clock me-1"></i>7 Days</p>
+                                    <a href="tours.html" class="btn btn-style btn-style-primary">Explore<i
+                                            class="fas fa-arrow-right"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- //tours slider section -->
 
     <!-- places section -->
     <div class="w3l-placesblock2 py-5" id="destinations">
         <div class="container py-lg-5 py-md-4 py-2">
             <div class="title-main text-center mx-auto mb-md-5 mb-4" style="max-width:600px;">
                 <p>Destinations</p>
-                <h3 class="title-style">Go Awesome Places</h3>
+                <h3 class="title-style">Some Other Tours</h3>
             </div>
             <div class="row">
                 <div class="col-lg-4 col-sm-6">
                     <div class="grids5-info">
-                        <a id="hochiminh" class="place-image d-block zoom"><img src="assets/images/s1.jpg" alt=""
+                        <a href="tours-HN.html" class="place-image d-block zoom"><img src="assets/images/ss1.jpg" alt=""
                                 class="img-fluid radius-image" />
                             <div class="image-overlay">
-                                <h4>Ho Chi Minh City</h4>
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse, consectetur.</p>
+                                <h4>Ha Noi</h4>
+                                <p>Hanoi, the thousand-year-old capital of Vietnam, stands out with its ancient
+                                    beauty
+                                    mixed
+                                    with modernity.</p>
                             </div>
                             <div class="iconic-plus">
                                 <p>3 tours</p>
@@ -123,53 +646,60 @@ Author URL: http://w3layouts.com
                 </div>
                 <div class="col-lg-4 col-sm-6 mt-sm-0 mt-4">
                     <div class="grids5-info">
-                        <a id="hanoi" class="place-image d-block zoom" onclick="navigateToTour('hanoi')"><img
-                                src="assets/images/s2.jpg" alt="" class="img-fluid radius-image" />
+                        <a href="tours-HCM.html" class="place-image d-block zoom"><img src="assets/images/ss2.jpg"
+                                alt="" class="img-fluid radius-image" />
                             <div class="image-overlay">
-                                <h4>Ha Noi City</h4>
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse, consectetur.</p>
+                                <h4>Ho Chi Minh</h4>
+                                <p>Ho Chi Minh City, Vietnam's most vibrant economic and cultural center, is known
+                                    for
+                                    its
+                                    modern and dynamic pace of life.</p>
                             </div>
                             <div class="iconic-plus">
-                                <p>4 tours</p>
+                                <p>2 tours</p>
                             </div>
                         </a>
                     </div>
                 </div>
                 <div class="col-lg-4 col-sm-6 mt-lg-0 mt-4">
                     <div class="grids5-info">
-                        <a id="halong" class="place-image d-block zoom" onclick="navigateToTour('halong')"><img
-                                src="assets/images/s3.jpg" alt="" class="img-fluid radius-image" />
+                        <a href="tours-HL.html" class="place-image d-block zoom"><img src="assets/images/ss3.jpg" alt=""
+                                class="img-fluid radius-image" />
                             <div class="image-overlay">
-                                <h4>Ha Long Bay</h4>
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse, consectetur.</p>
+                                <h4>Ha Long </h4>
+                                <p>Ha Long is home to Ha Long Bay - a natural wonder of the world with thousands of
+                                    limestone islands and amazing caves.</p>
                             </div>
                             <div class="iconic-plus">
-                                <p>5 tours</p>
+                                <p>3 tours</p>
                             </div>
                         </a>
                     </div>
                 </div>
                 <div class="col-lg-4 col-sm-6 mt-4">
                     <div class="grids5-info">
-                        <a href="#destination" class="place-image d-block zoom"><img src="assets/images/blog3.jpg"
+                        <a href="tours-DN.html" class="place-image d-block zoom"><img src="assets/images/ss4.jpg" alt=""
+                                class="img-fluid radius-image" />
+                            <div class="image-overlay">
+                                <h4>Đa Nang</h4>
+                                <p>Da Nang is known as "the most livable city", standing out with the harmony
+                                    between
+                                    beautiful natural landscapes and unique culture.</p>
+                            </div>
+                            <div class="iconic-plus">
+                                <p>3 tours</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-sm-6 mt-4">
+                    <div class="grids5-info">
+                        <a href="tours-Hue.html" class="place-image d-block zoom"><img src="assets/images/ss5.jpg"
                                 alt="" class="img-fluid radius-image" />
                             <div class="image-overlay">
                                 <h4>Hue</h4>
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse, consectetur.</p>
-                            </div>
-                            <div class="iconic-plus">
-                                <p>6 tours</p>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-sm-6 mt-4">
-                    <div class="grids5-info">
-                        <a href="#destination" class="place-image d-block zoom"><img src="assets/images/blog2.jpg"
-                                alt="" class="img-fluid radius-image" />
-                            <div class="image-overlay">
-                                <h4>Da Nang</h4>
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse, consectetur.</p>
+                                <p>Hue, the ancient capital of Vietnam, is famous for its quiet and ancient beauty,
+                                    associated with the history of the Nguyen Dynasty.</p>
                             </div>
                             <div class="iconic-plus">
                                 <p>2 tours</p>
@@ -179,14 +709,16 @@ Author URL: http://w3layouts.com
                 </div>
                 <div class="col-lg-4 col-sm-6 mt-4">
                     <div class="grids5-info">
-                        <a href="#destination" class="place-image d-block zoom"><img src="assets/images/blog1.jpg"
-                                alt="" class="img-fluid radius-image" />
+                        <a href="tours-CM.html" class="place-image d-block zoom"><img src="assets/images/ss6.jpg" alt=""
+                                class="img-fluid radius-image" />
                             <div class="image-overlay">
-                                <h4>Phu Quoc</h4>
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse, consectetur.</p>
+                                <h4>Ca Mau</h4>
+                                <p>Ca Mau, the land "at the end of the country" possesses wild natural beauty and
+                                    diverse
+                                    ecosystems.</p>
                             </div>
                             <div class="iconic-plus">
-                                <p>4 tours</p>
+                                <p>2 tours</p>
                             </div>
                         </a>
                     </div>
@@ -197,43 +729,35 @@ Author URL: http://w3layouts.com
     <!-- //places section -->
 
     <!-- promocode section -->
-    <section class="w3l-promocode py-5">
+    <section id="htc" class="w3l-promocode py-5">
         <div class="container ppy-lg-5 py-md-4 py-2">
             <div class="row aap-4-section align-items-center">
-                <div class="col-lg-6 col-8 m-auto app4-right-image pe-md-5 text-center">
-                    <img src="assets/images/img.jpg" class="img-fluid" alt="App Device" />
+                <!-- Added align-items-center to vertically center the content -->
+                <div class="col-lg-6 col-12 m-auto app4-left-text pe-md-5"> <!-- Text column on the left -->
+                    <h1>How to choose travel destinations in Vietnam</h1>
+                    <p>To choose a travel destination in Vietnam, consider these six highlights: Ho Chi Minh City
+                        offers
+                        vibrant nightlife and historical sites; Hanoi, the capital, is rich in culture with Hoan
+                        Kiem
+                        Lake
+                        and the Old Quarter. Da Nang boasts beautiful beaches and nearby cultural attractions like
+                        Hoi
+                        An.
+                        Ca Mau, the southernmost point, features unique mangrove forests. Ha Long Bay is famous for
+                        its
+                        stunning emerald waters and limestone islands, perfect for cruising. Lastly, Hue, the former
+                        imperial capital, showcases the royal citadel and ancient tombs. Each destination reflects
+                        Vietnam's
+                        diverse beauty and culture.</p>
                 </div>
-                <div class="col-lg-6 app4-left-text ps-lg-0 mb-lg-0 mb-5">
-                    <h6>For 30% Discount</h6>
-                    <h4>Get Our Promocode</h4>
-                    <p class="mb-4"> Uspendisse efficitur orci urna. In et augue ornare, tempor massa in, luctus
-                        sapien. Proin a
-                        diam et dui fermentum molestie vel id neque. </p>
-                    <div class="app-4-connection">
-                        <div class="newsletter">
-                            <label>Never Miss a Deal !</label>
-                            <form action="#" methos="GET" class="d-flex wrap-align">
-                                <input type="email" placeholder="Enter your email id" required="required" />
-                                <button type="submit" class="button-style">Get Promocode</button>
-                            </form>
-                        </div>
-                        <p class="mobile-text-app mt-4 pt-2">(Or) To Get Our Mobile Apps</p>
-                        <div class="app-4-icon">
-                            <ul>
-                                <li><a href="#url" title="Apple" class="app-icon apple-vv"><span
-                                            class="fab fa-apple  icon-color" aria-hidden="true"></span></a></li>
-                                <li><a href="#url" title="Google play" class="app-icon play-vv"><span
-                                            class="fab fa-google-play icon-color" aria-hidden="true"></span></a>
-                                </li>
-                                <li><a href="#url" title="Microsoft" class="app-icon windows-vv"><span
-                                            class="fab fa-windows icon-color" aria-hidden="true"></span></a></li>
-                            </ul>
-                        </div>
-                    </div>
+                <div class="col-lg-6 col-12 app4-right-image"> <!-- Image column on the right -->
+                    <img src="assets/images/tonghop.jpg" alt="Travel Destinations in Vietnam" class="img-fluid">
+                    <!-- Replace with your image path -->
                 </div>
             </div>
         </div>
     </section>
+
     <!-- //promocode section -->
 
     <!-- footer -->
@@ -242,10 +766,11 @@ Author URL: http://w3layouts.com
             <div class="row footer-top-29">
                 <div class="col-lg-4 col-md-6 footer-list-29">
                     <h6 class="footer-title-29">Contact Info </h6>
-                    <p class="mb-2 pe-xl-5">Address : Tours, 10001, 5th Avenue, #06 lane street, NY - 62617.
+                    <p class="mb-2 pe-xl-5">Address : Hoàn Kiếm, 12000, 12 Lý Thái Tổ, #02 Ngõ Tràng Tiền, Hà Nội -
+                        100000.
                     </p>
-                    <p class="mb-2">Phone Number : <a href="tel:+1(21) 234 4567">+1(21) 234 4567</a></p>
-                    <p class="mb-2">Email : <a href="mailto:info@example.com">info@example.com</a></p>
+                    <p class="mb-2">Phone Number :+84 999899799</p>
+                    <p class="mb-2">Email : <a href="mailto:info@example.com">Nhom1@gmail.com</a></p>
                     <div class="mt-4">
                         <ul class="social">
                             <li><a href="#facebook"><i class="fab fa-facebook-f"></i></a>
@@ -291,8 +816,8 @@ Author URL: http://w3layouts.com
                 </div>
             </div>
             <!-- copyright -->
-            <p class="copy-footer-29 text-center mt-5 pt-lg-3">© 2021 Tours. All rights reserved. Design
-                by <a href="https://w3layouts.com/" target="_blank">W3Layouts</a></p>
+            <p class="copy-footer-29 text-center mt-5 pt-lg-3">© 2050 VietNamTours. Design
+                by Nhom1</p>
         </div>
     </footer>
     <!-- //footer -->
@@ -401,7 +926,6 @@ Author URL: http://w3layouts.com
             })
         });
     </script>
-    <script src="assets/js/tours.js"></script>
     <!-- //disable body scroll which navbar is in active -->
 
     <!-- bootstrap -->
@@ -410,6 +934,7 @@ Author URL: http://w3layouts.com
     <!-- //Js scripts -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    <script src="assets/js/book.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', function () {
             const isLoggedIn = localStorage.getItem('loggedIn') === 'true'; // Kiểm tra trạng thái đăng nhập

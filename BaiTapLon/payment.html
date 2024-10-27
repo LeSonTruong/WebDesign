@@ -80,6 +80,85 @@
     </header>
 
     <div class="payment">
+        <h1>Select Travel Information</h1>
+
+        <label for="destination">Destination:</label>
+        <select id="destination">
+            <option value="">-- Select Destination --</option>
+            <option value="ha_noi">Hanoi</option>
+            <option value="ho_chi_minh">Ho Chi Minh City</option>
+            <option value="da_nang">Da Nang</option>
+            <option value="hue">Hue</option>
+            <option value="nha_trang">Nha Trang</option>
+            <option value="phu_quoc">Phu Quoc</option>
+            <option value="mui_ne">Mui Ne</option>
+            <option value="ha_long">Ha Long</option>
+            <option value="sapa">Sapa</option>
+            <option value="dalat">Da Lat</option>
+            <option value="can_tho">Can Tho</option>
+        </select>
+
+        <label for="hotel">Hotel:</label>
+        <select id="hotel">
+            <option value="">-- Select Hotel --</option>
+            <option value="sofitel">Sofitel Legend Metropole Hanoi</option>
+            <option value="opera">Hotel de l'Opera Hanoi - MGallery</option>
+            <option value="vinpearl_halong">Vinpearl Resort & Spa Ha Long</option>
+            <option value="paradise">Paradise Suites Hotel</option>
+            <option value="hotel_coupole">Hotel de la Coupole - MGallery</option>
+            <option value="sapa_jade">Sapa Jade Hill Resort</option>
+            <option value="intercontinental">InterContinental Danang Sun Peninsula Resort</option>
+            <option value="furama">Furama Resort Danang</option>
+            <option value="azerai_hue">Azerai La Residence, Hue</option>
+            <option value="saigon_morin">Hotel Saigon Morin</option>
+            <option value="intercontinental_nhatrang">InterContinental Nha Trang</option>
+            <option value="the_anam">The Anam Resort</option>
+            <option value="reverie">The Reverie Saigon</option>
+            <option value="park_hyatt">Park Hyatt Saigon</option>
+            <option value="jw_marriott">JW Marriott Phu Quoc Emerald Bay Resort & Spa</option>
+            <option value="vinpearl_phuquoc">Vinpearl Resort Phu Quoc</option>
+            <option value="azerai_cantho">Azerai Can Tho</option>
+            <option value="victoria_cantho">Victoria Can Tho Resort</option>
+            <option value="dalat_palace">Dalat Palace Heritage Hotel</option>
+            <option value="reverie_dalat">The Reverie Dalat</option>
+            <option value="dakruco">Dakruco Hotel</option>
+            <option value="muong_thanh">Muong Thanh Grand Buon Ma Thuot Hotel</option>
+        </select>
+
+        <label for="days">Days:</label>
+        <select id="days">
+            <option value="">-- Select Number of Days --</option>
+            <option value="1">1 Day</option>
+            <option value="2">2 Days</option>
+            <option value="3">3 Days</option>
+            <option value="4">4 Days</option>
+            <option value="5">5 Days</option>
+            <option value="6">6 Days</option>
+            <option value="7">7 Days</option>
+        </select>
+
+        <label for="people">People:</label>
+        <select id="people">
+            <option value="">-- Select Number of People --</option>
+            <option value="1">1 Person</option>
+            <option value="2">2 People</option>
+            <option value="3">3 People</option>
+            <option value="4">4 People</option>
+            <option value="5">5 People</option>
+            <option value="6">6 People</option>
+        </select>
+
+        <label for="price">Price:</label>
+        <select id="price">
+            <option value="">-- Select Price --</option>
+            <option value="39.99">39.99 USD</option>
+            <option value="49.99">49.99 USD</option>
+            <option value="59.99">59.99 USD</option>
+            <option value="69.99">69.99 USD</option>
+        </select>
+    </div>
+
+    <div class="payment">
         <h2>PAYMENT METHOD</h2>
         <div class="payment-method-section">
             <form action="/process_payment" method="post" style="flex: 3;">
