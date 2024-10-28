@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Regions of Vietnam</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+        }
+
+        h1 {
+            color: #2c3e50;
+            grid-column: span 2;
+            text-align: center;
+        }
+
+        .region {
+            background-color: #f8f8f8;
+            padding: 20px;
+            border-radius: 8px;
+        }
+
+        .region img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+
+        /* Custom alignment for each region */
+        .north {
+            grid-column: 1;
+        }
+
+        .north-image {
+            grid-column: 2;
+        }
+
+        .central {
+            grid-column: 2;
+        }
+
+        .central-image {
+            grid-column: 1;
+        }
+
+        .south {
+            grid-column: 1;
+        }
+
+        .south-image {
+            grid-column: 2;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Regions of Vietnam</h1>
+
+    <div class="region north">
+        <h2>North</h2>
+        <h3>Cultural Heritage</h3>
+        <p>The North is renowned for its long-standing traditions, with Hanoi, the thousand-year-old capital, embodying
+            much of Vietnam's historical and cultural essence. This area is home to iconic historical sites like the
+            Temple of Literature, which once served as Vietnam's first university, and the Old Quarter, with its
+            labyrinthine streets lined with artisan shops and family-owned eateries.</p>
+
+        <h3>Natural Beauty</h3>
+        <p>Ha Long Bay, a UNESCO World Heritage Site, is one of the most breathtaking natural landscapes in Vietnam,
+            featuring thousands of limestone karsts and islands that rise spectacularly from the emerald waters. Sapa
+            offers picturesque terraced rice fields and ethnic markets.</p>
+
+        <h3>Cuisine</h3>
+        <p>Northern Vietnamese cuisine is known for its subtle flavors and fresh ingredients. Pho, a traditional
+            Vietnamese soup, is a global favorite that originated here. Other dishes include bun thang and banh cuon.
+        </p>
+    </div>
+    <div class="region north-image">
+        <img src="images/north_culture.jpg" alt="Cultural site in Hanoi">
+        <img src="images/north_nature.jpg" alt="Ha Long Bay">
+        <img src="images/north_food.jpg" alt="Traditional Northern cuisine">
+    </div>
+
+    <div class="region central">
+        <h2>Central</h2>
+        <h3>Cultural Heritage</h3>
+        <p>The Central region is steeped in history and cultural diversity, influenced by the Cham, Vietnamese, and
+            Chinese communities. Hue, the former imperial capital, is rich in historical landmarks such as the Hue
+            Imperial City and My Son Sanctuary.</p>
+
+        <h3>Natural Beauty</h3>
+        <p>The central coast boasts some of the most beautiful beaches in Vietnam, including My Khe Beach in Da Nang.
+            Phong Nha-Ke Bang National Park is known for its impressive karst landscapes and the famous Son Doong Cave.
+        </p>
+
+        <h3>Cuisine</h3>
+        <p>Central Vietnamese cuisine is characterized by its bold and spicy flavors. Mi Quang, bun bo Hue, and banh beo
+            are some of the popular dishes that reflect the region's unique culinary approach.</p>
+    </div>
+    <div class="region central-image">
+        <img src="images/central_culture.jpg" alt="Hue Imperial City">
+        <img src="images/central_nature.jpg" alt="Phong Nha-Ke Bang National Park">
+        <img src="images/central_food.jpg" alt="Central Vietnamese cuisine">
+    </div>
+
+    <div class="region south">
+        <h2>South</h2>
+        <h3>Cultural Heritage</h3>
+        <p>The South is known for its vibrant culture, influenced by diverse ethnic groups. Ho Chi Minh City, formerly
+            Saigon, is a bustling metropolis with a blend of modern skyscrapers and colonial-era architecture. The
+            Mekong Delta offers a unique experience of southern Vietnam’s rural life.</p>
+
+        <h3>Natural Beauty</h3>
+        <p>The Mekong Delta is an expansive region known for its intricate waterways and lush, fertile lands. Phu Quoc
+            Island is a tropical paradise with pristine beaches, making it an ideal destination for beachgoers.</p>
+
+        <h3>Cuisine</h3>
+        <p>Southern Vietnamese cuisine is known for its rich, sweet flavors. Dishes like banh xeo, com tam, and goi cuon
+            highlight the region’s use of coconut milk and tropical ingredients.</p>
+    </div>
+    <div class="region south-image">
+        <img src="images/south_culture.jpg" alt="Historical landmark in Ho Chi Minh City">
+        <img src="images/south_nature.jpg" alt="Mekong Delta">
+        <img src="images/south_food.jpg" alt="Southern Vietnamese cuisine">
+    </div>
+
+    <p>Each region of Vietnam offers a unique blend of natural beauty, cultural heritage, and culinary delights, making
+        it a captivating destination for visitors from around the world.</p>
+</body>
+
+</html>

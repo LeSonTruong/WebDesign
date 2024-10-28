@@ -55,6 +55,7 @@ Author URL: http://w3layouts.com
                             <ul class="dropdown-menu" aria-labelledby="userIcon">
                                 <li><a class="dropdown-item" href="account-info.html">Account Info</a></li>
                                 <li><a class="dropdown-item" href="account-setup.html">Account Setup</a></li>
+                                <li><a class="dropdown-item" href="payment.html">Payment</a></li>
                                 <li><a class="dropdown-item" href="#" id="logout">Logout</a></li>
                             </ul>
                         </li>
@@ -130,7 +131,102 @@ Author URL: http://w3layouts.com
         <a href="#" class="next"><i class="fas fa-arrow-right"></i></a>
     </div>
     <!-- //banner section -->
+    <section class="w3l-aboutblock py-lg-5 py-4" class="map-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="title-main">
+                    <p>VietNam Map</p>
+                    <h3 class="title-style">Understand Vietnam better through VietNam Travel</h3>
+                </div>
+                <div class="map-image">
+                    <div class="region-button north" onclick="showContent('north')"></div>
+                    <div class="region-button central" onclick="showContent('central')"></div>
+                    <div class="region-button south" onclick="showContent('south')"></div>
+                </div>
 
+                <aside class="region-content">
+                    <div id="north" class="content">
+                        <h2>North Vietnam</h2>
+                        <h5>Cultural Heritage</h5>
+                        <p>The North is renowned for its long-standing traditions, with Hanoi, the thousand-year-old
+                            capital,
+                            embodying
+                            much of Vietnam's historical and cultural essence. This area is home to iconic historical
+                            sites like
+                            the
+                            Temple of Literature, which once served as Vietnam's first university, and the Old Quarter,
+                            with its
+                            labyrinthine streets lined with artisan shops and family-owned eateries.</p>
+
+                        <h5>Natural Beauty</h5>
+                        <p>Ha Long Bay, a UNESCO World Heritage Site, is one of the most breathtaking natural landscapes
+                            in
+                            Vietnam,
+                            featuring thousands of limestone karsts and islands that rise spectacularly from the emerald
+                            waters.
+                            Sapa
+                            offers picturesque terraced rice fields and ethnic markets.</p>
+
+                        <h5>Cuisine</h5>
+                        <p>Northern Vietnamese cuisine is known for its subtle flavors and fresh ingredients. Pho, a
+                            traditional
+                            Vietnamese soup, is a global favorite that originated here. Other dishes include bun thang
+                            and banh
+                            cuon.
+                        </p>
+                    </div>
+                    <div id="central" class="content">
+                        <h2>Central Vietnam</h2>
+                        <h5>Cultural Heritage</h5>
+                        <p>The Central region is steeped in history and cultural diversity, influenced by the Cham,
+                            Vietnamese, and
+                            Chinese communities. Hue, the former imperial capital, is rich in historical landmarks such
+                            as the Hue
+                            Imperial City and My Son Sanctuary.</p>
+
+                        <h5>Natural Beauty</h5>
+                        <p>The central coast boasts some of the most beautiful beaches in Vietnam, including My Khe
+                            Beach in Da Nang.
+                            Phong Nha-Ke Bang National Park is known for its impressive karst landscapes and the famous
+                            Son Doong Cave.
+                        </p>
+
+                        <h5>Cuisine</h5>
+                        <p>Central Vietnamese cuisine is characterized by its bold and spicy flavors. Mi Quang, bun bo
+                            Hue, and banh beo
+                            are some of the popular dishes that reflect the region's unique culinary approach.</p>
+                    </div>
+                    <div id="south" class="content">
+                        <h2>South Vietnam</h2>
+                        <h5>Cultural Heritage</h5>
+                        <p>The South is known for its vibrant culture, influenced by diverse ethnic groups. Ho Chi Minh
+                            City, formerly
+                            Saigon, is a bustling metropolis with a blend of modern skyscrapers and colonial-era
+                            architecture. The
+                            Mekong Delta offers a unique experience of southern Vietnam’s rural life.</p>
+
+                        <h5>Natural Beauty</h5>
+                        <p>The Mekong Delta is an expansive region known for its intricate waterways and lush, fertile
+                            lands. Phu Quoc
+                            Island is a tropical paradise with pristine beaches, making it an ideal destination for
+                            beachgoers.</p>
+
+                        <h5>Cuisine</h5>
+                        <p>Southern Vietnamese cuisine is known for its rich, sweet flavors. Dishes like banh xeo, com
+                            tam, and goi cuon
+                            highlight the region’s use of coconut milk and tropical ingredients.</p>
+                    </div>
+                </aside>
+    </section>
+
+    <script>
+        function showContent(region) {
+            document.querySelectorAll('.content').forEach((content) => {
+                content.classList.remove('active');
+            });
+            document.getElementById(region).classList.add('active');
+        }
+    </script>
     <!-- booking form section -->
     <section class="w3l-form-main py-5" id="book">
         <div class="container py-lg-5 py-md-4 py-2">
